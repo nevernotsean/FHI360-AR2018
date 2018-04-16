@@ -1,0 +1,55 @@
+.fp-tablecell-auto .fp-tableCell {
+	height: 100% !important;
+	height: 100vh !important;
+	display: initial !important;
+	vertical-align: initial !important;
+}
+.section {
+	color: white;
+	.bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -2;
+		overflow: hidden;
+		&-screen {
+			z-index: -1;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.4);
+		}
+	}
+	.inner-frame {
+		min-height: 100vh;
+		padding: 185px 60px;
+	}
+	.drawer-button {
+		cursor: pointer;
+		width: 65px;
+		margin-bottom: 15px;
+
+		&_container {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+
+			position: absolute;
+			transform: translateX(-50%);
+			left: 50%;
+			bottom: 0;
+			margin-bottom: 60px;
+		}
+	}
+	.slide-title * {
+		font-size: 60px;
+	}
+	.slide-subtitle * {
+		font-size: 24px;
+		color: rgba(255, 255, 255, 0.75);
+	}
+}
+
+[data-section='0'] {
+	background-color: $purple;
+}
