@@ -155,6 +155,11 @@ export default class Site {
 				$words: $('#words > span')
 			}
 
+			let title_white = '#cat_logo #cat_title_white'
+			let title = '#cat_logo #cat_title'
+			let subtitle = '#cat_logo #cat_subtitle'
+			let dot = '#cat_logo #orange_dot'
+
 			tl
 				.add({
 					targets: '.intro-header',
@@ -190,14 +195,73 @@ export default class Site {
 						$('.catalyst')
 							.show()
 							.css('opacity', 0)
+
+						$(dot).attr('cx', '640')
+						$(dot).attr('cy', '250')
 					}
 				})
+				// start catalyst
 				.add({
 					targets: '.catalyst',
 					opacity: [0, 1],
 					translateY: ['20px', '0'],
 					duration: 500,
-					easing: 'easeInOutSine',
+					easing: 'easeInOutSine'
+				})
+				.add({
+					targets: dot,
+					translateY: [150, 0],
+					duration: 500,
+					easing: 'easeInExpo'
+				})
+				.add({
+					targets: dot,
+					r: [9.51, 800],
+					duration: 2500,
+					easing: 'easeOutExpo'
+				})
+				.add({
+					targets: title_white,
+					opacity: [0, 1],
+					duration: 1000,
+					easing: 'easeOutCubic'
+				})
+				.add({
+					targets: dot,
+					duration: 500,
+					opacity: [1, 0],
+					easing: 'easeInQuart'
+				})
+				.add({
+					targets: title,
+					duration: 500,
+					opacity: [0, 1],
+					easing: 'easeInQuart',
+					offset: '-=500'
+				})
+				.add({
+					targets: [subtitle, dot],
+					duration: 500,
+					opacity: [0, 1],
+					translateY: [20, 0],
+					easing: 'easeOutCubic',
+					offset: '+=2000',
+					delay: function(el, i, l) {
+						return i * 300
+					},
+					begin: () => {
+						$(dot).attr('r', '9.51')
+						$(dot).attr('cx', '333.42')
+						$(dot).attr('cy', '369.25')
+					}
+				})
+				.add({
+					targets: '#intro-chevron',
+					duration: 500,
+					opacity: [0, 1],
+					translateY: [20, 0],
+					easing: 'easeInQuart',
+					offset: '+=1000',
 					complete: handleIntroComplete
 				})
 
@@ -225,11 +289,12 @@ export default class Site {
 		}
 		function handleIntroComplete() {
 			anime({
-				target: '#intro-chevron',
+				targets: '#intro-chevron',
 				loop: true,
+				direction: 'alternate',
 				translateY: ['-10px', '10px'],
 				duration: 1000,
-				easing: 'linear'
+				easing: 'easeInOutQuart'
 			})
 			$.fn.fullpage.setAllowScrolling(true)
 			$.fn.fullpage.setKeyboardScrolling(true)

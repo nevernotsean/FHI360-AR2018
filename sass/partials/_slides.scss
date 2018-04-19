@@ -164,10 +164,6 @@
 
 	.catalyst {
 		cursor: pointer;
-		max-width: 600px;
-		> * {
-			text-transform: uppercase;
-		}
 	}
 
 	#words {
@@ -182,10 +178,23 @@
 		display: none;
 	}
 
-	svg {
-		width: 80vw;
-		max-width: 600px;
-		height: auto;
+	#cat_logo {
+		height: 100vh;
+		min-height: 100%;
+		width: auto;
+	}
+
+	#orange_dot {
+		transform-origin: center center;
+	}
+
+	#intro-chevron {
+		position: absolute;
+		bottom: 80px;
+		left: 50%;
+		width: 100px;
+		margin-left: -50px;
+		opacity: 0;
 	}
 }
 
