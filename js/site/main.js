@@ -51,19 +51,31 @@ export default class Site {
 	hideEls() {
 		this.$hideEls.css('opacity', 0)
 	}
-	handleTocToggle(e) {}
-	toggleTOC() {
-		let $drawer = $(`.leftDrawer[data-toggle="${toggleID}"`)
-		let $button = $(`.drawer-button_container`)
+	handleTocToggle(e) {
+		this.toggleTOC()
+	}
+	handleTocClick(e) {
+		let dest = $(e.target)
+			.parent('[data-moveto]')
+			.data('moveto')
+		this.moveToSlide(dest)
+	}
+	moveToSlide(dest) {
+		this.toggleTOC()
+		$.fn.fullpage.silentMoveTo(dest, 0)
+	}
+	toggleTOC(dur = 300, forceClose = false) {
+		let $drawer = $(`#rightSideBar`)
+		let $button = $(`.toc-toggle`)
 
-		let drawerOpen = forceClose || $('body').hasClass('drawer-open')
+		let drawerOpen = forceClose || $('body').hasClass('toc-open')
 
 		anime({
 			targets: $drawer[0],
 			duration: dur,
 			easing: () => (drawerOpen ? 'easeInQuad' : 'easeOutQuad'),
-			translateX: () => (drawerOpen ? [0, '-100%'] : ['-100%', 0]),
-			begin: () => $('body').toggleClass('drawer-open')
+			translateX: () => (drawerOpen ? [0, '100%'] : ['100%', 0]),
+			begin: () => $('body').toggleClass('toc-open')
 		})
 		$.fn.fullpage.setAllowScrolling(drawerOpen)
 		$.fn.fullpage.setKeyboardScrolling(drawerOpen)
@@ -232,6 +244,9 @@ export default class Site {
 	addEventListeners() {
 		$('.move-next').on('click', e => $.fn.fullpage.moveSectionDown())
 		$('.drawer-button_container').on('click', e => this.handleDrawerToggle(e))
+		$('.toc-toggle').on('click', e => this.handleTocToggle(e))
+		$('.close-rightbar').on('click', e => this.toggleTOC())
+		$('.toc-item').on('click', e => this.handleTocClick(e))
 	}
 	init() {
 		this.addEventListeners()

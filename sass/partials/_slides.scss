@@ -118,6 +118,8 @@
 	z-index: 10002;
 	padding: 0 30px;
 
+	overflow-y: scroll;
+
 	.drawer-open & {
 		box-shadow: rgb(0, 0, 0) 0px 0px 156px 20px;
 	}
@@ -203,6 +205,8 @@
 }
 
 [data-section='14'] {
+	background: white;
+	color: #000;
 	h2 {
 		color: $orange;
 	}

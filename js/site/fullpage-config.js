@@ -49,10 +49,10 @@ const config = {
 
 	controlArrows: true,
 	verticalCentered: true,
-	// sectionsColor: ['#ccc', '#fff'],
+	sectionsColor: ['#fff'],
 	// paddingTop: '0',
 	// paddingBottom: '0',
-	fixedElements: '#header, .footer',
+	fixedElements: '#header',
 	responsiveWidth: 0,
 	responsiveHeight: 0,
 	responsiveSlides: false,

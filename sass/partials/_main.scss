@@ -110,32 +110,67 @@ a {
 .toc-toggle {
 	cursor: pointer;
 	border-radius: 100%;
+	border: 3px solid #000;
+	height: 50px;
+	width: 50px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&-inner {
+	}
+}
+
+.close-rightbar {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.5);
+
+	.toc-open & {
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: block;
+	}
 }
 
 #rightSideBar {
 	background: #fff;
 	color: #000;
+	height: 100%;
 	height: 100vh;
 	position: fixed;
 	right: 0;
 	top: 0;
 	transform: translateX(100%);
-	width: 50%;
 	z-index: 10002;
+
+	width: 400px;
 
 	.toc-open & {
 		box-shadow: rgb(0, 0, 0) 0px 0px 156px 20px;
 	}
 
 	.toc {
+		height: 100%;
 	}
 	.toc-item {
-		padding: 10px 0;
+		cursor: pointer;
+		padding: 10px 20px;
+		align-items: center;
+		border-bottom: 1px solid #ddd;
 	}
 	.toc-number {
 		padding: 10px;
 		border: 5px solid black;
 		border-radius: 100%;
+		display: flex;
+		width: 50px;
+		height: 50px;
+		align-items: center;
+		justify-content: center;
 	}
 	.toc-title {
 		padding: 10px 50px 10px 10px;
@@ -172,6 +207,10 @@ a {
 		letter-spacing: 0.1em;
 		font-size: 14px;
 	}
+}
+
+.footer {
+	background: #f2f2f2;
 }
 
 // Widgets
