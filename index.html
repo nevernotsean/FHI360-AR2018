@@ -9,9 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico in the root directory -->
-    <link rel="stylesheet" href="https://use.typekit.net/cua6unr.css">
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/cua6unr.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css">
+
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'cua6unr',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
 
 <body>
@@ -53,107 +64,434 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="fullpage">
-        <!-- <div class="section" data-section="intro">
+        <div id="fullpage">
+            <!-- <div class="section" data-section="intro">
                 How do we _______? …text in a separate document; Catalyze
             </div> -->
-        <div class="section" data-section="0">
-            <div class="grid-x align-center inner-frame">
-                <div class="small-12 large-8 cell grid-y align-justify">
-                    <div class="text-center">
-                        <p class="h3"> A catalyst is a spark that transforms an idea into a solution.</p>
-                        <br>
-                        <p class="h3">
-                            In this year's annual report, we share some of the ways we are working with our partners to accelerate innovation and strengthen
-                            our collective capacity to improve lives.
-                        </p>
-                    </div>
-                    <hr class="medium align-self-middle">
-                    <div class="grid-x grid-padding-x align-center p2">
-                        <div class="cell shrink">
-                            <img src="./img/patrick-fine-headshot.jpg" alt="" width="100" height="100">
+            <!-- SECTION 0 -->
+            <div class="section" data-section="0">
+                <div class="grid-x align-center inner-frame">
+                    <div class="small-12 large-8 cell grid-y align-justify">
+                        <div class="text-center">
+                            <p class="h3"> A catalyst is a spark that transforms an idea into a solution.</p>
+                            <br>
+                            <p class="h3">
+                                In this year's annual report, we share some of the ways we are working with our partners to accelerate innovation and strengthen
+                                our collective capacity to improve lives.
+                            </p>
                         </div>
-                        <div class="cell shrink grid-y align-center">
-                            <p class="h6 uppercase">A message from our CEO</p>
-                            <p class="h2 mb0">PATRICK FINE</p>
+                        <hr class="medium align-self-middle">
+                        <div class="grid-x grid-padding-x align-center p2">
+                            <div class="cell shrink">
+                                <img src="./img/patrick-fine-headshot.jpg" alt="" width="100" height="100">
+                            </div>
+                            <div class="cell shrink grid-y align-center">
+                                <p class="h6 uppercase">A message from our CEO</p>
+                                <p class="h2 mb0">PATRICK FINE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                </div>
+            </div>
+            <!-- SECTION 1 -->
+            <div class="section fp-tablecell-auto" data-section="1">
+                <div class="bg object-fit">
+                    <img src="./img/slides/profile-jordan-slide1-original.jpg" alt="">
+                </div>
+                <div class="bg-screen"></div>
+
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-6 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>A beekeeper uses new skills to build a thriving business</h2>
+                        </div>
+                        <div class="cell shrink stagger-in">
+                            <hr class="small">
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <h3>Samira Saeed Mouawwad</h3>
+                            <h3>Business-owner, Jordan</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 2 -->
+            <div class="section fp-tablecell-auto" data-section="2">
+                <div class="bg object-fit">
+                    <img src="./img/slides/profile-jordan-slide2-original.jpg" alt="">
+                </div>
+                <div class="bg-screen"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-9 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>“The focus on small and home-based businesses is giving women the tools they need to become more
+                                powerful and independent, and this leads to their greater contribution to the economy.”</h2>
+                        </div>
+                        <div class="cell shrink stagger-in">
+                            <hr class="small">
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <h3>Samira Saeed Mouawwad</h3>
+                            <h3>Business-owner, Jordan</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 3 -->
+            <div class="section fp-tablecell-auto" data-section="3">
+                <div class="bg object-fit">
+                    <img src="./img/slides/example-hptn-slide-original.jpg" alt="">
+                </div>
+                <div class="bg-screen purple"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-9 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>Long-acting injection shows promise for HIV prevention</h2>
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <div class="grid-x grid-padding-x">
+                                <div class="cell shrink">
+                                    <img width="50" src="./img/icons/syringe-icon.svg" alt="">
+                                </div>
+                                <div class="cell small-auto medium-6">
+                                    <h3>Injectable cabotegravir may be an alternative to a daily dose of PrEP</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 4 -->
+            <div class="section fp-tablecell-auto" data-section="4">
+                <div class="bg object-fit">
+                    <img src="./img/slides/profile-india-slide1-original.jpg" alt="">
+                </div>
+                <div class="bg-screen"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-9 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>Emerging leaders develop lasting connections </h2>
+                        </div>
+                        <div class="cell shrink stagger-in">
+                            <hr class="small">
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <h3>Yatin Thakur</h3>
+                            <h3>Entrepreneur, India</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 5 -->
+            <div class="section fp-tablecell-auto" data-section="5">
+                <div class="bg object-fit">
+                    <img src="./img/slides/profile-india-slide2-original.jpg" alt="">
+                </div>
+                <div class="bg-screen"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-9 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>“My exposure to the U.S. environment showed me how to bring in the right people to work to achieve
+                                scale.”
+                            </h2>
+                        </div>
+                        <div class="cell shrink stagger-in">
+                            <hr class="small">
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <h3>Yatin Thakur</h3>
+                            <h3>Entrepreneur, India</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 6 -->
+            <div class="section fp-tablecell-auto" data-section="6">
+                <div class="bg object-fit">
+                    <img src="./img/slides/example-sinoimplant-slide-original.jpg" alt="">
+                </div>
+                <div class="bg-screen purple"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-9 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>Expanding contraceptive access and choice for women</h2>
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <div class="grid-x grid-padding-x">
+                                <div class="cell shrink">
+                                    <img width="50" src="./img/icons/manwoman-icon.svg" alt="">
+                                </div>
+                                <div class="cell small-auto medium-6">
+                                    <h3>Two-rod contraceptive implant is prequalified by WHO</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 7 -->
+            <div class="section fp-tablecell-auto" data-section="7">
+                <div class="bg object-fit">
+                    <img src="./img/slides/profile-succeed2020-slide1-original.jpg" alt="">
+                </div>
+                <div class="bg-screen"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 medium-3 large-4 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>Data drives student success in America’s heartland</h2>
+                        </div>
+                        <div class="cell shrink stagger-in">
+                            <hr class="small">
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <h3>Jennifer Carlson</h3>
+                            <h3>Educator, United States</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 8 -->
+            <div class="section fp-tablecell-auto" data-section="8">
+                <div class="bg object-fit">
+                    <img src="./img/slides/profile-succeed2020-slide2-original.jpg" alt="">
+                </div>
+                <div class="bg-screen darker"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-9 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>“The project really helped us to drill down and determine the best way to achieve the most goals
+                                within the fastest time,” </h2>
+                        </div>
+                        <div class="cell shrink stagger-in">
+                            <hr class="small">
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <h3>Jennifer Carlson</h3>
+                            <h3>Educator, United States</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawer-button_container">
+                    <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                    <span class="h6 uppercase">Read Story</span>
+                </div>
+            </div>
+            <!-- SECTION 9 -->
+            <div class="section fp-tablecell-auto" data-section="9">
+                <div class="bg object-fit">
+                    <img src="./img/slides/example-tb-slide-original.jpg" alt="">
+                </div>
+                <div class="bg-screen purple"></div>
+                <div class="grid-x inner-frame">
+                    <div class="small-12 large-9 cell grid-y align-center">
+                        <div class="cell shrink slide-title stagger-in">
+                            <h2>Bringing TB prevention and care into communities in Mozambique</h2>
+                        </div>
+                        <div class="cell shrink slide-subtitle stagger-in">
+                            <h3>In some provinces, TB detection through CB-DOTS has increased to</h3>
+                        </div>
+                        <div class="grid-x grid-padding-x stagger-in">
+                            <div class="cell shrink">
+                                <img width="30" src="./img/icons/arrowup-icon.svg" alt="">
+                            </div>
+                            <div class="cell shrink">
+                                <h3>
+                                    <span data-countup>36</span>%</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drawer-button_container">
+                        <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                        <span class="h6 uppercase">Read Story</span>
+                    </div>
+                </div>
+                <!-- SECTION 10 -->
+                <div class="section fp-tablecell-auto" data-section="10">
+                    <div class="bg object-fit">
+                        <img src="./img/slides/profile-tanzania-slide-original.jpg" alt="">
+                    </div>
+                    <div class="bg-screen darker"></div>
+                    <div class="grid-x inner-frame">
+                        <div class="small-12 large-9 cell grid-y align-center">
+                            <div class="cell shrink slide-title stagger-in">
+                                <h2>A multisectoral approach transforms nutrition in Tanzania </h2>
+                            </div>
+                            <div class="cell shrink slide-subtitle stagger-in">
+                                <h3>Obey Assery</h3>
+                                <h3>Economist, Tanzania</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drawer-button_container">
+                        <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                        <span class="h6 uppercase">Read Story</span>
+                    </div>
+                </div>
+                <!-- SECTION 11 -->
+                <div class="section fp-tablecell-auto" data-section="11">
+                    <div class="bg object-fit">
+                        <img src="./img/slides/profile-jordan-slide2-original.jpg" alt="">
+                    </div>
+                    <div class="bg-screen purple"></div>
+                    <div class="grid-x inner-frame">
+                        <div class="small-12 large-9 cell grid-y align-center">
+                            <div class="cell shrink slide-title stagger-in">
+                                <h2>Supporting Myanmar’s democratic transition</h2>
+                            </div>
+                            <div class="cell shrink slide-subtitle stagger-in">
+                                <ul class="checkmarks">
+                                    <li>
+                                        <img width="20" src="./img/icons/checkmark.svg" alt="">Promoting civic action and engagement
+                                    </li>
+                                    <li>
+                                        <img width="20" src="./img/icons/checkmark.svg" alt="">Supporting an independent media
+                                    </li>
+                                    <li>
+                                        <img width="20" src="./img/icons/checkmark.svg" alt="">Leadership development
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drawer-button_container">
+                        <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                        <span class="h6 uppercase">Read Story</span>
+                    </div>
+                </div>
+                <!-- SECTION 12 -->
+                <div class="section fp-tablecell-auto" data-section="12">
+                    <div class="bg object-fit">
+                        <img src="./img/slides/university-background.jpg" alt="">
+                    </div>
+                    <div class="bg-screen"></div>
+                    <div class="grid-x inner-frame">
+                        <div class="small-12 large-9 cell grid-y align-center">
+                            <div class="cell shrink slide-title stagger-in">
+                                <h2>University degree program prepares Afghani students for tomorrow’s jobs</h2>
+                            </div>
+                            <div class="cell shrink slide-subtitle stagger-in">
+                                <h3>Yosouf Jami</h3>
+                                <h3>Dean, Herat University, Afghanistan</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drawer-button_container">
+                        <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                        <span class="h6 uppercase">Read Story</span>
+                    </div>
+                </div>
+                <!-- SECTION 13 -->
+                <div class="section fp-tablecell-auto" data-section="13">
+                    <div class="bg object-fit">
+                        <img src="./img/slides/example-mstar-slide-original.jpg" alt="">
+                    </div>
+                    <div class="bg-screen purple"></div>
+                    <div class="grid-x inner-frame">
+                        <div class="small-12 large-9 cell grid-y align-center">
+                            <div class="cell shrink slide-title stagger-in">
+                                <h2>Technology to drive better outcomes</h2>
+                            </div>
+                            <div class="cell shrink slide-subtitle stagger-in">
+                                <h3>In Liberia, mobile money paid</h3>
+                                <h3>3000+ teachers</h3>
+                                <h3>800+ health care workers</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drawer-button_container">
+                        <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+                        <span class="h6 uppercase">Read Story</span>
+                    </div>
+                </div>
+                <!-- SECTION 14 -->
+                <div class="section fp-tablecell-auto" data-section="14">
+                    <div class="bg-screen"></div>
+                    <div class="inner-frame">
+                        <div class="grid-x">
+                            <div class="small-12 large-6 cell grid-y align-center">
+                                <h2>Learn more</h2>
+                                <h3>Read more about FHI 360 and the work we do</h3>
+                            </div>
+                            <div class="small-12 large-6 cell grid-y align-center">
+                                <h2>Share</h2>
+                                <ul class="menu simple">
+                                    <li>
+                                        <img src="https://icon.now.sh/discover" alt="share on facebook">
+                                    </li>
+                                    <li>
+                                        <img src="https://icon.now.sh/discover" alt="retweet">
+                                    </li>
+                                    <li>
+                                        <img src="https://icon.now.sh/discover" alt="share on linkedin">
+                                    </li>
+                                    <li>
+                                        <img src="https://icon.now.sh/discover" alt="copy this link">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="small-12 large-9 cell grid-y align-center">
+                            <div class="cell shrink">
+                                <h2>Technology to drive better outcomes</h2>
+                            </div>
+                            <div class="cell shrink">
+                                <a href="#">View low-bandwidth text version.</a>
+                                <p>Copyright 2017 FHI 360. All rights reserved. </p>
+                                <p>FHI 360 is the registered trade name of Family Health International.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="drawer-button_container">
-                <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
+            <div id="rightSideBar">
+                <nav class="toc">
+                    <div class="toc-item grix-x grid-padding-x">
+                        <div class="cell toc-number">1</div>
+                        <div class="cell auto toc-title">A beekeeper uses new skills to build a thriving business</div>
+                    </div>
+                </nav>
             </div>
         </div>
-        <div class="section fp-tablecell-auto" data-section="1">
-            <div class="bg object-fit">
-                <img src="./img/slides/profile-jordan-slide1-original.jpg" alt="">
-            </div>
-            <div class="bg-screen"></div>
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+        <script src="./js/index.js"></script>
 
-            <div class="grid-x inner-frame">
-                <div class="small-12 medium-6 cell grid-y align-center">
-                    <div class="cell shrink slide-title">
-                        <h2>A beekeeper uses new skills to build a thriving business</h2>
-                    </div>
-                    <div class="cell shrink">
-                        <hr class="small">
-                    </div>
-                    <div class="cell shrink slide-subtitle">
-                        <h3>Samira Saeed Mouawwad</h3>
-                        <h3>Business-owner, Jordan</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="drawer-button_container">
-                <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
-                <span class="h6 uppercase">Read Story</span>
-            </div>
-        </div>
-        <div class="section fp-tablecell-auto" data-section="2">
-            <div class="bg object-fit">
-                <img src="./img/slides/profile-jordan-slide2-original.jpg" alt="">
-            </div>
-            <div class="bg-screen"></div>
-            <div class="grid-x inner-frame">
-                <div class="small-12 medium-9 cell grid-y align-center">
-                    <div class="cell shrink slide-title">
-                        <h2>“The focus on small and home-based businesses is giving women the tools they need to become more
-                            powerful and independent, and this leads to their greater contribution to the economy.”</h2>
-                    </div>
-                    <div class="cell shrink">
-                        <hr class="small">
-                    </div>
-                    <div class="cell shrink slide-subtitle">
-                        <h3>Samira Saeed Mouawwad</h3>
-                        <h3>Business-owner, Jordan</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="drawer-button_container">
-                <img class="drawer-button align-self-middle m2" src="./img/drawer-button.svg" alt="">
-                <span class="h6 uppercase">Read Story</span>
-            </div>
-        </div>
-    </div>
-    <div id="rightSideBar">
-        <nav class="toc">
-            <div class="toc-item grix-x grid-padding-x">
-                <div class="cell toc-number">1</div>
-                <div class="cell auto toc-title">A beekeeper uses new skills to build a thriving business</div>
-            </div>
-        </nav>
-    </div>
-    </div>
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
-    <script src="./js/index.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <!-- <script>
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <!-- <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
         </script>
