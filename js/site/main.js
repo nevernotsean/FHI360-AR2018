@@ -56,11 +56,12 @@ export default class Site {
 	}
 	handleTocClick(e) {
 		let dest = $(e.target)
-			.parent('[data-moveto]')
+			.closest('[data-moveto]')
 			.data('moveto')
 		this.moveToSlide(dest)
 	}
 	moveToSlide(dest) {
+		console.log(dest)
 		this.toggleTOC()
 		$.fn.fullpage.silentMoveTo(dest, 0)
 	}
