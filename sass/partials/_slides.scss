@@ -176,12 +176,12 @@
 
 	.catalyst {
 		display: none;
-	}
 
-	#cat_logo {
-		height: 100vh;
-		min-height: 100%;
-		width: auto;
+		svg {
+			height: 100vh;
+			min-height: 100%;
+			width: auto;
+		}
 	}
 
 	#orange_dot {
