@@ -1,5 +1,4 @@
 import config from './fullpage-config.js'
-import content from '../../content/content.json'
 
 import anime from 'animejs'
 
@@ -7,9 +6,23 @@ export default class Site {
 	constructor(props) {
 		this.config = config
 
-		// this.config.anchors = content.sections.map(
-		// 	section => `section-${section.id}`
-		// )
+		this.config.anchors = [
+			'section1',
+			'section2',
+			'section3',
+			'section4',
+			'section5',
+			'section6',
+			'section7',
+			'section8',
+			'section9',
+			'section10',
+			'section11',
+			'section12',
+			'section13',
+			'section14',
+			'section15',
+		]
 		this.config.onLeave = this.handleOnLeave.bind(this)
 		this.config.afterLoad = this.handleAfterLoad.bind(this)
 		this.config.afterRender = this.handleAfterRender.bind(this)
@@ -127,7 +140,7 @@ export default class Site {
 			'inspire young leaders?',
 			'harness digital technology?',
 			'prepare students for 21st century jobs?',
-			'empower people to plan healthy families?',
+			'promote healthy families?',
 			'generate groundbreaking research?',
 			'combat violent extremism?',
 			'support communities in crisis?'
