@@ -1,0 +1,195 @@
+# 2017 Annual Report home page text
+
+# Title slide
+phrase_start: How do we
+end_phrases: 
+	- promote peace?
+	- end HIV?
+	- increase economic well-being?
+	- eliminate TB?
+	- empower women and girls?
+	- give citizens voice?
+	- drive student success?
+	- improve nutrition?
+	- use data for greater impact?
+	- end HIV?
+	- increase economic well-being?
+	- eliminate TB?
+	- empower women and girls?
+	- promote civic engagement?
+	- advance peace and stability?
+	- expand access to healthcare?
+	- drive student success?
+	- improve nutrition?
+	- use data for greater impact?
+	- inspire young leaders?
+	- harness digital technology?
+	- prepare students for 21st century jobs?
+	- promote healthy families?
+	- generate groundbreaking research?
+	- combat violent extremism?
+	- support communities in crisis?
+
+intro_title: Catalyze
+
+# CEO message slide
+ceo_slide_content: >
+  A catalyst is a spark that transforms an idea into a solution.
+
+  In this year's annual report, we share some of the ways we are working with our partners to accelerate innovation and strengthen our collective capacity to improve lives.
+
+  A message from our CEO
+  PATRICK FINE
+
+# [Photo: Patrick’s headshot (same photo as one in drawer): patrick-fine-headshot-original.jpg]
+
+sections:
+- 1: # Profile: Jordan (slide 1)
+  section_title: A beekeeper uses new skills to build a thriving business in Jordan
+
+  section_subtitle: Samira Saeed Mouawwad, Business owner, Jordan
+
+  photo_credit: Mohammad Magayda/FHI 360
+
+# [Photo: Samira in beekeeper suit - profile-jordan-slide1-original.jpg]
+
+- 2: # Profile: Jordan (slide 2)
+  section_title: “The focus on small and home-based businesses is giving women the tools they need to become more powerful and independent, and this leads to their greater contribution to the economy.”
+
+  section_subtitle: Samira Saeed Mouawwad, Business owner, Jordan
+
+  photo_credit: As Hardworking as a Bee, Dirar Shawagfeh/FHI 360
+
+# [Photo: close up of beehive – profile-jordan-slide2-original.png]
+
+- 3: # Example: HPTN
+  section_title: Long-acting injection shows promise for HIV prevention
+
+  section_subtitle: (icon) Injectable cabotegravir may be an alternative to a daily dose of PrEP
+
+  photo_credit: Jessica Scranton/FHI 360
+
+# [Photo: HIV testing/hands – example-hptn-slide-original.jpg]
+
+- 4: # Profile: India/IVLP (slide 1)
+  section_title: Emerging leader in India makes lasting connections
+
+  section_subtitle: Yatin Thakur, Entrepreneur, India
+
+  photo_credit: Vivek Singh/The Verbatim Agency for FHI 360
+
+# [Photo: Yatin over woman’s shoulder – profile-india-slide1-original.jpg]
+
+- 5: # Profile: India/IVLP (slide 2)
+  section_title: “My exposure to the U.S. environment showed me how to bring in the right people to work to achieve scale.”
+
+  section_subtitle: Yatin Thakur, Entrepreneur, India
+
+  photo_credit: Vivek Singh/The Verbatim Agency for FHI 360
+
+# [Photo: Exterior shot in New Delhi – profile-india-slide2-original.jpg]
+
+- 6: # Example: Sino-implant (II)
+  section_title: Expanding contraceptive access and choice for women
+
+  section_subtitle: (icon) Two-rod contraceptive implant is prequalified by WHO
+
+  photo_credit: Jessica Scranton/FHI 360
+
+# [Photo: woman and community health worker – example-sinoimplant-slide-original.jpg]
+
+- 7: # Profile: Succeed 2020 (slide 1)
+  section_title: Data drives student success in America's heartland
+
+  section_subtitle: Jennifer Carlson, Educator, United States
+
+  photo_credit: Leanne Gray/FHI 360
+
+# [Photo: Jennifer standing in hallway – profile-succeed2020-slide1-original.jpg]
+
+- 8: # Profile: Succeed 2020 (slide 2)
+  section_title: “We’ve increased our organizational capacities, including our in-house data system. Data is part of our culture now.”
+
+  section_subtitle: Jennifer Carlson, Educator, United States
+
+ photo_credit: Leanne Gray/FHI 360
+
+# [Photo: Devils Lake grain silos – profile-succeed2020-slide2-original.jpg]
+
+- 9: # Example: TB
+  section_title: Bringing TB prevention and care into communities in Mozambique
+
+  section_subtitle: In some provinces, TB detection through CB-DOTS has increased to 36% 
+
+  photo_credit: Jessica Scranton/FHI 360
+
+# [Photo: couple in Mozambique – example-tb-slide-original.jpg]
+
+- 10: # Profile: Tanzania
+  section_title: A multisectoral approach transforms nutrition in Tanzania
+
+  section_subtitle: Obey Assery, Policymaker, Tanzania
+
+  photo_credit: Leanne Gray/FHI 360
+
+# [Photo: Obey standing in front of flag – profile-tanzania-slide-original.jpg]
+
+- 11: # Example: Myanmar
+  section_title: Supporting Myanmar's democratic transition
+  section_subtitle: >
+    - Promoting civic action and engagement
+    - Supporting an independent media
+    - Leadership development
+
+  photo_credit: Maxiphoto/iStockPhoto
+
+# [Photo: market in Yangon – example-myanmar-slide-original.jpg]
+
+- 12: # Profile: Afghanistan (slide 1)
+  section_title: University degree program prepares Afghan students for tomorrow's jobs
+
+  section_subtitle: Yosouf Jami, University dean, Afghanistan
+
+  photo_credit: Kiana Hayeri/The Verbatim Agency for FHI 360
+
+# [Photo: Students in lab coats with Dean Jami – profile-afghanistan-slide1-original.jpg]
+
+- 13: # Profile: Afghanistan (slide 2)
+  section_title: “This department is the first food technology program in our country.” 
+
+  section_subtitle: Yosouf Jami, University dean, Afghanistan
+
+  photo_credit: Kiana Hayeri/The Verbatim Agency for FHI 360
+
+# [Photo: Exterior shot of Herat University – profile-afghanistan-slide2-original.jpg]
+
+- 14: # Example: mSTAR
+  section_title: Technology to drive better outcomes
+  
+  section_subtitle: >
+    In Liberia, mobile money paid
+    3,000+ teachers | 800+ health care workers
+
+  photo_credit: John O'Bryan/USAID (CC BY-ND 2.0)
+
+# [Photo: woman working with mobile devices – example-mstar-slide-original.jpg]
+
+# Closing slide
+closing_content: >
+  LEARN MORE [button to https://www.fhi360.org/] | Read about FHI 360 and our work
+  Share [social share buttons from footer]
+
+# Menu titles
+# [Same as story titles]
+menu_items: 
+ - A beekeeper uses new skills to build a thriving business in Jordan
+ - Long-acting injection shows promise for HIV prevention
+ - Emerging leader in India makes lasting connections
+ - Expanding contraceptive access and choice for women
+ - Data drives student success in America's heartland
+ - Bringing TB prevention and care into communities in Mozambique
+ - A multisectoral approach transforms nutrition in Tanzania
+ - Supporting Myanmar's democratic transition
+ - University degree program prepares Afghan students for tomorrow's jobs
+ - Technology to drive better outcomes
+
