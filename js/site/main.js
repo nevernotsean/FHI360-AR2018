@@ -168,7 +168,7 @@ export default class Site {
 				$words: $('#words > span')
 			}
 
-			let title_white = '#cat_logo #cat_title_white'
+			let title_white = '#cat_title_white path, #cat_title_white polyline,#cat_title_white line'
 			let title = '#cat_logo #cat_title'
 			let subtitle = '#cat_logo #cat_subtitle'
 			let dot = '#cat_logo #orange_dot'
@@ -199,51 +199,56 @@ export default class Site {
 				})
 				.add({
 					targets: '.intro-header',
+					scale: [1, 1.25],
+					duration: 3000,
+					easing: 'linear',
+					delay: 500
+				})
+				.add({
+					targets: '.intro-header',
 					opacity: [1, 0],
 					duration: 500,
 					easing: 'easeInOutSine',
-					delay: 3000,
-					complete: function() {
-						$('.intro-header').hide()
-						$('.catalyst')
-							.show()
-							.css('opacity', 0)
-
-						$(dot).attr('cx', '640')
-						$(dot).attr('cy', '250')
-					}
+					offset: '-=500',
+					complete: () => 
+					$('.intro-header').css('position', 'absolute')
 				})
 				// start catalyst
 				.add({
-					targets: '.catalyst',
-					opacity: [0, 1],
-					translateY: ['20px', '0'],
-					duration: 500,
-					easing: 'easeInOutSine'
-				})
-				.add({
 					targets: dot,
-					translateY: [150, 0],
-					duration: 500,
-					easing: 'easeInExpo'
-				})
-				.add({
-					targets: dot,
+					opacity: [0,1],
 					r: [9.51, 800],
-					duration: 2500,
-					easing: 'easeOutExpo'
+					duration: 1500,
+					easing: 'easeOutExpo',
+					begin: function() {
+						$('.catalyst')
+							.show()
+							.css('opacity', 1)
+
+						$(dot).attr('cx', '640')
+						$(dot).attr('cy', '400')
+					},
+					complete: () => $('.intro-header').hide()
 				})
 				.add({
 					targets: title_white,
-					opacity: [0, 1],
-					duration: 1000,
-					easing: 'easeOutCubic'
+					strokeDashoffset: [anime.setDashoffset, 0],
+					duration: 500,
+					delay: (el, i) => {
+						return i * 250
+					},
+					easing: 'easeOutSine'
 				})
 				.add({
 					targets: dot,
 					duration: 500,
-					opacity: [1, 0],
-					easing: 'easeInQuart'
+					r: 9.51,
+					easing: 'easeOutCubic',
+					offset: '+=1000',
+					begin: () => {
+						$(dot).attr('cx', '333.42')
+						$(dot).attr('cy', '369.25')
+					}
 				})
 				.add({
 					targets: title,
@@ -253,20 +258,11 @@ export default class Site {
 					offset: '-=500'
 				})
 				.add({
-					targets: [subtitle, dot],
+					targets: subtitle,
 					duration: 500,
 					opacity: [0, 1],
-					translateY: [20, 0],
 					easing: 'easeOutCubic',
-					offset: '+=2000',
-					delay: function(el, i, l) {
-						return i * 300
-					},
-					begin: () => {
-						$(dot).attr('r', '9.51')
-						$(dot).attr('cx', '333.42')
-						$(dot).attr('cy', '369.25')
-					}
+					offset: '+=1000'
 				})
 				.add({
 					targets: '#intro-chevron',
@@ -308,6 +304,15 @@ export default class Site {
 				translateY: ['-10px', '10px'],
 				duration: 1000,
 				easing: 'easeInOutQuart'
+			})
+			anime({
+				targets: '#orange_dot2',
+				loop: true,
+				r: 20,
+				opacity: [1,0],
+				duration: 500,
+				delay: 1500,
+				easing: 'linear'
 			})
 			$.fn.fullpage.setAllowScrolling(true)
 			$.fn.fullpage.setKeyboardScrolling(true)

@@ -163,11 +163,8 @@
 	.catalyst {
 		opacity: 0;
 		font-size: 56px;
+		font-size: 6vw;
 		text-align: center;
-	}
-
-	.catalyst {
-		cursor: pointer;
 	}
 
 	#words {
@@ -179,17 +176,38 @@
 	}
 
 	.catalyst {
+		cursor: pointer;
 		display: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
 
 		svg {
-			height: 100vh;
-			min-height: 100%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			left: 50%;
+			top: 50%;
+			height: auto;
 			width: auto;
+			min-width: 100vw;
+			min-height: 100vh;
 		}
 	}
 
-	#orange_dot {
+	#orange_dot, #orange_dot2, #orange_dot3  {
 		transform-origin: center center;
+	}
+	#orange_dot2 {
+		opacity: 0;
+		transform-origin: center center;
+	}
+
+	#orange_dot3_svg {
+		top: 0;
+		left: 0;
+		position: absolute;
 	}
 
 	#intro-chevron {
