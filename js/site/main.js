@@ -199,18 +199,19 @@ export default class Site {
 				})
 				.add({
 					targets: '.intro-header',
-					scale: [1, 1.25],
-					duration: 3000,
-					easing: 'linear',
-					delay: 500
-				})
-				.add({
-					targets: '.intro-header',
-					opacity: [1, 0],
-					duration: 500,
-					easing: 'easeInOutSine',
-					offset: '-=500',
-					complete: () => 
+					scale: {
+						value: [1, 1.25],
+						duration: 3000,
+						easing: 'linear',
+						delay: 500
+					},
+					color: {
+						value: '#f27321',
+						duration: 1000,
+						easing: 'easeInSine',
+						delay: 500,
+					},
+					begin: () => 
 					$('.intro-header').css('position', 'absolute')
 				})
 				// start catalyst
@@ -218,8 +219,9 @@ export default class Site {
 					targets: dot,
 					opacity: [0,1],
 					r: [9.51, 800],
-					duration: 1500,
+					duration: 1000,
 					easing: 'easeOutExpo',
+					offset: '-=300',
 					begin: function() {
 						$('.catalyst')
 							.show()
@@ -235,7 +237,7 @@ export default class Site {
 					strokeDashoffset: [anime.setDashoffset, 0],
 					duration: 500,
 					delay: (el, i) => {
-						return i * 250
+						return i * 100
 					},
 					easing: 'easeOutSine'
 				})
