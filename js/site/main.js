@@ -21,26 +21,48 @@ export default class Site {
 			'section12',
 			'section13',
 			'section14',
-			'section15',
+			'section15'
 		]
 		this.config.onLeave = this.handleOnLeave.bind(this)
 		this.config.afterLoad = this.handleAfterLoad.bind(this)
 		this.config.afterRender = this.handleAfterRender.bind(this)
+		this.config.animateAnchor = false
 
 		this.gDur = 800
 		this.gEase = 'easeOutCubic'
 
 		this.$hideEls = $('.stagger-in')
+		this.pulseAnim = null
 	}
 	handleOnLeave(index, nextIndex, direction) {
 		// console.log('handleOnLeave', index, nextIndex, direction)
 		if ($('body').hasClass('drawer-open')) {
 			this.toggleDrawer(index, 1, true)
 		}
+		this.pulseAnim && this.pulseAnim.pause()
 	}
 	handleAfterLoad(anchorLink, index) {
 		this.hideEls()
 		this.staggerInEls(index - 1)
+
+		this.pulseAnim && this.pulseAnim.pause()
+
+		this.pulseAnim = anime({
+			targets: `[data-section="${index - 2}"] .drawer-button_container img`,
+			scale: [0.85, 1],
+			loop: true,
+			direction: 'alternate',
+			duration: 1000,
+			easing: 'easeInOutSine'
+		})
+
+		$(`[data-section="${index - 2}"] .drawer-button_container`).one(
+			'click',
+			() => this.pulseAnim && this.pulseAnim.pause()
+		)
+	}
+	pauseDrawerButton() {
+		this.pulseAnim && this.pulseAnim.pause()
 	}
 	staggerInEls(index) {
 		const dur = this.gDur
@@ -68,13 +90,27 @@ export default class Site {
 		this.toggleTOC()
 	}
 	handleTocClick(e) {
-		let dest = $(e.target)
-			.closest('[data-moveto]')
-			.data('moveto')
+		let dest = $(e.target).data('moveto')
+
+		if (!dest)
+			dest = $(e.target)
+				.closest('[data-moveto]')
+				.data('moveto')
+
 		this.moveToSlide(dest)
 	}
+	handleCeoLink() {
+		if ($('body').hasClass('drawer-open')) {
+			this.toggleDrawer()
+		}
+		if ($('body').hasClass('toc-open')) {
+			this.toggleTOC(1, true)
+		}
+		$.fn.fullpage.silentMoveTo(2)
+		this.toggleDrawer(0)
+		this.pauseDrawerButton()
+	}
 	moveToSlide(dest) {
-		console.log(dest)
 		this.toggleTOC()
 		$.fn.fullpage.silentMoveTo(dest, 0)
 	}
@@ -91,6 +127,7 @@ export default class Site {
 			translateX: () => (drawerOpen ? [0, '100%'] : ['100%', 0]),
 			begin: () => $('body').toggleClass('toc-open')
 		})
+
 		$.fn.fullpage.setAllowScrolling(drawerOpen)
 		$.fn.fullpage.setKeyboardScrolling(drawerOpen)
 	}
@@ -115,6 +152,30 @@ export default class Site {
 		})
 		$.fn.fullpage.setAllowScrolling(drawerOpen)
 		$.fn.fullpage.setKeyboardScrolling(drawerOpen)
+	}
+	closeDrawer(id) {
+		if (!$('body').hasClass('drawer-open')) return
+		this.toggleDrawer(id, 300)
+	}
+	startFullpage() {
+		$('#fullpage').fullpage(this.config)
+		if (!location.hash) {
+			$.fn.fullpage.setAllowScrolling(false)
+			$.fn.fullpage.setKeyboardScrolling(false)
+		}
+	}
+	addEventListeners() {
+		$('.move-next').on('click', e => $.fn.fullpage.moveSectionDown())
+		$('.drawer-button_container').on('click', e => this.handleDrawerToggle(e))
+		$('.toc-toggle').on('click', e => this.handleTocToggle(e))
+		$('.close-rightbar').on('click', e => this.toggleTOC())
+		$('.toc-item').on('click', e => this.handleTocClick(e))
+		$('[data-ceoLink]').on('click', e => this.handleCeoLink())
+
+		$.map($('[data-section]'), el => {
+			let id = $(el).data('section')
+			$(el).on('click', () => this.closeDrawer(id))
+		})
 	}
 	createHero() {
 		var words = [
@@ -168,7 +229,8 @@ export default class Site {
 				$words: $('#words > span')
 			}
 
-			let title_white = '#cat_title_white path, #cat_title_white polyline,#cat_title_white line'
+			let title_white =
+				'#cat_title_white path, #cat_title_white polyline,#cat_title_white line'
 			let title = '#cat_logo #cat_title'
 			let subtitle = '#cat_logo #cat_subtitle'
 			let dot = '#cat_logo #orange_dot'
@@ -209,15 +271,14 @@ export default class Site {
 						value: '#f27321',
 						duration: 1000,
 						easing: 'easeInSine',
-						delay: 500,
+						delay: 500
 					},
-					begin: () => 
-					$('.intro-header').css('position', 'absolute')
+					begin: () => $('.intro-header').css('position', 'absolute')
 				})
 				// start catalyst
 				.add({
 					targets: dot,
-					opacity: [0,1],
+					opacity: [0, 1],
 					r: [9.51, 800],
 					duration: 1000,
 					easing: 'easeOutExpo',
@@ -276,6 +337,11 @@ export default class Site {
 					complete: handleIntroComplete
 				})
 
+			if (location.hash) {
+				tl.seek(tl.duration)
+				handleIntroComplete()
+			}
+
 			function cycleWord(anime) {
 				if (Math.floor(wordState.indexTween) !== wordState.activeIndex) {
 					wordState.$words.hide()
@@ -311,28 +377,17 @@ export default class Site {
 				targets: '#orange_dot2',
 				loop: true,
 				r: 20,
-				opacity: [1,0],
+				opacity: [1, 0],
 				duration: 500,
 				delay: 1500,
 				easing: 'linear'
 			})
+
 			$.fn.fullpage.setAllowScrolling(true)
 			$.fn.fullpage.setKeyboardScrolling(true)
 		}
 
 		createWords()
-	}
-	startFullpage() {
-		$('#fullpage').fullpage(this.config)
-		$.fn.fullpage.setAllowScrolling(false)
-		$.fn.fullpage.setKeyboardScrolling(false)
-	}
-	addEventListeners() {
-		$('.move-next').on('click', e => $.fn.fullpage.moveSectionDown())
-		$('.drawer-button_container').on('click', e => this.handleDrawerToggle(e))
-		$('.toc-toggle').on('click', e => this.handleTocToggle(e))
-		$('.close-rightbar').on('click', e => this.toggleTOC())
-		$('.toc-item').on('click', e => this.handleTocClick(e))
 	}
 	init() {
 		this.addEventListeners()
