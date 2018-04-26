@@ -3,43 +3,37 @@
 # Title slide
 phrase_start: How do we
 end_phrases: 
-	- promote peace?
-	- end HIV?
-	- increase economic well-being?
-	- eliminate TB?
-	- empower women and girls?
-	- give citizens voice?
-	- drive student success?
-	- improve nutrition?
-	- use data for greater impact?
-	- end HIV?
-	- increase economic well-being?
-	- eliminate TB?
-	- empower women and girls?
-	- promote civic engagement?
-	- advance peace and stability?
-	- expand access to healthcare?
-	- drive student success?
-	- improve nutrition?
-	- use data for greater impact?
-	- inspire young leaders?
-	- harness digital technology?
-	- prepare students for 21st century jobs?
-	- promote healthy families?
-	- generate groundbreaking research?
-	- combat violent extremism?
-	- support communities in crisis?
+  - promote peace?
+  - end HIV?
+  - increase economic well-being?
+  - eliminate TB?
+  - empower women and girls?
+  - give citizens voice?
+  - drive student success?
+  - improve nutrition?
+  - use data for greater impact?
+  - promote civic engagement?
+  - advance peace and stability?
+  - expand access to health services?
+  - inspire young leaders?
+  - harness digital technology?
+  - prepare students for 21st-century jobs?
+  - promote healthy families?
+  - generate groundbreaking research?
+  - combat violent extremism?
+  - support communities in crisis?
+
 
 intro_title: Catalyze
 
 # CEO message slide
 ceo_slide_content: >
-  A catalyst is a spark that transforms an idea into a solution.
+  A catalyst is the spark that transforms an idea into a solution. 
 
-  In this year's annual report, we share some of the ways we are working with our partners to accelerate innovation and strengthen our collective capacity to improve lives.
+  In this year’s annual report, we share how we are working with our partners to unleash new ideas and opportunities and strengthen our collective capacity to affect change. 
 
   A message from our CEO
-  PATRICK FINE
+  PATRICK C. FINE
 
 # [Photo: Patrick’s headshot (same photo as one in drawer): patrick-fine-headshot-original.jpg]
 
@@ -65,7 +59,7 @@ sections:
 - 3: # Example: HPTN
   section_title: Long-acting injection shows promise for HIV prevention
 
-  section_subtitle: (icon) Injectable cabotegravir may be an alternative to a daily dose of PrEP
+  section_subtitle: (icon) Injectable cabotegravir may be an alternative to a daily dose of Truvada ® for PrEP
 
   photo_credit: Jessica Scranton/FHI 360
 
@@ -108,7 +102,7 @@ sections:
 # [Photo: Jennifer standing in hallway – profile-succeed2020-slide1-original.jpg]
 
 - 8: # Profile: Succeed 2020 (slide 2)
-  section_title: “We’ve increased our organizational capacities, including our in-house data system. Data is part of our culture now.”
+  section_title: “We’ve increased our organizational capacities, including our in-house education data system. Data is part of our culture now.”
 
   section_subtitle: Jennifer Carlson, Educator, United States
 
@@ -119,7 +113,7 @@ sections:
 - 9: # Example: TB
   section_title: Bringing TB prevention and care into communities in Mozambique
 
-  section_subtitle: In some provinces, TB detection through CB-DOTS has increased to 36% 
+  section_subtitle: In some provinces, TB detection through CB-DOTS has increased to 36%.  
 
   photo_credit: Jessica Scranton/FHI 360
 
@@ -168,7 +162,7 @@ sections:
   
   section_subtitle: >
     In Liberia, mobile money paid
-    3,000+ teachers | 800+ health care workers
+    3,000+ school staff | 800+ health care workers
 
   photo_credit: John O'Bryan/USAID (CC BY-ND 2.0)
 
@@ -192,4 +186,3 @@ menu_items:
  - Supporting Myanmar's democratic transition
  - University degree program prepares Afghan students for tomorrow's jobs
  - Technology to drive better outcomes
-
