@@ -7,21 +7,21 @@ export default class Site {
 		this.config = config
 
 		this.config.anchors = [
-			'section1',
-			'section2',
-			'section3',
-			'section4',
-			'section5',
-			'section6',
-			'section7',
-			'section8',
-			'section9',
-			'section10',
-			'section11',
-			'section12',
-			'section13',
-			'section14',
-			'section15'
+			'jordanlens',
+			'jordanlens-2',
+			'hptn',
+			'ivlp',
+			'ivlp-2',
+			'sinoimplant',
+			'succeed2020',
+			'succeed2020-2',
+			'challengetb',
+			'fanta',
+			'civilsociety',
+			'uswdp',
+			'uswdp-2',
+			'technology',
+			'learn-more'
 		]
 		this.config.onLeave = this.handleOnLeave.bind(this)
 		this.config.afterLoad = this.handleAfterLoad.bind(this)
