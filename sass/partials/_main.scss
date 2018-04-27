@@ -292,7 +292,7 @@ nav#up-down {
 }
 
 .fp-viewing-intro .toc-progress circle {
-	stroke-dasharray: 100px 500px;
+	stroke-dasharray: 200px 500px;
 }
 .fp-viewing-jordanlens .toc-progress circle {
 	stroke-dasharray: 200px 500px;
@@ -338,4 +338,14 @@ nav#up-down {
 }
 .fp-viewing-learn-more .toc-progress circle {
 	stroke-dasharray: 150px 500px;
+}
+
+.share-menu {
+	ul.menu,
+	&:hover img {
+		display: none;
+	}
+	&:hover ul.menu {
+		display: block;
+	}
 }

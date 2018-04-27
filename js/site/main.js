@@ -67,6 +67,8 @@ export default class Site {
 		)
 
 		this.handleTocProgress(index - 2)
+
+		this.countUp(index - 2)
 	}
 	handleTocProgress(index) {
 		let tocIndex = $(`[data-section='${index}']`).data('toc')
@@ -92,6 +94,25 @@ export default class Site {
 			delay: function(el, i, l) {
 				return i * dur / 3
 			}
+		})
+	}
+	countUp(index) {
+		let state = {
+			number: 0
+		}
+		let el = $(`[data-section="${index}"] [data-countup]`)
+
+		if (!el) return
+
+		let end = el.html()
+
+		anime({
+			targets: state,
+			number: [0, end],
+			duration: 1000,
+			delay: 1000,
+			easing: 'linear',
+			update: () => el.html(Math.ceil(state.number))
 		})
 	}
 	handleAfterRender() {

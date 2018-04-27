@@ -225,11 +225,15 @@
 }
 
 [data-section='0'] {
-	background-color: $purple;
+	background-color: #cccccc;
+	color: #000;
 
 	// .inner-frame {
 	// padding-top: calc(185px + 20vh);
 	// }
+	hr.medium {
+		border-color: #fff;
+	}
 }
 
 [data-section='14'] {
@@ -297,6 +301,15 @@
 		cursor: pointer;
 	}
 }
+
+.bg {
+	.fore {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
 [data-closedrawer] {
 	position: absolute;
 	height: 100%;
