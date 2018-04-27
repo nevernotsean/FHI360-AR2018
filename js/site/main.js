@@ -157,7 +157,6 @@ export default class Site {
 			.parent('[data-toggle]')
 			.data('toggle')
 		this.toggleDrawer(toggleID)
-		this.toggleTOC(1, true)
 	}
 	toggleDrawer(toggleID, dur = 300, forceClose = false) {
 		let $drawer =
@@ -208,9 +207,13 @@ export default class Site {
 		$('.toc-item').on('click', e => this.handleTocClick(e))
 		$('[data-ceoLink]').on('click', e => this.handleCeoLink())
 
-		$.map($('[data-section]'), el => {
-			let id = $(el).data('section')
-			$(el).on('click', () => this.closeDrawer(id))
+		$('[data-closedrawer]').on('click', e => {
+			let id = $(e.target)
+				.closest('[data-section]')
+				.data('section')
+
+			console.log(id)
+			this.closeDrawer(id)
 		})
 
 		$('.photo-credit-trigger').on('click', e => this.handleCreditToggle(e))
