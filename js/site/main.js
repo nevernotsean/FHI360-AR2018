@@ -7,6 +7,7 @@ export default class Site {
 		this.config = config
 
 		this.config.anchors = [
+			'intro',
 			'jordanlens',
 			'jordanlens-2',
 			'hptn',
@@ -39,6 +40,9 @@ export default class Site {
 		if ($('body').hasClass('drawer-open')) {
 			this.toggleDrawer(index, 1, true)
 		}
+		if ($('body').hasClass('credit-open')) {
+			this.toggleCredit(true)
+		}
 		this.pulseAnim && this.pulseAnim.pause()
 	}
 	handleAfterLoad(anchorLink, index) {
@@ -60,6 +64,22 @@ export default class Site {
 			'click',
 			() => this.pulseAnim && this.pulseAnim.pause()
 		)
+
+		this.handleTocProgress(index)
+	}
+	handleTocProgress(index) {
+		anime({
+			targets: '.toc-progress svg circle',
+			strokeDashoffset: [
+				index / this.config.anchors.length * anime.setDashoffset,
+				0
+			],
+			duration: 1000,
+			easing: 'easeInSine',
+			update: () => {
+				console.log(anime.setDashoffset)
+			}
+		})
 	}
 	pauseDrawerButton() {
 		this.pulseAnim && this.pulseAnim.pause()
@@ -86,6 +106,9 @@ export default class Site {
 	hideEls() {
 		this.$hideEls.css('opacity', 0)
 	}
+	handleCreditToggle() {
+		this.toggleCredit()
+	}
 	handleTocToggle(e) {
 		this.toggleTOC()
 	}
@@ -107,7 +130,7 @@ export default class Site {
 			this.toggleTOC(1, true)
 		}
 		$.fn.fullpage.silentMoveTo(2)
-		this.toggleDrawer(0)
+		this.toggleDrawer(1)
 		this.pauseDrawerButton()
 	}
 	moveToSlide(dest) {
@@ -128,6 +151,8 @@ export default class Site {
 			begin: () => $('body').toggleClass('toc-open')
 		})
 
+		this.toggleDrawer(null, 300, true)
+
 		$.fn.fullpage.setAllowScrolling(drawerOpen)
 		$.fn.fullpage.setKeyboardScrolling(drawerOpen)
 	}
@@ -136,9 +161,13 @@ export default class Site {
 			.parent('[data-toggle]')
 			.data('toggle')
 		this.toggleDrawer(toggleID)
+		this.toggleTOC(1, true)
 	}
 	toggleDrawer(toggleID, dur = 300, forceClose = false) {
-		let $drawer = $(`.leftDrawer[data-toggle="${toggleID}"`)
+		let $drawer =
+			toggleID !== null
+				? $(`.leftDrawer[data-toggle="${toggleID}"`)
+				: $(`.leftDrawer`)
 		let $button = $(`.drawer-button_container`)
 
 		let drawerOpen = forceClose || $('body').hasClass('drawer-open')
@@ -156,6 +185,17 @@ export default class Site {
 	closeDrawer(id) {
 		if (!$('body').hasClass('drawer-open')) return
 		this.toggleDrawer(id, 300)
+	}
+	toggleCredit(forceClose = false) {
+		let creditOpen = forceClose || $('body').hasClass('credit-open')
+
+		anime({
+			targets: '.photo-credits',
+			duration: 300,
+			easing: 'easeInOutQuad',
+			translateY: () => (creditOpen ? [0, '100%'] : ['100%', 0]),
+			begin: () => $('body').toggleClass('credit-open')
+		})
 	}
 	startFullpage() {
 		$('#fullpage').fullpage(this.config)
@@ -176,6 +216,13 @@ export default class Site {
 			let id = $(el).data('section')
 			$(el).on('click', () => this.closeDrawer(id))
 		})
+
+		$('.photo-credit-trigger').on('click', e => this.handleCreditToggle(e))
+		$('.photo-credits').on('click', e => this.toggleCredit(true))
+
+		$('[data-movedown]').on('click', () => $.fn.fullpage.moveSectionDown())
+
+		$('[data-moveup]').on('click', () => $.fn.fullpage.moveSectionUp())
 	}
 	createHero() {
 		var words = [

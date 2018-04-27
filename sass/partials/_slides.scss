@@ -250,7 +250,7 @@
 .photo-credit {
 	&-container {
 		position: absolute;
-		right: 50px;
+		left: 50px;
 		bottom: 30px;
 	}
 	&-trigger {
@@ -261,5 +261,39 @@
 			width: 10px;
 			height: 6px;
 		}
+	}
+}
+
+.photo-credits {
+	position: absolute;
+	transform: translateY(100%);
+	z-index: 9999;
+	height: 50px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	align-items: center;
+
+	padding: 0px 50px;
+	background: #fff;
+	color: #000;
+
+	display: none;
+	h6 {
+		margin-bottom: 0;
+		font-size: 20px;
+	}
+	span {
+		margin-right: 4px;
+	}
+	.credit-open & {
+		display: flex;
+	}
+	&:after {
+		content: '×';
+		position: absolute;
+		right: 50px;
+		font-size: 32px;
+		cursor: pointer;
 	}
 }
