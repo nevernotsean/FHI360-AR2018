@@ -272,3 +272,70 @@ nav#up-down {
 		}
 	}
 }
+
+.toc-progress {
+	transform-origin: center center;
+	transform: rotate(-90deg);
+
+	position: absolute;
+	top: 19px;
+	width: 48.5px;
+	height: 48.5px;
+
+	svg circle {
+		transition: stroke-dasharray 0.5s linear;
+	}
+
+	&.one circle {
+		stroke-dasharray: 1px 500px;
+	}
+}
+
+.fp-viewing-intro .toc-progress circle {
+	stroke-dasharray: 100px 500px;
+}
+.fp-viewing-jordanlens .toc-progress circle {
+	stroke-dasharray: 200px 500px;
+}
+.fp-viewing-jordanlens-2 .toc-progress circle {
+	stroke-dasharray: 20px 500px;
+}
+.fp-viewing-hptn .toc-progress circle {
+	stroke-dasharray: 30px 500px;
+}
+.fp-viewing-ivlp .toc-progress circle {
+	stroke-dasharray: 40px 500px;
+}
+.fp-viewing-ivlp-2 .toc-progress circle {
+	stroke-dasharray: 50px 500px;
+}
+.fp-viewing-sinoimplant .toc-progress circle {
+	stroke-dasharray: 60px 500px;
+}
+.fp-viewing-succeed2020 .toc-progress circle {
+	stroke-dasharray: 70px 500px;
+}
+.fp-viewing-succeed2020-2 .toc-progress circle {
+	stroke-dasharray: 80px 500px;
+}
+.fp-viewing-challengetb .toc-progress circle {
+	stroke-dasharray: 90px 500px;
+}
+.fp-viewing-fanta .toc-progress circle {
+	stroke-dasharray: 100px 500px;
+}
+.fp-viewing-civilsociety .toc-progress circle {
+	stroke-dasharray: 110px 500px;
+}
+.fp-viewing-uswdp .toc-progress circle {
+	stroke-dasharray: 120px 500px;
+}
+.fp-viewing-uswdp-2 .toc-progress circle {
+	stroke-dasharray: 130px 500px;
+}
+.fp-viewing-technology .toc-progress circle {
+	stroke-dasharray: 140px 500px;
+}
+.fp-viewing-learn-more .toc-progress circle {
+	stroke-dasharray: 150px 500px;
+}

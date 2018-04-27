@@ -8,6 +8,7 @@ export default class Site {
 
 		this.config.anchors = [
 			'intro',
+			'ceo',
 			'jordanlens',
 			'jordanlens-2',
 			'hptn',
@@ -65,21 +66,16 @@ export default class Site {
 			() => this.pulseAnim && this.pulseAnim.pause()
 		)
 
-		this.handleTocProgress(index)
+		this.handleTocProgress(index - 2)
 	}
 	handleTocProgress(index) {
-		anime({
-			targets: '.toc-progress svg circle',
-			strokeDashoffset: [
-				index / this.config.anchors.length * anime.setDashoffset,
-				0
-			],
-			duration: 1000,
-			easing: 'easeInSine',
-			update: () => {
-				console.log(anime.setDashoffset)
-			}
-		})
+		let tocIndex = $(`[data-section='${index}']`).data('toc')
+		if (!tocIndex) {
+			$('.toc-toggle-inner').html('Start')
+		} else {
+			$('.toc-toggle-inner').html(tocIndex + ' / 10')
+		}
+		console.log(index, tocIndex)
 	}
 	pauseDrawerButton() {
 		this.pulseAnim && this.pulseAnim.pause()
