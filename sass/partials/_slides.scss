@@ -57,9 +57,11 @@
 	}
 
 	.slide-title h2 {
+		font-size: 40px;
 		font-weight: 200;
 	}
 	.slide-subtitle h3 {
+		font-size: 30px;
 		font-weight: 200;
 		color: rgba(255, 255, 255, 0.75);
 		margin-bottom: 0;
@@ -105,6 +107,7 @@
 	pointer-events: none;
 	top: 0;
 	left: 0;
+	width: 80px;
 	transform: rotate(90deg);
 }
 
@@ -360,5 +363,12 @@
 	.fore,
 	.back {
 		transform-origin: center center;
+	}
+}
+
+[data-section='12'] {
+	.bg img {
+		transform-origin: top center;
+		object-position: top right;
 	}
 }

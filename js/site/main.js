@@ -341,6 +341,16 @@ export default class Site {
 				function(response) {}
 			)
 		})
+
+		$('[data-copyurl]').attr('data-clipboard-text', location.origin)
+		new ClipboardJS('[data-copyurl]')
+		$('[data-copyurl]').on('click', () => {
+			alert(location.origin + ' has been copied to your clipboard!')
+		})
+
+		$('.mobile-menu-trigger').on('click', () => {
+			$('body').toggleClass('mobile-open')
+		})
 	}
 	createHero() {
 		var words = [

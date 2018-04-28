@@ -19,7 +19,7 @@
     <!-- <link rel="stylesheet" href="https://use.typekit.net/cua6unr.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <script>
         (function (d) {
             var config = {
@@ -66,12 +66,15 @@
 
     <div class="main-content">
         <div id="header" class="grid-x grid-padding-x grid-padding-y">
-            <div class="cell shrink">
+            <div class="cell shrink logo-container">
                 <a href="#" class="home">
                     <img src="./img/fhi-logo-tagline.svg" alt="" class="home-logo">
                 </a>
             </div>
-            <div class="cell auto grid-y align-center">
+            <div class="cell auto hide-for-medium mobile-menu-trigger">
+                <img src="https://icon.now.sh/menu" alt="">
+            </div>
+            <div class="cell auto grid-y align-center nav-container">
                 <div class="grid-x grid-padding-x align-middle">
                     <ul class="cell auto menu simple main">
                         <li>
@@ -99,12 +102,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="cell auto">
+                                <a class="cell auto" href="https://twitter.com/home?status=See Catalyst: REPLACEME.COM">
                                     <img width="30" src="./img/icons/twitter-icon.svg" alt="retweet">
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="cell auto">
+                                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://developer.linkedin.com&title=LinkedIn%20Developer%20Network
+                                    &summary=My%20favorite%20developer%20program&source=LinkedIn" class="cell auto">
                                     <img width="30" src="./img/icons/linkedin-icon.svg" alt="share on linkedin">
                                 </a>
                             </li>
@@ -362,8 +366,8 @@
                 </div>
                 <div class="bg object-fit">
                     <!-- <img src="./img/slides/profile-jordan-slide1-original.jpg" alt=""> -->
-                    <img class="back" src="./img/layers/profile-jordan-slide1-bg.jpg" alt="">
-                    <img class="fore" src="./img/layers/profile-jordan-slide1-fg.png" alt="">
+                    <img class="back" data-src="http://sean-harrington.com/ar2018/img/layers/profile-jordan-slide1-bg.jpg" alt="">
+                    <img class="fore" data-src="http://sean-harrington.com/ar2018/img/layers/profile-jordan-slide1-fg.png" alt="">
                 </div>
                 <div class="bg-screen black"></div>
                 <div class="grid-x inner-frame">
@@ -474,7 +478,7 @@
                                 <div class="cell shrink">
                                     <img width="60" src="./img/icons/syringe-icon.svg" alt="">
                                 </div>
-                                <div class="cell small-auto medium-8">
+                                <div class="cell auto medium-8">
                                     <h3>Injectable cabotegravir may be an alternative to a daily dose of PrEP</h3>
                                 </div>
                             </div>
@@ -528,8 +532,8 @@
                         <span>Photo:</span>Vivek Singh/The Verbatim Agency for FHI 360</h6>
                 </div>
                 <div class="bg object-fit top">
-                    <img class="back" src="./img/layers/profile-india-slide1-bg.jpg" alt="">
-                    <img class="fore" src="./img/layers/profile-india-slide1-fg.png" alt="">
+                    <img class="back" data-src="http://sean-harrington.com/ar2018/img/layers/profile-india-slide1-bg.jpg" alt="">
+                    <img class="fore" data-src="http://sean-harrington.com/ar2018/img/layers/profile-india-slide1-fg.png" alt="">
                 </div>
                 <div class="bg-screen black"></div>
                 <div class="grid-x inner-frame">
@@ -647,7 +651,7 @@
                                 <div class="cell shrink">
                                     <img width="50" src="./img/icons/manwoman-icon.svg" alt="">
                                 </div>
-                                <div class="cell small-auto medium-8">
+                                <div class="cell auto medium-8">
                                     <h3>Two-rod contraceptive implant is prequalified by WHO</h3>
                                 </div>
                             </div>
@@ -710,7 +714,7 @@
                         <span>Photo:</span>Leanne Gray/FHI 360</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img class="back" src="./img/slides/profile-succeed2020-slide1-original.jpg" alt="">
+                    <img class="back" data-src="http://sean-harrington.com/ar2018/img/slides/profile-succeed2020-slide1-original.jpg" alt="">
                 </div>
                 <div class="bg-screen black"></div>
                 <div class="grid-x inner-frame">
@@ -819,7 +823,7 @@
                         <span>Photo:</span>Jessica Scranton/FHI 360</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img src="./img/slides/example-tb-slide-original.jpg" alt="">
+                    <img data-src="http://sean-harrington.com/ar2018/img/slides/example-tb-slide-original.jpg" alt="">
                 </div>
                 <div class="bg-screen purple"></div>
                 <div class="grid-x inner-frame">
@@ -904,8 +908,8 @@
                         <span>Photo:</span>Leanne Gray/FHI 360</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img class="back" src="./img/layers/profile-tanzania-slide-bg.jpg" alt="">
-                    <img class="fore" src="./img/layers/profile-tanzania-slide-fg.png" alt="">
+                    <img class="back" data-src="http://sean-harrington.com/ar2018/img/layers/profile-tanzania-slide-bg.jpg" alt="">
+                    <img class="fore" data-src="http://sean-harrington.com/ar2018/img/layers/profile-tanzania-slide-fg.png" alt="">
                 </div>
                 <div class="bg-screen black"></div>
                 <div class="grid-x inner-frame">
@@ -1007,7 +1011,7 @@
                         <span>Photo:</span>Maxiphoto/iStockPhoto</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img src="./img/slides/example-myanmar-slide-original.jpg" alt="">
+                    <img data-src="http://sean-harrington.com/ar2018/img/slides/example-myanmar-slide-original.jpg" alt="">
                 </div>
                 <div class="bg-screen purple"></div>
                 <div class="grid-x inner-frame">
@@ -1104,13 +1108,13 @@
                 </div>
             </div>
             <!-- SECTION 12 # Profile: Afghanistan (slide 1) -->
-            <div class="section fp-tablecell-auto" data-section="12" data-toc="9">
+            <div class="section fp-tablecell-auto" data-section="12" data-toc="9" data-parallax="zoom3">
                 <div class="photo-credits">
                     <h6>
                         <span>Photo:</span>Kiana Hayeri/The Verbatim Agency for FHI 360</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img src="./img/slides/university-background.jpg" alt="">
+                    <img class="back" data-src="http://sean-harrington.com/ar2018/img/slides/profile-afghanistan-slide1-original.jpg" alt="">
                 </div>
                 <div class="bg-screen"></div>
                 <div class="grid-x inner-frame">
@@ -1214,7 +1218,7 @@
                         <span>Photo:</span>Kiana Hayeri/The Verbatim Agency for FHI 360</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img src="./img/slides/profile-afghanistan-slide2-original.jpg" alt="">
+                    <img data-src="http://sean-harrington.com/ar2018/img/slides/profile-afghanistan-slide2-original.jpg" alt="">
                 </div>
                 <div class="bg-screen purple"></div>
                 <div class="grid-x inner-frame">
@@ -1247,7 +1251,7 @@
                         <span>Photo:</span>John O'Bryan/USAID (CC BY-ND 2.0)</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img src="./img/slides/example-mstar-slide-original.jpg" alt="">
+                    <img data-src="http://sean-harrington.com/ar2018/img/slides/example-mstar-slide-original.jpg" alt="">
                 </div>
                 <div class="bg-screen purple"></div>
                 <div class="grid-x inner-frame">
@@ -1339,7 +1343,7 @@
             <div class="section fp-tablecell-auto" data-section="15">
                 <div class="bg-screen"></div>
                 <div class="grid-y align-center" style="height: 100vh;">
-                    <div class="cell small-auto medium-9 grid-x p2">
+                    <div class="cell auto medium-9 grid-x p2">
                         <div class="small-12 large-6 cell grid-y align-center align-middle" style="border-right: 1px solid #ddd;">
                             <h2 class="uppercase">Learn more</h2>
                             <p class="p0 h4">Read more about FHI 360 and the work we do</p>
@@ -1350,14 +1354,15 @@
                                 <a href="#" class="cell auto" data-fb-share>
                                     <img width="30" src="./img/icons/fb-icon.svg" alt="share on facebook">
                                 </a>
-                                <a href="#" class="cell auto">
+                                <a class="cell auto" href="https://twitter.com/home?status=See Catalyst: REPLACEME.COM">
                                     <img width="30" src="./img/icons/twitter-icon.svg" alt="retweet">
                                 </a>
-                                <a href="#" class="cell auto">
+                                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://developer.linkedin.com&title=LinkedIn%20Developer%20Network
+                                &summary=My%20favorite%20developer%20program&source=LinkedIn" class="cell auto">
                                     <img width="30" src="./img/icons/linkedin-icon.svg" alt="share on linkedin">
                                 </a>
                                 <a href="#" class="cell auto">
-                                    <img width="30" src="./img/icons/link-icon.svg" alt="copy this link">
+                                    <img width="30" src="./img/icons/link-icon.svg" data-copyurl alt="copy this link" data-clipboard-text="">
                                 </a>
                             </div>
                         </div>
