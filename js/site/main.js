@@ -45,15 +45,18 @@ export default class Site {
 			this.toggleCredit(true)
 		}
 		this.pulseAnim && this.pulseAnim.pause()
+
+		this.runParallax(nextIndex - 2)
 	}
 	handleAfterLoad(anchorLink, index) {
+		let offsetIndex = index - 2
 		this.hideEls()
 		this.staggerInEls(index - 1)
 
 		this.pulseAnim && this.pulseAnim.pause()
 
 		this.pulseAnim = anime({
-			targets: `[data-section="${index - 2}"] .drawer-button_container img`,
+			targets: `[data-section="${offsetIndex}"] .drawer-button_container img`,
 			scale: [0.85, 1],
 			loop: true,
 			direction: 'alternate',
@@ -61,14 +64,14 @@ export default class Site {
 			easing: 'easeInOutSine'
 		})
 
-		$(`[data-section="${index - 2}"] .drawer-button_container`).one(
+		$(`[data-section="${offsetIndex}"] .drawer-button_container`).one(
 			'click',
 			() => this.pulseAnim && this.pulseAnim.pause()
 		)
 
-		this.handleTocProgress(index - 2)
+		this.handleTocProgress(offsetIndex)
 
-		this.countUp(index - 2)
+		this.countUp(offsetIndex)
 	}
 	handleTocProgress(index) {
 		let tocIndex = $(`[data-section='${index}']`).data('toc')
@@ -160,15 +163,18 @@ export default class Site {
 
 		let drawerOpen = forceClose || $('body').hasClass('toc-open')
 
+		drawerOpen
+			? $('body').removeClass('toc-open')
+			: $('body').addClass('toc-open')
+
 		anime({
 			targets: $drawer[0],
 			duration: dur,
 			easing: () => (drawerOpen ? 'easeInQuad' : 'easeOutQuad'),
-			translateX: () => (drawerOpen ? [0, '100%'] : ['100%', 0]),
-			begin: () => $('body').toggleClass('toc-open')
+			translateX: () => (drawerOpen ? [0, '100%'] : ['100%', 0])
 		})
 
-		this.toggleDrawer(null, 300, true)
+		// this.toggleDrawer(null, 300, true)
 
 		$.fn.fullpage.setAllowScrolling(drawerOpen)
 		$.fn.fullpage.setKeyboardScrolling(drawerOpen)
@@ -212,6 +218,38 @@ export default class Site {
 			translateY: () => (creditOpen ? [0, '100%'] : ['100%', 0]),
 			begin: () => $('body').toggleClass('credit-open')
 		})
+	}
+	runParallax(i) {
+		let $section = $(`[data-section="${i}"]`)
+		let animName = $section.data('parallax')
+
+		var tl = new anime.timeline({
+			duration: 4000,
+			easing: 'easeOutQuart',
+			delay: 500
+		})
+
+		if (animName == 'zoom') {
+			tl
+				.add({
+					targets: `[data-section="${i}"] .bg-screen`,
+					opacity: [1, 0.4],
+					duration: 1000,
+					delay: 1000,
+					begin: anim => $(anim.animatables[0]).css('background', '#000')
+				})
+				.add({
+					targets: `[data-section="${i}"] .fore`,
+					translateX: ['10px', '-10px'],
+					scale: [1, 1.05],
+					offset: '-=2000'
+				})
+				.add({
+					targets: `[data-section="${i}"] .back`,
+					scale: [1.05, 1],
+					offset: '-=4000'
+				})
+		}
 	}
 	startFullpage() {
 		$('#fullpage').fullpage(this.config)

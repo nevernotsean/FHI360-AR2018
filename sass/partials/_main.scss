@@ -122,6 +122,8 @@ a {
 	height: 50px;
 	width: 50px;
 
+	position: relative;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -131,7 +133,7 @@ a {
 	}
 	.toc-progress {
 		position: absolute;
-		top: 19px;
+		top: -5px;
 	}
 }
 
@@ -207,10 +209,11 @@ a {
 
 	background: #fff;
 
-	padding: 0px 60px;
+	padding: 0px;
 	transition: all ease 300ms;
 
-	.drawer-open & {
+	.drawer-open &,
+	.toc-open & {
 		opacity: 0;
 	}
 
@@ -225,7 +228,7 @@ a {
 		letter-spacing: 0.1em;
 		font-size: 14px;
 	}
-	.menu li {
+	.menu.main li {
 		padding: 0 5px;
 	}
 }
@@ -342,10 +345,10 @@ nav#up-down {
 
 .share-menu {
 	ul.menu,
-	&:hover img {
+	&:hover .share-icon {
 		display: none;
 	}
 	&:hover ul.menu {
-		display: block;
+		display: flex;
 	}
 }

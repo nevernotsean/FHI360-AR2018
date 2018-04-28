@@ -41,6 +41,10 @@
 			&.purple {
 				background: rgba(55, 33, 79, 0.6);
 			}
+
+			&.black {
+				background: #000;
+			}
 		}
 	}
 	.inner-frame {
@@ -53,14 +57,21 @@
 	}
 
 	.slide-title h2 {
-		font-size: 5vw;
 		font-weight: 200;
 	}
 	.slide-subtitle h3 {
-		font-size: 2.5vw;
 		font-weight: 200;
 		color: rgba(255, 255, 255, 0.75);
 		margin-bottom: 0;
+	}
+
+	@media screen and (min-width: $medium) {
+		.slide-title h2 {
+			font-size: 5vw;
+		}
+		.slide-subtitle h3 {
+			font-size: 2.5vw;
+		}
 	}
 }
 
@@ -163,9 +174,12 @@
 	.intro-header,
 	.catalyst {
 		opacity: 0;
-		font-size: 56px;
-		font-size: 6vw;
 		text-align: center;
+
+		@media screen and (min-width: $medium) {
+			font-size: 56px;
+			font-size: 6vw;
+		}
 	}
 
 	#words {
@@ -233,6 +247,15 @@
 	// }
 	hr.medium {
 		border-color: #fff;
+	}
+}
+
+[data-section='1'] {
+	.bg {
+		background: #000;
+	}
+	.fore {
+		transform-origin: bottom center;
 	}
 }
 
