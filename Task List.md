@@ -8,9 +8,12 @@ Bigger font across the board - everything, including titles, table of contents, 
 
 * Done
 
-'Parrallax' background effects for each slide. To confirm: the background effect should only be on 5 slides: A beekeeper..., Emerging leaders..., Data drives student success..., A multisectoral approach..., University degree program...// TBD
-
-## TODO
+'Parrallax' background effects for each slide. To confirm: the background effect should only be on 5 slides:
+A beekeeper..., \* Done
+Emerging leaders..., \* Done
+Data drives student success..., \* Done
+A multisectoral approach..., \* Done
+University degree program...
 
 Change the Afghanistan story photo for slide 1 (with the drawer photo), and add a slide 2
 

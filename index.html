@@ -8,6 +8,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta property="og:url" content="REPLACE ME WITH PRODUCTION URL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Catalyze: FHI360.org Annual Report 2018" />
+    <meta property="og:description" content="In this year’s annual report, we share how we are working with our partners to unleash new ideas and opportunities and strengthen
+    our collective capacity to affect change." />
+    <meta property="og:image" content="./img/FHI360_2017AR_thumbnail.jpg" />
+
     <!-- Place favicon.ico in the root directory -->
     <!-- <link rel="stylesheet" href="https://use.typekit.net/cua6unr.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
@@ -23,12 +30,39 @@
                 h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
         })(document);
     </script>
+    <style>
+        #fullpage {
+            opacity: 0;
+        }
+
+        #fullpage.fullpage-wrapper {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: 'your-app-id',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.12'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <div class="main-content">
         <div id="header" class="grid-x grid-padding-x grid-padding-y">
@@ -60,7 +94,7 @@
                         <img class="share-icon" src="https://icon.now.sh/share" alt="">
                         <ul class="menu simple">
                             <li>
-                                <a href="#" class="cell auto">
+                                <a href="#" class="cell auto" data-fb-share>
                                     <img width="30" src="./img/icons/fb-icon.svg" alt="share on facebook">
                                 </a>
                             </li>
@@ -307,6 +341,9 @@
                                 </p>
                                 <p>Patrick C. Fine</p>
                                 <p>
+                                    <img src="./img/patrick-fine-signature-300x78.jpg" alt="">
+                                </p>
+                                <p>
                                     Chief Executive Officer,
                                 </p>
                                 <p>
@@ -485,15 +522,16 @@
                 </div>
             </div>
             <!-- SECTION 4 # Profile: India/IVLP (slide 1) -->
-            <div class="section fp-tablecell-auto" data-section="4" data-toc="3">
+            <div class="section fp-tablecell-auto" data-section="4" data-toc="3" data-parallax="zoom2">
                 <div class="photo-credits">
                     <h6>
                         <span>Photo:</span>Vivek Singh/The Verbatim Agency for FHI 360</h6>
                 </div>
                 <div class="bg object-fit top">
-                    <img src="./img/slides/profile-india-slide1-original.jpg" alt="">
+                    <img class="back" src="./img/layers/profile-india-slide1-bg.jpg" alt="">
+                    <img class="fore" src="./img/layers/profile-india-slide1-fg.png" alt="">
                 </div>
-                <div class="bg-screen"></div>
+                <div class="bg-screen black"></div>
                 <div class="grid-x inner-frame">
                     <div class="small-12 medium-6 large-4 cell grid-y align-center">
                         <div class="cell shrink slide-title stagger-in">
@@ -666,15 +704,15 @@
                 </div>
             </div>
             <!-- SECTION 7 # Profile: Succeed 2020 (slide 1) -->
-            <div class="section fp-tablecell-auto" data-section="7" data-toc="5">
+            <div class="section fp-tablecell-auto" data-section="7" data-toc="5" data-parallax="zoom3">
                 <div class="photo-credits">
                     <h6>
                         <span>Photo:</span>Leanne Gray/FHI 360</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img src="./img/slides/profile-succeed2020-slide1-original.jpg" alt="">
+                    <img class="back" src="./img/slides/profile-succeed2020-slide1-original.jpg" alt="">
                 </div>
-                <div class="bg-screen"></div>
+                <div class="bg-screen black"></div>
                 <div class="grid-x inner-frame">
                     <div class="small-12 medium-6 large-4 cell grid-y align-center">
                         <div class="cell shrink slide-title stagger-in">
@@ -802,7 +840,7 @@
                             </div>
                             <div class="cell shrink">
                                 <div class="counter h3">
-                                    <span data-countup>36</span>%
+                                    <span data-countup="36" data-countstart="12">36</span>%
                                 </div>
                             </div>
                         </div>
@@ -860,17 +898,18 @@
                 </div>
             </div>
             <!-- SECTION 10 # Profile: Tanzania -->
-            <div class="section fp-tablecell-auto" data-section="10" data-toc="7">
+            <div class="section fp-tablecell-auto" data-section="10" data-toc="7" data-parallax="zoom4">
                 <div class="photo-credits">
                     <h6>
                         <span>Photo:</span>Leanne Gray/FHI 360</h6>
                 </div>
                 <div class="bg object-fit">
-                    <img src="./img/slides/profile-tanzania-slide-original.jpg" alt="">
+                    <img class="back" src="./img/layers/profile-tanzania-slide-bg.jpg" alt="">
+                    <img class="fore" src="./img/layers/profile-tanzania-slide-fg.png" alt="">
                 </div>
-                <div class="bg-screen"></div>
+                <div class="bg-screen black"></div>
                 <div class="grid-x inner-frame">
-                    <div class="small-12 medium-6 large-4 cell grid-y align-center">
+                    <div class="small-12 medium-6 large-5 cell grid-y align-center">
                         <div class="cell shrink slide-title stagger-in">
                             <h2>A multisectoral approach transforms nutrition in Tanzania</h2>
                         </div>
@@ -972,21 +1011,21 @@
                 </div>
                 <div class="bg-screen purple"></div>
                 <div class="grid-x inner-frame">
-                    <div class="small-12 medium-6 large-4 cell grid-y align-center">
+                    <div class="small-12 medium-8 large-7 cell grid-y align-center">
                         <div class="cell shrink slide-title stagger-in">
                             <h2>Supporting Myanmar’s democratic transition</h2>
                         </div>
-                        <div class="cell shrink slide-subtitle stagger-in">
+                        <div class="cell shrink slide-subtitle">
                             <ul class="checkmarks">
-                                <li>
+                                <li class="stagger-in">
                                     <img width="20" src="./img/icons/checkmark.svg" alt="">
                                     <span>Promoting civic action and engagement</span>
                                 </li>
-                                <li>
+                                <li class="stagger-in">
                                     <img width="20" src="./img/icons/checkmark.svg" alt="">
                                     <span>Supporting an independent media</span>
                                 </li>
-                                <li>
+                                <li class="stagger-in">
                                     <img width="20" src="./img/icons/checkmark.svg" alt="">
                                     <span>Leadership development</span>
                                 </li>
@@ -1075,7 +1114,7 @@
                 </div>
                 <div class="bg-screen"></div>
                 <div class="grid-x inner-frame">
-                    <div class="small-12 medium-6 large-4 cell grid-y align-center">
+                    <div class="small-12 medium-6 large-5 cell grid-y align-center">
                         <div class="cell shrink slide-title stagger-in">
                             <h2>University degree program prepares Afghan students for tomorrow’s jobs</h2>
                         </div>
@@ -1181,61 +1220,17 @@
                 <div class="grid-x inner-frame">
                     <div class="small-12 cell grid-y align-center">
                         <div class="cell shrink slide-title stagger-in grid-x">
-                            <div class="cell medium-6 large-4">
+                            <div class="cell medium-8 large-8">
                                 <h2>“This department is the first food technology program in our country.” </h2>
                             </div>
                         </div>
-                        <div class="cell shrink">
-                            <hr class="invisible">
+                        <div class="cell shrink stagger-in">
+                            <hr class="small">
                         </div>
                         <div class="cell shrink slide-subtitle stagger-in">
                             <h3>Yosouf Jami</h3>
                             <h3>University dean, Afghanistan</h3>
                         </div>
-                    </div>
-                </div>
-                <div class="drawer-button_container" data-toggle="13">
-                    <img class="drawer-button align-self-middle m2" src="./img/icons/menu-button.svg" alt="">
-                    <img class="drawer-close-button align-self-middle m2" src="./img/icons/close-button.svg" alt="">
-                    <span class="h6 uppercase drawer-button_label">Learn More</span>
-                </div>
-                <div data-closedrawer></div>
-                <div class="leftDrawer" data-toggle="13">
-                    <div class="grid-y grid-padding-x grid-padding-y">
-                        <section class="cell auto">
-                            <h1 class="drawer-title">Technology to drive better outcomes</h1>
-                            <div class="drawer-content">
-                                <p>The potential for digital technologies to transform societies for the better and address
-                                    some of the world’s most pressing challenges has never been greater. In Liberia and Ghana,
-                                    FHI 360 is using technology to collect data to improve the quality and timeliness of
-                                    decision-making, enhance program outcomes and improve accountability.</p>
-                                <p>
-                                    <strong>Mobile payments = regular salaries
-                                        <strong>
-                                </p>
-                                <p>FHI 360, in partnership with the Liberian government, is transforming the way its teachers
-                                    and health care workers are being paid. In the past, teachers needed to leave work and
-                                    travel long distances to be paid, costing them time and money and causing them to be
-                                    away from their duty station. In July 2016, 67 teachers began receiving their pay digitally
-                                    by mobile money, an easily accessible substitute for cash. By the end of 2017, that number
-                                    had climbed to more than 3,000 teachers and 800 health care workers in nearly all of
-                                    Liberia’s counties. For civil servants, this means receiving the regular salary to which
-                                    they are entitled, without hassles. The Government of Liberia also benefits: It can distribute
-                                    payments quicker, with more transparent tracking of transactions.</p>
-                                <p>
-                                    <hr>
-                                </p>
-                                <p>
-                                    <strong>Project name</strong>
-                                </p>
-                                <p>Mobile Solutions Technical Assistance and Research (mSTAR)</p>
-                                <p>
-                                    <strong>Funder</strong>
-                                </p>
-                                <p>U.S. National Institutes of Health (National Institute of Allergy and Infectious Diseases)
-                                    <p>
-                            </div>
-                        </section>
                     </div>
                 </div>
                 <div class="photo-credit-container">
@@ -1275,11 +1270,11 @@
                                     <div class="grid-y">
                                         <div class="cell grid-x align-middle">
                                             <div class="counter h3">
-                                                <span data-countup>3000</span>+
+                                                <span data-countup="3000">3000</span>+
                                                 <label>teachers</label>
                                             </div>
                                             <div class="counter h3">
-                                                <span data-countup>800</span>+
+                                                <span data-countup="800">800</span>+
                                                 <label>health care workers</label>
                                             </div>
                                         </div>
@@ -1289,13 +1284,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="drawer-button_container" data-toggle="13">
+                <div class="drawer-button_container" data-toggle="14">
                     <img class="drawer-button align-self-middle m2" src="./img/icons/menu-button.svg" alt="">
                     <img class="drawer-close-button align-self-middle m2" src="./img/icons/close-button.svg" alt="">
                     <span class="h6 uppercase drawer-button_label">Learn More</span>
                 </div>
                 <div data-closedrawer></div>
-                <div class="leftDrawer" data-toggle="13">
+                <div class="leftDrawer" data-toggle="14">
                     <div class="grid-y grid-padding-x grid-padding-y">
                         <section class="cell auto">
                             <h1 class="drawer-title">Technology to drive better outcomes</h1>
@@ -1347,12 +1342,12 @@
                     <div class="cell small-auto medium-9 grid-x p2">
                         <div class="small-12 large-6 cell grid-y align-center align-middle" style="border-right: 1px solid #ddd;">
                             <h2 class="uppercase">Learn more</h2>
-                            <p class="p0 h4">Read more about FHI 360 and the work we do</p>
+                            <p class="p0 h4">Read more about FHI 360 and the work we do</p>
                         </div>
                         <div class="small-12 large-6 cell grid-y align-center align-middle">
                             <h2 class="uppercase">Share</h2>
                             <div class="grid-x grid-padding-x align-middle">
-                                <a href="#" class="cell auto">
+                                <a href="#" class="cell auto" data-fb-share>
                                     <img width="30" src="./img/icons/fb-icon.svg" alt="share on facebook">
                                 </a>
                                 <a href="#" class="cell auto">

@@ -47,6 +47,7 @@ export default class Site {
 		this.pulseAnim && this.pulseAnim.pause()
 
 		this.runParallax(nextIndex - 2)
+		this.countUp(nextIndex - 2)
 	}
 	handleAfterLoad(anchorLink, index) {
 		let offsetIndex = index - 2
@@ -70,8 +71,6 @@ export default class Site {
 		)
 
 		this.handleTocProgress(offsetIndex)
-
-		this.countUp(offsetIndex)
 	}
 	handleTocProgress(index) {
 		let tocIndex = $(`[data-section='${index}']`).data('toc')
@@ -100,22 +99,30 @@ export default class Site {
 		})
 	}
 	countUp(index) {
-		let state = {
-			number: 0
-		}
-		let el = $(`[data-section="${index}"] [data-countup]`)
+		let els = $(`[data-section="${index}"] [data-countup]`)
 
-		if (!el) return
+		if (!els) return
 
-		let end = el.html()
+		els.each(function() {
+			let state = {
+				number: 0
+			}
+			let start = $(this).data('countstart') || 0
+			let end = $(this).data('countup')
 
-		anime({
-			targets: state,
-			number: [0, end],
-			duration: 1000,
-			delay: 1000,
-			easing: 'linear',
-			update: () => el.html(Math.ceil(state.number))
+			anime({
+				targets: state,
+				number: [start, end],
+				duration: 1000,
+				delay: 1000,
+				easing: 'linear',
+				update: () =>
+					$(this).html(
+						Math.ceil(state.number)
+							.toString()
+							.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+					)
+			})
 		})
 	}
 	handleAfterRender() {
@@ -235,8 +242,7 @@ export default class Site {
 					targets: `[data-section="${i}"] .bg-screen`,
 					opacity: [1, 0.4],
 					duration: 1000,
-					delay: 1000,
-					begin: anim => $(anim.animatables[0]).css('background', '#000')
+					delay: 1000
 				})
 				.add({
 					targets: `[data-section="${i}"] .fore`,
@@ -248,6 +254,49 @@ export default class Site {
 					targets: `[data-section="${i}"] .back`,
 					scale: [1.05, 1],
 					offset: '-=4000'
+				})
+		}
+		if (animName == 'zoom2') {
+			tl
+				.add({
+					targets: `[data-section="${i}"] .bg-screen`,
+					opacity: [1, 0.4],
+					duration: 1000,
+					delay: 1000
+				})
+				.add({
+					targets: `[data-section="${i}"] .back`,
+					scale: [1.05, 1],
+					offset: '-=2000'
+				})
+		}
+		if (animName == 'zoom3') {
+			tl
+				.add({
+					targets: `[data-section="${i}"] .bg-screen`,
+					opacity: [1, 0.4],
+					duration: 1000,
+					delay: 1000
+				})
+				.add({
+					targets: `[data-section="${i}"] .back`,
+					scale: [1, 1.1],
+					offset: '-=2000'
+				})
+		}
+		if (animName == 'zoom4') {
+			tl
+				.add({
+					targets: `[data-section="${i}"] .bg-screen`,
+					opacity: [1, 0.4],
+					duration: 1000,
+					delay: 1000
+				})
+				.add({
+					targets: `[data-section="${i}"] .fore`,
+					scale: [1, 1.1],
+					translateX: ['10px', '-10px'],
+					offset: '-=2000'
 				})
 		}
 	}
@@ -281,6 +330,17 @@ export default class Site {
 		$('[data-movedown]').on('click', () => $.fn.fullpage.moveSectionDown())
 
 		$('[data-moveup]').on('click', () => $.fn.fullpage.moveSectionUp())
+
+		$('[data-fb-share]').on('click', e => {
+			e.preventDefault()
+			FB.ui(
+				{
+					method: 'share',
+					href: 'https://developers.facebook.com/docs/'
+				},
+				function(response) {}
+			)
+		})
 	}
 	createHero() {
 		var words = [
