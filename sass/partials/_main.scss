@@ -10,10 +10,20 @@
 }
 .compat-object-fit {
 	background-size: cover;
+	background-position: center center;
+
+	&.top {
+		background-position: top center;
+	}
 
 	img {
 		opacity: 0;
 		pointer-events: none;
+	}
+}
+.object-fit.remove-object-fit {
+	img {
+		height: auto;
 	}
 }
 

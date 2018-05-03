@@ -545,7 +545,28 @@ export default class Site {
 
 		createWords()
 	}
+	preload() {
+		if (!Modernizr) return console.log('Enable Modernizer!')
+		if (!Modernizr.objectfit) {
+			$('.object-fit').each(function() {
+				var $container = $(this)
+				var imgUrls = []
+				$container.find('img').each(function() {
+					var imgUrl = $(this).attr('src') || $(this).attr('data-src')
+
+					imgUrls.push(`url('${imgUrl}')`)
+				})
+				imgUrls = imgUrls.reverse().join(',')
+
+				if (imgUrls) {
+					$container.css('background-image', imgUrls)
+					$container.addClass('compat-object-fit')
+				}
+			})
+		}
+	}
 	init() {
+		this.preload()
 		this.addEventListeners()
 		this.startFullpage()
 	}
