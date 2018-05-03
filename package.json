@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "parcel index.html --open",
-		"build": "rm -rf dist/* && parcel build index.html --no-minify --public-url ./"
+		"start": "parcel index.hbs --open",
+		"build": "rm -rf dist/* && parcel build index.hbs --no-minify --public-url ./"
 	},
 	"author": "",
 	"license": "ISC",
@@ -14,6 +14,8 @@
 		"animejs": "^2.2.0",
 		"clipboard": "^2.0.0",
 		"fullpage.js": "^2.9.7",
-		"node-sass": "^4.8.3"
+		"node-sass": "^4.8.3",
+		"parcel-plugin-handlebars": "^0.4.4",
+		"promise-polyfill": "^7.1.2"
 	}
 }

@@ -1,3 +1,5 @@
+import Promise from 'promise-polyfill'
+
 import config from './fullpage-config.js'
 
 import anime from 'animejs'
@@ -233,7 +235,8 @@ export default class Site {
 		var tl = new anime.timeline({
 			duration: 4000,
 			easing: 'easeOutQuart',
-			delay: 500
+			delay: 500,
+			autoplay: false
 		})
 
 		if (animName == 'zoom') {
@@ -299,6 +302,18 @@ export default class Site {
 					offset: '-=2000'
 				})
 		}
+		let promiseArr = []
+
+		$section.find('img[data-src]').each(function(i) {
+			const $img = $(this)
+			const loaded = new Promise((resolve, reject) => $img.on('load', resolve))
+
+			promiseArr.push(loaded)
+		})
+
+		Promise.all(promiseArr).then(() => {
+			tl.play()
+		})
 	}
 	startFullpage() {
 		$('#fullpage').fullpage(this.config)
