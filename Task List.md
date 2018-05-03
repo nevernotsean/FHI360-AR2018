@@ -1,11 +1,8 @@
 ## General site changes:
 
 Update site with final content
-
-## TODO
-
+* Done
 Bigger font across the board - everything, including titles, table of contents, inside the drawers and the subtitle text on the slides. Relative to screen size. There are some screens where the font is almost illegible. // Increaded the article content, title and subtitle of slides, and table of contents
-
 * Done
   'Parrallax' background effects for each slide. To confirm: the background effect should only be on 5 slides:
   A beekeeper..., \* Done
@@ -31,7 +28,7 @@ Change the Afghanistan story photo for slide 1 (with the drawer photo), and add 
 * Done
   and left drawer.
 
-## TODO
+* Done
 
 On the slides: move the photo credit link to the left side, and add small navigation arrows on the right side, near where the scroll bar would appear. A small up arrow in the upper right corner, which on click would take you to the previous slide, and a small down arrow in the bottom right.
 
@@ -72,8 +69,15 @@ On the slides: move the photo credit link to the left side, and add small naviga
   On #technology, you might catch this when you do the text, but the second number should be “800+” not 3000. Also, where you do have 3000, please use “3,000” with the comma. And we’re changing “teachers” to “school staff” (this is indicated in the updated text).
 * Done
   On #learn-more, I’m seeing a small square on my PC right before “and”. I’m not seeing it on my Mac. Screenshot below.
+* cant reproduce...
 
-## TODO
+ Image meta tags
+* Done
+## Other TODO
+
+
 
 * Tell Armen to update the open graph metatags with correct SEO info,
 * Get Share content for Twitter, Add a Facebook App ID, Linkedin
+* Replace all instances of 'data-src="http://sean-harrington.com..."' for images
+* Where does the last drawer_content article go?
