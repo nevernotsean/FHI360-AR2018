@@ -49,6 +49,7 @@
 	}
 	.inner-frame {
 		min-height: 100vh;
+		height: 100%;
 		padding: 100px 60px 185px 60px;
 
 		&.centered {
@@ -338,6 +339,7 @@
 		content: '×';
 		position: absolute;
 		right: 50px;
+		bottom: 0;
 		font-size: 32px;
 		cursor: pointer;
 	}
