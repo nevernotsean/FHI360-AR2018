@@ -246,12 +246,26 @@
 	}
 }
 
+.fp-viewing-ceo {
+	#up-down {
+		img {
+			opacity: 1;
+		}
+	}
+}
+
 [data-section='0'] {
 	background-color: #cccccc;
 	color: #000;
 
 	hr.medium {
-		border-color: #fff;
+		border-width: 1px;
+		border-color: #666666;
+	}
+
+	.h3 {
+		font-weight: 500;
+		line-height: 1.2;
 	}
 }
 

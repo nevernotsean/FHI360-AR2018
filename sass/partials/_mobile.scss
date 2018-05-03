@@ -1,3 +1,10 @@
+.toc-title {
+	span.mobile {
+		font-size: 16px;
+		display: none;
+	}
+}
+
 @media screen and (max-width: $medium) {
 	div#header {
 		padding: 0;
@@ -70,5 +77,37 @@
 	}
 	#up-down {
 		display: none;
+	}
+
+	.toc-title {
+		span {
+			display: none;
+		}
+		span.mobile {
+			display: inline;
+		}
+	}
+	#rightSideBar .toc-number {
+		width: 30px;
+		height: 30px;
+		border-width: 2px;
+		font-size: 18px;
+	}
+	//intro
+	.section.intro #intro-chevron {
+		bottom: 0px;
+	}
+	.catalyst svg {
+		margin-top: -30px;
+	}
+	// ceo
+	[data-section='0'] {
+		.inner-frame .align-center {
+			text-align: center;
+			img {
+				margin-top: -20px;
+				margin-bottom: 20px;
+			}
+		}
 	}
 }

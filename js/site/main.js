@@ -81,7 +81,7 @@ export default class Site {
 		} else {
 			$('.toc-toggle-inner').html(tocIndex + ' / 10')
 		}
-		console.log(index, tocIndex)
+		// console.log(index, tocIndex)
 	}
 	pauseDrawerButton() {
 		this.pulseAnim && this.pulseAnim.pause()
@@ -409,7 +409,9 @@ export default class Site {
 		}
 
 		var animate = function() {
-			var tl = anime.timeline()
+			var tl = anime.timeline({
+				easing: 'easeInSine'
+			})
 
 			$('.skip-intro').click(() => tl.seek(tl.duration))
 
@@ -418,12 +420,6 @@ export default class Site {
 				activeIndex: 0,
 				$words: $('#words > span')
 			}
-
-			let title_white =
-				'#cat_title_white path, #cat_title_white polyline,#cat_title_white line'
-			let title = '#cat_logo #cat_title'
-			let subtitle = '#cat_logo #cat_subtitle'
-			let dot = '#cat_logo #orange_dot'
 
 			tl
 				.add({
@@ -467,52 +463,31 @@ export default class Site {
 				})
 				// start catalyst
 				.add({
-					targets: dot,
-					opacity: [0, 1],
-					r: [9.51, 800],
+					targets: '.catalyst',
+					background: ['#fff', '#f27321'],
 					duration: 1000,
-					easing: 'easeOutExpo',
-					offset: '-=300',
 					begin: function() {
 						$('.catalyst')
 							.show()
 							.css('opacity', 1)
-
-						$(dot).attr('cx', '640')
-						$(dot).attr('cy', '400')
-					},
-					complete: () => $('.intro-header').hide()
-				})
-				.add({
-					targets: title_white,
-					strokeDashoffset: [anime.setDashoffset, 0],
-					duration: 500,
-					delay: (el, i) => {
-						return i * 100
-					},
-					easing: 'easeOutSine'
-				})
-				.add({
-					targets: dot,
-					duration: 500,
-					r: 9.51,
-					easing: 'easeOutCubic',
-					offset: '+=1000',
-					begin: () => {
-						$(dot).attr('cx', '333.42')
-						$(dot).attr('cy', '369.25')
+							.addClass('run-ants')
 					}
 				})
 				.add({
-					targets: title,
-					duration: 500,
+					targets: '#cat_title',
 					opacity: [0, 1],
+					duration: 500,
+					delay: 800,
+					offset: '-=300',
 					easing: 'easeInQuart',
-					offset: '-=500'
+					begin: function() {
+						$('.catalyst').addClass('run-ants')
+					},
+					complete: () => $('.intro-header, #s-text').hide()
 				})
 				.add({
-					targets: subtitle,
-					duration: 500,
+					targets: '#cat_subtitle',
+					duration: 1000,
 					opacity: [0, 1],
 					easing: 'easeOutCubic',
 					offset: '+=1000'
@@ -522,7 +497,7 @@ export default class Site {
 					duration: 500,
 					opacity: [0, 1],
 					translateY: [20, 0],
-					easing: 'easeInQuart',
+					easing: 'easeOutCubic',
 					offset: '+=1000',
 					complete: handleIntroComplete
 				})
@@ -562,15 +537,6 @@ export default class Site {
 				translateY: ['-10px', '10px'],
 				duration: 1000,
 				easing: 'easeInOutQuart'
-			})
-			anime({
-				targets: '#orange_dot2',
-				loop: true,
-				r: 20,
-				opacity: [1, 0],
-				duration: 500,
-				delay: 1500,
-				easing: 'linear'
 			})
 
 			$.fn.fullpage.setAllowScrolling(true)

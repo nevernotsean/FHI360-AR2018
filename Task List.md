@@ -1,8 +1,9 @@
 ## General site changes:
 
 Update site with final content
+
 * Done
-Bigger font across the board - everything, including titles, table of contents, inside the drawers and the subtitle text on the slides. Relative to screen size. There are some screens where the font is almost illegible. // Increaded the article content, title and subtitle of slides, and table of contents
+  Bigger font across the board - everything, including titles, table of contents, inside the drawers and the subtitle text on the slides. Relative to screen size. There are some screens where the font is almost illegible. // Increaded the article content, title and subtitle of slides, and table of contents
 * Done
   'Parrallax' background effects for each slide. To confirm: the background effect should only be on 5 slides:
   A beekeeper..., \* Done
@@ -71,11 +72,19 @@ On the slides: move the photo credit link to the left side, and add small naviga
   On #learn-more, I’m seeing a small square on my PC right before “and”. I’m not seeing it on my Mac. Screenshot below.
 * cant reproduce...
 
- Image meta tags
+Image meta tags
+
 * Done
+
+Shorter Table of Contents Titles
+
+* Done
+
+New Catalyze animation
+
+* Done
+
 ## Other TODO
-
-
 
 * Tell Armen to update the open graph metatags with correct SEO info,
 * Get Share content for Twitter, Add a Facebook App ID, Linkedin

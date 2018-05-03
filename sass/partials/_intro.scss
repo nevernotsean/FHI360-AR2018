@@ -1,0 +1,73 @@
+$colors: #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb;
+
+.intro-header {
+	> span:not(#words) {
+		color: #000;
+	}
+}
+
+.catalyst,
+.cat_logo {
+	background: #f27321;
+	font: 16em/1 Montserrat;
+	font-weight: 300;
+	letter-spacing: 0.15em;
+}
+
+.text--line {
+	font-size: 2em;
+	@media screen and (max-width: $medium) {
+		font-size: 0.2em;
+		letter-spacing: 0.1em;
+	}
+}
+
+.text--subline {
+	font-family: Montserrat, sans-serif;
+	font-weight: 200;
+	font-size: 0.45em;
+	letter-spacing: 0.01em;
+
+	@media screen and (max-width: $medium) {
+		font-size: 0.05em;
+	}
+}
+
+#cat_title text {
+	font-weight: 100;
+}
+
+svg {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+}
+
+$max: 5;
+$stroke-step: 5%;
+.text-copy {
+	fill: none;
+	stroke: white;
+	stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
+	stroke-width: 1px;
+
+	.run-ants & {
+		animation: stroke-offset 2s 2 linear;
+
+		@for $item from 1 through $max {
+			$stroke-color: nth($colors, $item);
+
+			&:nth-child(#{$item}) {
+				stroke: $stroke-color;
+				stroke-dashoffset: $stroke-step * $item;
+			}
+		}
+	}
+}
+
+@keyframes stroke-offset {
+	0% {
+		stroke-dashoffset: 100px * $max;
+		stroke-dasharray: 0 100px * $max * 2.5;
+	}
+}
