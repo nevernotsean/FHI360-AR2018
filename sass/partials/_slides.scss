@@ -293,6 +293,14 @@
 	}
 }
 
+// learnmore
+[data-section='15'] {
+	a > img {
+		width: 30px;
+		height: 30px;
+	}
+}
+
 .photo-credit {
 	&-container {
 		position: absolute;
