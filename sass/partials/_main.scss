@@ -271,7 +271,7 @@ nav#up-down {
 		&[data-movedown] {
 			transform: rotate(180deg);
 			bottom: 50px;
-			top: initial;
+			top: auto;
 		}
 	}
 }
