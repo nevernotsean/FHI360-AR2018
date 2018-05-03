@@ -10,7 +10,7 @@ const Site = new main()
 const preload = () => {
 	if (!Modernizr) return console.log('Enable Modernizer!')
 	if (!Modernizr.objectfit) {
-		$('.object-fit-container').each(function() {
+		$('.object-fit').each(function() {
 			var $container = $(this),
 				imgUrl = $container.find('img').prop('src')
 			if (imgUrl) {
