@@ -152,15 +152,15 @@ export default class Site {
 		this.moveToSlide(dest)
 	}
 	handleCeoLink() {
-		if ($('body').hasClass('drawer-open')) {
-			this.toggleDrawer()
-		}
-		if ($('body').hasClass('toc-open')) {
-			this.toggleTOC(1, true)
-		}
+		// if ($('body').hasClass('drawer-open')) {
+		// 	this.toggleDrawer()
+		// }
+		// if ($('body').hasClass('toc-open')) {
+		// 	this.toggleTOC(1, true)
+		// }
 		$.fn.fullpage.silentMoveTo(2)
-		this.toggleDrawer(1)
-		this.pauseDrawerButton()
+		// this.toggleDrawer(1)
+		// this.pauseDrawerButton()
 	}
 	moveToSlide(dest) {
 		this.toggleTOC()
@@ -197,7 +197,7 @@ export default class Site {
 	toggleDrawer(toggleID, dur = 300, forceClose = false) {
 		let $drawer =
 			toggleID !== null
-				? $(`.leftDrawer[data-toggle="${toggleID}"`)
+				? $(`.leftDrawer[data-toggle="${toggleID}"]`)
 				: $(`.leftDrawer`)
 		let $button = $(`.drawer-button_container`)
 
