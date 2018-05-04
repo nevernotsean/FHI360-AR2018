@@ -12,12 +12,12 @@ $colors: #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb;
 .cat_logo {
 	background: #f27321;
 	font: 16em/1 Montserrat;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0.15em;
 }
 
 .text--line {
-	font-size: 2em;
+	font-size: 1.5em;
 	@media screen and (max-width: $medium) {
 		font-size: 0.2em;
 		letter-spacing: 0.1em;
@@ -35,40 +35,41 @@ $colors: #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb;
 	}
 }
 
-#cat_title text {
-	font-weight: 100;
-}
+// svg {
+// 	position: absolute;
+// 	width: 100vw;
+// 	height: 100vh;
+// }
 
-svg {
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
-}
-
-$max: 5;
-$stroke-step: 5%;
+$max: 2;
+$stroke-step: 8%;
 .text-copy {
 	fill: none;
 	stroke: white;
 	stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
-	stroke-width: 1px;
+	stroke-width: 3px;
 
-	.run-ants & {
-		animation: stroke-offset 2s 2 linear;
+	// .run-ants & {
+	animation: stroke-offset 10s 3 ease;
+	stroke-dashoffset: $stroke-step;
 
-		@for $item from 1 through $max {
-			$stroke-color: nth($colors, $item);
+	// @for $item from 1 through $max {
+	// 	$stroke-color: nth($colors, $item);
 
-			&:nth-child(#{$item}) {
-				stroke: $stroke-color;
-				stroke-dashoffset: $stroke-step * $item;
-			}
-		}
-	}
+	// 	&:nth-child(#{$item}) {
+	// 		stroke: $stroke-color;
+	// 		stroke-dashoffset: $stroke-step * $item;
+	// 	}
+	// }
+	// }
 }
 
 @keyframes stroke-offset {
-	0% {
+	50% {
+		stroke-dashoffset: 200px;
+		stroke-dasharray: 0 300px;
+	}
+	50% {
 		stroke-dashoffset: 100px * $max;
 		stroke-dasharray: 0 100px * $max * 2.5;
 	}

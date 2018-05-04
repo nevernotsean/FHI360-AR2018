@@ -117,7 +117,7 @@ export default class Site {
 				number: [start, end],
 				duration: 1000,
 				delay: 1000,
-				easing: 'linear',
+				easing: 'easeInSine',
 				update: () =>
 					$(this).html(
 						Math.ceil(state.number)
@@ -463,27 +463,23 @@ export default class Site {
 				})
 				// start catalyst
 				.add({
-					targets: '.catalyst',
-					background: ['#fff', '#f27321'],
-					duration: 1000,
-					begin: function() {
-						$('.catalyst')
-							.show()
-							.css('opacity', 1)
-							.addClass('run-ants')
-					}
-				})
-				.add({
-					targets: '#cat_title',
+					targets: '#orange_dot',
 					opacity: [0, 1],
-					duration: 500,
+					r: [9.51, 800],
+					duration: 1000,
 					delay: 800,
 					offset: '-=300',
 					easing: 'easeInQuart',
 					begin: function() {
-						$('.catalyst').addClass('run-ants')
+						$('.catalyst')
+							.show()
+							.css('opacity', 1)
+						// .addClass('run-ants')
 					},
-					complete: () => $('.intro-header, #s-text').hide()
+					complete: () => {
+						$('#orange_dot').hide()
+						$('.catalyst').css('background', '#f27321')
+					}
 				})
 				.add({
 					targets: '#cat_subtitle',
@@ -530,6 +526,13 @@ export default class Site {
 			return a
 		}
 		function handleIntroComplete() {
+			// anime({
+			// 	targets: '.text-copy',
+			// 	strokeDashoffset: [0, anime.setDashoffset],
+			// 	duration: 1500,
+			// 	direction: 'alternate',
+			// 	loop: true
+			// })
 			anime({
 				targets: '#intro-chevron',
 				loop: true,

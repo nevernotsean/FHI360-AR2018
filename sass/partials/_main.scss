@@ -1,11 +1,11 @@
 // index.js
-.object-fit img {
+.objectfit-img img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
 	object-position: center;
 }
-.object-fit.top img {
+.objectfit-img.top img {
 	object-position: top center;
 }
 .compat-object-fit {
@@ -21,7 +21,7 @@
 		pointer-events: none;
 	}
 }
-.object-fit.remove-object-fit {
+.objectfit-img.remove-object-fit {
 	img {
 		height: auto;
 	}

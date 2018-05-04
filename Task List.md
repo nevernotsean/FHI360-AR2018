@@ -89,4 +89,73 @@ New Catalyze animation
 * Tell Armen to update the open graph metatags with correct SEO info,
 * Get Share content for Twitter, Add a Facebook App ID, Linkedin
 * Replace all instances of 'data-src="http://sean-harrington.com..."' for images
-* Where does the last drawer_content article go?
+* Where does the last drawer_content article go? Add to "Technology/..." article
+
+5/1/18 feedback
+
+The up/down navigation arrows aren’t visible on the CEO slide since we changed it to gray. Could you either darken the arrows, or make them less transparent on just this slide?
+
+* Done
+
+The font size on the CEO letter is a bit too small – did this get sized down when we changed the background color to gray?
+
+* Increased font size
+
+On the Beekeeper Slide 1, the circle in the top right moves to read “1/10,” but the “progress” bar is full. It moves to begin marking progress when you scroll down to the Beekeeper Slide 2. Rather than starting at “full” could it start with just a tiny bit of the circle visible The reverse of how it looks on the final #technology slide.
+
+* Fixed
+
+When you click on “CEO Letter” in the header, we want it to just go to the slide with the drawer closed. Right now when you click, it goes to the slide and looks like it’s trying to open the drawer, but the drawer isn’t visible.
+
+* Fixed
+
+The drawer photos are missing for the North Dakota and Afghanistan stories
+
+* Fixed
+
+Love the counting action on the Mozambique slide, but it starts before you can really realize what is happening. Would suggest slowing down the entrance by a second or so then having it move in and start counting.
+
+* Entrance Slowed
+
+On Afghanistan Slide 1, the photo gradient comes in with the image but then goes away, making the text hard to read.
+
+* Fixed
+
+On Afghanistan Slide 2, the gradient should be gray, not purple.
+
+* Fixed
+
+On the non-profile slides (CEO letter, #hptn, #sinoimplant, #challengetb, #civilsociety, #technology), a tiny bit of the gradient is still appearing in the bottom left corner of the drawer.
+
+* Fixed
+
+On #fanta, Obey’s forehead gets cut off on some wider displays. I understand if this might not be possible, but could it crop off more of the bottom of the photo instead of the top? Similar issue that we were having on the #ivlp slide, which you fixed.
+
+* Fixed, as much as possible!
+
+Desktop:
+ Safari: drawers don’t open (this also happened on mobile in Safari)
+
+* Fixed
+   Edge: the photo credit appears stacked:
+* Fixed?
+
+Mobile:
+ All devices:
+o CEO message slide – text doesn’t wrap around Patrick’s photo very well
+o The menu gets cut off at story 9, and you can’t scroll to see #10.
+ Android (Pixel XL – Chrome):
+o The photo credits on the slides are cut off – only visible when you’re scrolling to the
+next slide
+ Android (Pixel XL – Firefox):
+
+o The photo credits are visible, but on some slides with lots of text, some of the text gets
+cut off or looks too squashed.
+ iPhone (6 and X - Safari):
+o All slides get cut off – starting at the bottom of the blue button
+ When you scroll back up through the slides, the top of the slide gets cut off, but
+the bottom is visible.
+
+o The text is too big on most slides – text appears on top of other text (civilsociety), or too
+close to the button (challengeTB).
+o Drawers don’t open (seems like a Safari issue)
