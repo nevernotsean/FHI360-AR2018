@@ -1,5 +1,4 @@
 // CSS
-import './vendor/modernizr-3.5.0.min'
 import '../sass/index.scss'
 
 // Site Scripts

@@ -1,4 +1,4 @@
-$colors: #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb;
+$colors: #f27321, #eeeeee, #ffffff, #eeeeee, #eeeeee;
 
 .intro-header {
 	top: 0;
@@ -12,7 +12,7 @@ $colors: #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb;
 .cat_logo {
 	background: #f27321;
 	font: 16em/1 Montserrat;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: 0.15em;
 }
 
@@ -24,53 +24,31 @@ $colors: #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb;
 	}
 }
 
-.text--subline {
-	font-family: Montserrat, sans-serif;
-	font-weight: 200;
-	font-size: 0.45em;
-	letter-spacing: 0.01em;
-
-	@media screen and (max-width: $medium) {
-		font-size: 0.05em;
-	}
-}
-
-// svg {
-// 	position: absolute;
-// 	width: 100vw;
-// 	height: 100vh;
-// }
-
-$max: 2;
-$stroke-step: 8%;
+$max: 5;
+$stroke-step: 5%;
 .text-copy {
 	fill: none;
-	stroke: white;
+	stroke: #f27321;
 	stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
-	stroke-width: 3px;
+	stroke-width: 0.05em;
 
-	// .run-ants & {
-	animation: stroke-offset 10s 3 ease;
-	stroke-dashoffset: $stroke-step;
+	.run-ants & {
+		animation: stroke-offset 3s 1 ease-out;
 
-	// @for $item from 1 through $max {
-	// 	$stroke-color: nth($colors, $item);
+		@for $item from 1 through $max {
+			$stroke-color: nth($colors, $item);
 
-	// 	&:nth-child(#{$item}) {
-	// 		stroke: $stroke-color;
-	// 		stroke-dashoffset: $stroke-step * $item;
-	// 	}
-	// }
-	// }
+			&:nth-child(#{$item}) {
+				stroke: $stroke-color;
+				stroke-dashoffset: $stroke-step * $item;
+			}
+		}
+	}
 }
 
 @keyframes stroke-offset {
-	50% {
-		stroke-dashoffset: 200px;
-		stroke-dasharray: 0 300px;
-	}
-	50% {
-		stroke-dashoffset: 100px * $max;
-		stroke-dasharray: 0 100px * $max * 2.5;
+	0% {
+		stroke-dashoffset: 0.2em * $max;
+		stroke-dasharray: 0 0.2em * $max * 2.5;
 	}
 }

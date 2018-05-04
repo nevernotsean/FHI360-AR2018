@@ -116,7 +116,7 @@ export default class Site {
 				targets: state,
 				number: [start, end],
 				duration: 1000,
-				delay: 1000,
+				delay: 1500,
 				easing: 'easeInSine',
 				update: () =>
 					$(this).html(
@@ -142,6 +142,7 @@ export default class Site {
 		this.toggleTOC()
 	}
 	handleTocClick(e) {
+		e.preventDefault()
 		let dest = $(e.target).data('moveto')
 
 		if (!dest)
@@ -446,7 +447,7 @@ export default class Site {
 					update: cycleWord
 				})
 				.add({
-					targets: '.intro-header',
+					targets: '.intro-header #words',
 					scale: {
 						value: [1, 1.25],
 						duration: 3000,
@@ -469,17 +470,27 @@ export default class Site {
 					duration: 1000,
 					delay: 800,
 					offset: '-=300',
-					easing: 'easeInQuart',
+					easing: 'easeOutCirc',
 					begin: function() {
 						$('.catalyst')
 							.show()
 							.css('opacity', 1)
-						// .addClass('run-ants')
+							.css('background', '#fff')
+
+						$('.g-ants').hide()
 					},
 					complete: () => {
 						$('#orange_dot').hide()
-						$('.catalyst').css('background', '#f27321')
+						$('.catalyst')
+							.css('background', '#f27321')
+							.addClass('run-ants')
 					}
+				})
+				.add({
+					targets: '.catalyst',
+					duration: 1,
+					begin: () => $('.g-ants').show(),
+					offset: '+=100'
 				})
 				.add({
 					targets: '#cat_subtitle',
@@ -526,13 +537,11 @@ export default class Site {
 			return a
 		}
 		function handleIntroComplete() {
-			// anime({
-			// 	targets: '.text-copy',
-			// 	strokeDashoffset: [0, anime.setDashoffset],
-			// 	duration: 1500,
-			// 	direction: 'alternate',
-			// 	loop: true
-			// })
+			$('#orange_dot').hide()
+			$('.catalyst')
+				.css('background', '#f27321')
+				.addClass('run-ants')
+			$('.g-ants').show()
 			anime({
 				targets: '#intro-chevron',
 				loop: true,

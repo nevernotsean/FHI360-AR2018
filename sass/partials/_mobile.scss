@@ -4,7 +4,14 @@
 		display: none;
 	}
 }
-
+@media screen and (min-width: $medium) {
+	.fp-tablecell-auto .fp-tableCell {
+		height: 100% !important;
+		height: 100vh !important;
+		display: initial !important;
+		vertical-align: initial !important;
+	}
+}
 @media screen and (max-width: $medium) {
 	div#header {
 		padding: 0;
@@ -107,13 +114,6 @@
 			transform: none;
 			left: initial;
 		}
-		.inner-frame .align-center {
-			text-align: center;
-			img {
-				margin-top: -20px;
-				margin-bottom: 20px;
-			}
-		}
 		.leftDrawer {
 			.leftDrawer {
 				height: 100%;
@@ -123,6 +123,11 @@
 				width: 100px !important;
 			}
 		}
+	}
+	[data-section='0'].section .inner-frame.centered {
+		min-height: auto;
+		height: 50vh;
+		padding: 10px;
 	}
 	.drawer-open [data-section='0'] .drawer-button_container {
 		right: -20px;

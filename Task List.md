@@ -84,13 +84,6 @@ New Catalyze animation
 
 * Done
 
-## Other TODO
-
-* Tell Armen to update the open graph metatags with correct SEO info,
-* Get Share content for Twitter, Add a Facebook App ID, Linkedin
-* Replace all instances of 'data-src="http://sean-harrington.com..."' for images
-* Where does the last drawer_content article go? Add to "Technology/..." article
-
 5/1/18 feedback
 
 The up/down navigation arrows aren’t visible on the CEO slide since we changed it to gray. Could you either darken the arrows, or make them less transparent on just this slide?
@@ -133,29 +126,86 @@ On #fanta, Obey’s forehead gets cut off on some wider displays. I understand i
 
 * Fixed, as much as possible!
 
+## Mobile and Cross Browser Client Feedback
+
 Desktop:
  Safari: drawers don’t open (this also happened on mobile in Safari)
 
 * Fixed
+
    Edge: the photo credit appears stacked:
-* Fixed?
+
+* Fixed
 
 Mobile:
  All devices:
 o CEO message slide – text doesn’t wrap around Patrick’s photo very well
-o The menu gets cut off at story 9, and you can’t scroll to see #10.
+
+* Fixed
+
+  o The menu gets cut off at story 9, and you can’t scroll to see #10.
+
+* This looks fixed to me after shorter titles added
+
  Android (Pixel XL – Chrome):
 o The photo credits on the slides are cut off – only visible when you’re scrolling to the
 next slide
+
+* I wasn't able to fix this given the time.
+
  Android (Pixel XL – Firefox):
 
-o The photo credits are visible, but on some slides with lots of text, some of the text gets
-cut off or looks too squashed.
+o The photo credits are visible, but on some slides with lots of text, some of the text gets cut off or looks too squashed.
+
+* This is fixed on my Pixel 2
+
  iPhone (6 and X - Safari):
 o All slides get cut off – starting at the bottom of the blue button
  When you scroll back up through the slides, the top of the slide gets cut off, but
 the bottom is visible.
 
+* This and the Photo Credit issue are still unfixed
+
 o The text is too big on most slides – text appears on top of other text (civilsociety), or too
 close to the button (challengeTB).
+
+* Fixed
+
 o Drawers don’t open (seems like a Safari issue)
+
+* Fixed
+
+## Other TODO
+
+* Tell Armen to update the open graph metatags with correct SEO info,
+
+Updated OpenGraph title and description
+
+* Done
+
+- Get Share content for Twitter, Add a Facebook App ID, Linkedin
+- Replace all instances of 'data-src="http://sean-harrington.com..."' for images
+
+in some places, the bolded text barely appears bold, but in others it looks normal. The #civilsociety story is a good example, since it has both.
+
+* Fixed
+
+For “How do we improve lives?”, can just “improve lives” scale up, not “how do we”? Scale up size now is okay, but we don’t want emphasis on “how do we”, only emphasis on “improve lives.”
+
+* Done
+
+Would like to go back to the orange dot expanding to make the fullscreen orange.
+
+* Done
+
+Drawn-in “Catalyze” should mimic this Codepen in speed and stroke width. If it can also end with gaps in the text as shown in the print version (see attached), that would be ideal. Ending “Catalyze” should remain double-stroke.
+
+* Done
+
+Can “Catalyze” be 75% of user screen in size?
+
+* Fixed
+
+“2017 Annual Report” font is Montserrat. Can it be changed to Mr Eaves Modern in SVG format?
+
+* Done
