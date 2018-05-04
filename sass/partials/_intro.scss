@@ -1,6 +1,8 @@
 $colors: #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb;
 
 .intro-header {
+	top: 0;
+	left: 0;
 	> span:not(#words) {
 		color: #000;
 	}

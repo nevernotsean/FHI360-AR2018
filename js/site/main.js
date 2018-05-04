@@ -458,8 +458,8 @@ export default class Site {
 						duration: 1000,
 						easing: 'easeInSine',
 						delay: 500
-					},
-					begin: () => $('.intro-header').css('position', 'absolute')
+					}
+					// begin: () => $('.intro-header').css('position', 'absolute')
 				})
 				// start catalyst
 				.add({
