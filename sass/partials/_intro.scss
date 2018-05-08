@@ -19,21 +19,27 @@ $colors: #f27321, #eeeeee, #ffffff, #eeeeee, #eeeeee;
 .text--line {
 	font-size: 1.5em;
 	@media screen and (max-width: $medium) {
-		font-size: 0.2em;
+		font-size: 0.18em;
 		letter-spacing: 0.1em;
 	}
 }
 
 $max: 5;
-$stroke-step: 5%;
+$stroke-step: 4%;
 .text-copy {
 	fill: none;
 	stroke: #f27321;
 	stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
-	stroke-width: 0.05em;
+	stroke-width: 0.03em;
+	@media screen and (max-width: $medium) {
+		stroke-width: 0.005em;
+	}
 
 	.run-ants & {
-		animation: stroke-offset 3s 1 ease-out;
+		animation: stroke-offset 0.8s 3 alternate linear;
+		@media screen and (max-width: $medium) {
+			animation: stroke-offset-mobile 1200ms 3 alternate linear;
+		}
 
 		@for $item from 1 through $max {
 			$stroke-color: nth($colors, $item);
@@ -48,7 +54,14 @@ $stroke-step: 5%;
 
 @keyframes stroke-offset {
 	0% {
-		stroke-dashoffset: 0.2em * $max;
-		stroke-dasharray: 0 0.2em * $max * 2.5;
+		stroke-dashoffset: 0.18em * $max;
+		stroke-dasharray: 0 0.18em * $max * 2.5;
+	}
+}
+
+@keyframes stroke-offset-mobile {
+	0% {
+		stroke-dashoffset: 0.02em * $max;
+		stroke-dasharray: 0 0.02em * $max * 2.5;
 	}
 }

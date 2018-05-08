@@ -131,6 +131,10 @@ export default class Site {
 		// console.log('handleAfterRender')
 		this.hideEls()
 		this.createHero()
+
+		if (screen.height > $(window).height()) {
+			$('.section').height($(window).height() + 'px')
+		}
 	}
 	hideEls() {
 		this.$hideEls.css('opacity', 0)
