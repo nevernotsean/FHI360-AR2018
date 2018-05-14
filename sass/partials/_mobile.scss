@@ -8,6 +8,9 @@
 	div#header .share-menu {
 		display: none;
 	}
+	[data-section='0'] .drawer-button_container {
+		margin-bottom: 10px;
+	}
 }
 @media screen and (min-width: $large) {
 	.fp-tablecell-auto .fp-tableCell {
