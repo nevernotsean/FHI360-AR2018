@@ -362,6 +362,14 @@ export default class Site {
 			)
 		})
 
+		$('[data-li-share], [data-tw-share]').click(function() {
+			var shareurl = $(this).attr('href')
+			var windowName = 'Share'
+			window.open(shareurl, windowName, 'height=400,width=400')
+
+			return false
+		})
+
 		$('[data-copyurl]').attr('data-clipboard-text', location.origin)
 		new ClipboardJS('[data-copyurl]')
 		$('[data-copyurl]').on('click', () => {

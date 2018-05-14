@@ -4,7 +4,7 @@
 		display: none;
 	}
 }
-@media screen and (min-width: $medium) {
+@media screen and (min-width: $large) {
 	.fp-tablecell-auto .fp-tableCell {
 		height: 100% !important;
 		height: 100vh !important;
@@ -12,7 +12,7 @@
 		vertical-align: initial !important;
 	}
 }
-@media screen and (max-width: $medium) {
+@media screen and (max-width: $large) {
 	div#header {
 		padding: 0;
 
