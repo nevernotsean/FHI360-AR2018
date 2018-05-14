@@ -4,6 +4,11 @@
 		display: none;
 	}
 }
+@media screen and (max-width: $medium) {
+	div#header .share-menu {
+		display: none;
+	}
+}
 @media screen and (min-width: $large) {
 	.fp-tablecell-auto .fp-tableCell {
 		height: 100% !important;
@@ -52,9 +57,6 @@
 		}
 		.nav-container {
 			align-items: flex-end;
-		}
-		.share-menu {
-			display: none;
 		}
 	}
 	.mobile-open div#header .menu.main {
