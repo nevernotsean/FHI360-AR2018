@@ -1,7 +1,5 @@
 import Promise from 'promise-polyfill'
-
 import config from './fullpage-config.js'
-
 import anime from 'animejs'
 
 export default class Site {

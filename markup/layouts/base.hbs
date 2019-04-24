@@ -1,0 +1,95 @@
+<!-- Doctype HTML5 -->
+<!doctype html>
+<html class="no-js" lang="{{#if language}}{{language}}{{else}}en{{/if}}" dir="ltr">
+{{#block "head"}}
+
+  <head>
+    {{#block "meta"}}
+      {{> meta}}
+    {{/block}}
+
+    {{#block "relationships"}}
+      {{> relationships}}
+    {{/block}}
+
+    {{#block "title"}}
+      <title>{{title}}</title>
+    {{/block}}
+
+    {{#block "styles"}}
+      {{#each stylesheets}}
+        <link href="{{this}}" rel="stylesheet" />
+      {{/each}}
+    {{/block}}
+
+    <script>
+      (function (d) {
+        var config = {
+          kitId: 'cua6unr',
+          scriptTimeout: 3000,
+          async: true
+        },
+          h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+      })(document);
+    </script>
+    <style>
+      #fullpage {
+        opacity: 0;
+      }
+
+      #fullpage.fullpage-wrapper {
+        opacity: 1;
+      }
+    </style>
+  </head>
+{{/block}}
+
+{{#block "body"}}
+
+  <body class="{{bodyclass}}">
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: 'your-app-id',
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v2.12'
+        });
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="main-content">
+    {{#block "header"}}
+      {{> header}}
+    {{/block}}
+
+    {{#block "right-sidebar"}}
+    {{/block}}
+
+    {{#block "main"}}
+    {{/block}}
+
+    {{#block "footer"}}
+      {{> footer}}
+    {{/block}}
+    </div>
+    {{#block "scripts"}}
+      {{#each scripts}}
+        <script defer src="{{this}}"></script>
+      {{/each}}
+    {{/block}}
+  </body>
+{{/block}}
+
+</html>

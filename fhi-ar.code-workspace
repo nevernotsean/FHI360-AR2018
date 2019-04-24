@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "/Users/harrings/Downloads/parcel-plugin-handlebars-master/examples"
+    }
+  ],
+  "settings": {
+    "editor.autoIndent": false,
+    "html.format.indentHandlebars": true,
+    "prettier.disableLanguages": ["hbs", "handlebars"],
+    "editor.tabSize": 2,
+    "prettier.printWidth": 120
+  }
+}

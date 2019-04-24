@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website" />
+{{#if meta}}
+  {{#if meta.url}}
+    <meta name="url" content="{{meta.url}}" {{!-- content="REPLACE ME WITH PRODUCTION URL"  --}} />
+    <meta property="og:url" content="{{meta.url}}" />
+  {{/if}}
+
+  {{#if meta.title}}
+    <meta property="og:title" content="{{meta.title}}" {{!-- content="CATALYZE: FHI 360's 2017 Annual Report" --}} />
+  {{/if}}
+
+  {{#if meta.description}}
+    <meta name="description" content="{{meta.description}}">
+    <meta property="og:description" content="{{meta.description}}"
+      {{!-- content="In science, a catalyst ignites a chemical reaction. When applied to human development, a catalyst is the spark that transforms an idea into a solution. In this year's annual report, we share some of the many ways FHI 360 is working with partners to catalyze positive change in the United States and around the world."  --}} />
+  {{/if}}
+
+  {{#if meta.keywords}}
+    <meta name="keywords" content="{{meta.keywords}}"
+      {{!-- content="FHI 360 Annual Report 2017,Catalyze,Global transformative change,Samira Saeed Mouawwad,Injectable cabotegravir,Yatin Thakur,Sino-implant,Jennifer Carlson,CB-DOTS,Obey Assery,Democracy in Myanmar,Yosouf Jami,Mobile money in Liberia,"  --}}>
+  {{/if}}
+
+  {{#if meta.robots}}
+    <meta name="robots" content="{{meta.robots}}">
+  {{/if}}
+
+  {{#if meta.image}}
+    <meta property="og:image" content="{{meta.image}}" {{!-- content="../img/FHI360_2017AR_thumbnail.jpg"  --}} />
+  {{/if}}
+
+{{/if}}
