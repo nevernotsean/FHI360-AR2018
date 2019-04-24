@@ -1,0 +1,6 @@
+<section class="section" data-section="{{this.sectionIndex}}">
+  {{#block "content"}}
+  {{/block}}
+  {{> elements/drawer-button toggleValue=this.sectionIndex }}
+  {{> elements/drawer toggleValue=this.sectionIndex }}
+</section>

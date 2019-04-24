@@ -1,4 +1,18 @@
-            <section class="section" data-section="0">
+{{#extend "elements/simple-section"}}
+<h1>Test</h1>
+    {{#content "content"}}
+        <p class="mb0">
+            <strong class="uppercase">Chief Executive Officer, FHI 360</strong>
+        </p>
+    {{/content}}
+    {{#content "drawer-content"}}
+        <p class="mb0">
+            <strong class="uppercase">Drawer Content</strong>
+        </p>
+    {{/content}}
+{{/extend}}
+
+{{!-- <section class="section" data-section="0">
                 <div class="grid-x align-center inner-frame centered">
                     <div class="small-12 medium-8 cell grid-y align-justify">
                         <div class="text-center">
@@ -94,4 +108,4 @@
                         </section>
                     </div>
                 </div>
-            </section>
+            </section> --}}
