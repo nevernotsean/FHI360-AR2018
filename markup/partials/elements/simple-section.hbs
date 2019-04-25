@@ -1,6 +1,44 @@
 <section class="section" data-section="{{this.sectionIndex}}">
-  {{#block "content"}}
-  {{/block}}
-  {{> elements/drawer-button toggleValue=this.sectionIndex }}
-  {{> elements/drawer toggleValue=this.sectionIndex }}
+  {{#if sectionData[this.sectionIndex].photoCredit}}
+    <div class="photo-credits">
+      <h6><span>Photo:</span>{{sectionData[this.sectionIndex].photoCredit}}</h6>
+    </div>
+  {{/if}}
+  {{#if sectionData[this.sectionIndex].image }}
+    <div class="bg objectfit-img">
+      <img class="back" data-src="{{sectionData[this.sectionIndex].image}}" alt="{{sectionData[this.sectionIndex].caption}}">
+    </div>
+    <div class="bg-screen black"></div>
+  {{/if}}
+  <div class="grid-x inner-frame">
+    <div class="small-12 medium-6 large-6 cell grid-y align-center">
+      <div class="cell shrink slide-title stagger-in">
+        <h2>{{#block "title"}}{{/block}}</h2>
+      </div>
+      <div class="cell shrink stagger-in">
+        <hr class="small">
+      </div>
+      <div class="cell shrink slide-subtitle stagger-in">
+        {{#block "subtitle"}}{{/block}}
+      </div>
+    </div>
+  </div>
+
+  {{#if this.drawer}}
+    <div class="drawer-button_container" data-toggle="{{this.sectionIndex}}">
+      <img class="drawer-button align-self-middle m2" src="../img/icons/menu-button.svg" alt="">
+      <img class="drawer-close-button align-self-middle m2" src="../img/icons/close-button.svg" alt="">
+    </div>
+    <div data-closedrawer></div>
+    <div class="leftDrawer" data-toggle="{{this.sectionIndex}}">
+      <div class="grid-y grid-padding-x grid-padding-y">
+        <section class="cell auto">
+          <div class="drawer-content">
+            {{#block "drawer-content"}}
+            {{/block}}
+          </div>
+        </section>
+      </div>
+    </div>
+  {{/if}}
 </section>

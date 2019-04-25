@@ -1,13 +1,15 @@
     <div id="rightSideBar">
     <nav class="toc grid-y">
-        {{#each toc_titles}}
-            <a href="{{this.href}}" data-moveto="{{this.moveto}}" class="cell auto toc-item grid-x grid-padding-x">
-                <div class="cell shrink toc-number">{{this.toc}}</div>
+        {{#each sectionData}}
+            {{#if this.toc}}
+            <a href="{{this.toc.href}}" data-moveto="{{@index}}" class="cell auto toc-item grid-x grid-padding-x">
+                <div class="cell shrink toc-number">{{this.toc.chapter}}</div>
                 <div class="cell auto toc-title">
-                    <span>{{this.desktop}}</span>
-                    <span class="mobile">{{this.mobile}}</span>
+                    <span>{{this.toc.desktop}}</span>
+                    <span class="mobile">{{this.toc.mobile}}</span>
                 </div>
             </a>
+            {{/if}}
         {{/each}}
     </nav>
 </div>
