@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "rm -rf .cache",
     "start": "parcel markup/index.hbs --open",
     "build": "rm -rf dist/* && parcel build markup/index.hbs --no-minify --public-url ./"
   },
