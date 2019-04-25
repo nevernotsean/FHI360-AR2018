@@ -50,14 +50,17 @@ export default class Site {
 		this.countUp(nextIndex - 2)
 	}
 	handleAfterLoad(anchorLink, index) {
-		let offsetIndex = index - 2
+		index = index - 1
+
+		console.log('afterload', index)
+
 		this.hideEls()
-		this.staggerInEls(index - 1)
+		this.staggerInEls(index)
 
 		this.pulseAnim && this.pulseAnim.pause()
 
 		this.pulseAnim = anime({
-			targets: `[data-section="${offsetIndex}"] .drawer-button_container img`,
+			targets: `[data-section="${index}"] .drawer-button_container img`,
 			scale: [0.85, 1],
 			loop: true,
 			direction: 'alternate',
@@ -65,12 +68,12 @@ export default class Site {
 			easing: 'easeInOutSine'
 		})
 
-		$(`[data-section="${offsetIndex}"] .drawer-button_container`).one(
+		$(`[data-section="${index}"] .drawer-button_container`).one(
 			'click',
 			() => this.pulseAnim && this.pulseAnim.pause()
 		)
 
-		this.handleTocProgress(offsetIndex)
+		this.handleTocProgress(index)
 	}
 	handleTocProgress(index) {
 		let tocIndex = $(`[data-section='${index}']`).data('toc')
@@ -88,7 +91,7 @@ export default class Site {
 		const dur = this.gDur
 		const ease = this.gEase
 		anime({
-			targets: `[data-section="${index - 1}"] .stagger-in`,
+			targets: `[data-section="${index}"] .stagger-in`,
 			opacity: [0, 1],
 			duration: dur,
 			translateY: [50, 0],
@@ -152,7 +155,7 @@ export default class Site {
 				.closest('[data-moveto]')
 				.data('moveto')
 
-		this.moveToSlide(dest)
+		this.moveToChapter(dest)
 	}
 	handleCeoLink() {
 		// if ($('body').hasClass('drawer-open')) {
@@ -165,9 +168,10 @@ export default class Site {
 		// this.toggleDrawer(1)
 		// this.pauseDrawerButton()
 	}
-	moveToSlide(dest) {
+	moveToChapter(chapter) {
 		this.toggleTOC()
-		$.fn.fullpage.silentMoveTo(dest, 0)
+		var i = $(`[data-chapter="chapter-${chapter}"]`).data('section')
+		$.fn.fullpage.silentMoveTo(i + 1, 0)
 	}
 	toggleTOC(dur = 300, forceClose = false) {
 		let $drawer = $(`#rightSideBar`)
@@ -307,7 +311,7 @@ export default class Site {
 		}
 		let promiseArr = []
 
-		$section.find('img[data-src]').each(function(i) {
+		$section.find('img[data-wait]').each(function(i) {
 			const $img = $(this)
 			const loaded = new Promise((resolve, reject) => $img.on('load', resolve))
 
