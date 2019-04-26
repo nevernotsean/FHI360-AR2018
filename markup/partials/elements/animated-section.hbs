@@ -1,0 +1,33 @@
+<section class="section" data-section="{{this.sectionIndex}}">
+  {{#if image }}
+    <div class="bg objectfit-img">
+      <img src="../img/slides/{{image}}" alt="{{caption}}">
+    </div>
+    <div class="bg-screen {{this.overlay}}"></div>
+  {{/if}}
+  <div class="grid-x inner-frame middle-center">
+    <div class="small-12 medium-10  large-8 cell grid-y align-center">
+      <div class="cell shrink slide-title stagger-in">
+         {{#block "content"}}{{/block}}
+      </div>
+    </div>
+  </div>
+
+  {{#if this.drawer}}
+    <div class="drawer-button_container" data-toggle="{{this.sectionIndex}}">
+      <img class="drawer-button align-self-middle m2" src="../img/icons/menu-button.svg" alt="">
+      <img class="drawer-close-button align-self-middle m2" src="../img/icons/close-button.svg" alt="">
+    </div>
+    <div data-closedrawer></div>
+    <div class="leftDrawer" data-toggle="{{this.sectionIndex}}">
+      <div class="grid-y grid-padding-x grid-padding-y">
+        <section class="cell auto">
+          <div class="drawer-content">
+            {{#block "drawer-content"}}
+            {{/block}}
+          </div>
+        </section>
+      </div>
+    </div>
+  {{/if}}
+</section>
