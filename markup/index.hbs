@@ -22,6 +22,15 @@ stylesheets:
 title: FHI 360's 2018 Annual Report
 uri: /
 sectionData:
+  - name: Intro
+    image: RS11066_FHI - Challenge TB [Zambezia] 025-lpr.jpg
+    caption: imageCaption caption
+  - name: HL1
+    image: High level 1_TOC.png
+    caption: imageCaption caption
+  - name: Ceo Letter
+    image: DSC_0533_bw_web.jpg
+    caption: imageCaption caption
   - name: TB (Zambia)
     title: State-of-the-art TB control
     subtitle: | 
@@ -41,7 +50,7 @@ sectionData:
                 <h3>Kenza Elbouazzaoui</h3>
                 <h3>Morocco</h3>
     photoCredit: Amira Azzouzi/FHI 360
-    image: 
+    image: Career Center_-36_web.jpg
     caption: imageCaption caption
     toc:
         desktop: "You’re hired: 21st-century career centers"
@@ -72,6 +81,9 @@ sectionData:
         mobile: An integrated response addresses urgent needs
         href: #one
         chapter: 4
+  - name: HL2
+    image: High level 2.png
+    caption: imageCaption caption
   - name: SHIFT (Vietnam)
     title: Leading the way in financing the HIV response
     subtitle: <h3>Vietnam</h3>
@@ -109,18 +121,21 @@ sectionData:
     title: Literacy improved through local language learning
     subtitle: <h3>Nigeria</h3>
     photoCredit: Kunle Lawal/FHI 360
-    image: 
+    image: RANA 96_web.jpg
     caption: imageCaption caption
     toc:
         desktop: Literacy improved through local language learning
         mobile: Literacy improved through local language learning
         href: #one
         chapter: 8
+  - name: HL3
+    image: High level 3.png
+    caption: imageCaption caption
   - name: Ventures
     title: FHI Ventures is launched to scale impact
     subtitle: 
     photoCredit: TBD
-    image: 
+    image: Ventures_gettyimages-554489637-170667a.jpg
     caption: imageCaption caption
     toc:
         desktop: FHI Ventures is launched to scale impact
@@ -160,6 +175,9 @@ sectionData:
         mobile: Data drives impact
         href: #one
         chapter: 12
+  - name: HL4
+    image: High level 4_video.png
+    caption: imageCaption caption
   - name: Learn More
 
 ---
@@ -175,6 +193,13 @@ sectionData:
     </nav>
     <div id="fullpage">
       {{#each sectionData}}
+
+        {{#eq  this.name "Intro" }}
+          {{> sections/intro sectionIndex=@index }}
+        {{/eq}}        
+        {{#eq  this.name "HL1" }}
+          {{> sections/hl1 sectionIndex=@index }}
+        {{/eq}}
         {{#eq  this.name "Ceo Letter" }}
           {{> sections/ceo-letter sectionIndex=@index }}
         {{/eq}}
@@ -185,10 +210,13 @@ sectionData:
           {{> sections/career-centers sectionIndex=@index }}
         {{/eq}}
         {{#eq  this.name "Compass Rose (USA)" }}
-          {{> sections/yemen sectionIndex=@index }}
+          {{> sections/compass-rose sectionIndex=@index }} 
         {{/eq}}
         {{#eq  this.name "Yemen" }}
-          {{> sections/compass-rose sectionIndex=@index }}
+          {{> sections/yemen sectionIndex=@index }}
+        {{/eq}}
+        {{#eq  this.name "HL2" }}
+          {{> sections/hl2 sectionIndex=@index }}
         {{/eq}}
         {{#eq  this.name "SHIFT (Vietnam)" }}
           {{> sections/shift sectionIndex=@index }}
@@ -197,22 +225,28 @@ sectionData:
           {{> sections/dreams sectionIndex=@index }}
         {{/eq}}
         {{#eq  this.name "NTD’s (Laos)" }}
-          {{> sections/ventures sectionIndex=@index }}
-        {{/eq}}
-        {{#eq  this.name "RANA (Nigeria)" }}
-          {{> sections/cti sectionIndex=@index }}
-        {{/eq}}
-        {{#eq  this.name "Ventures" }}
-          {{> sections/rana sectionIndex=@index }}
-        {{/eq}}
-        {{#eq  this.name "CTI" }}
-          {{> sections/dig-solution sectionIndex=@index }}
-        {{/eq}}
-        {{#eq  this.name "AMD (Ethiopia & Mozambique)" }}
           {{> sections/ntds sectionIndex=@index }}
         {{/eq}}
-        {{#eq  this.name "Data Drives impact (Tanzania & Zanzibar)" }}
+        {{#eq  this.name "RANA (Nigeria)" }}
+          {{> sections/rana sectionIndex=@index }}
+        {{/eq}}
+        {{#eq  this.name "HL3" }}
+          {{> sections/hl3 sectionIndex=@index }}
+        {{/eq}}
+        {{#eq  this.name "Ventures" }}
+          {{> sections/ventures sectionIndex=@index }}
+        {{/eq}}
+        {{#eq  this.name "CTI" }}
+          {{> sections/cti sectionIndex=@index }}
+        {{/eq}}
+        {{#eq  this.name "AMD (Ethiopia & Mozambique)" }}
           {{> sections/digital-amdd sectionIndex=@index }}
+        {{/eq}}
+        {{#eq  this.name "Data Drives impact (Tanzania & Zanzibar)" }}
+          {{> sections/dig-solution sectionIndex=@index }}
+        {{/eq}}
+        {{#eq  this.name "HL4" }}
+          {{> sections/hl4 sectionIndex=@index }}
         {{/eq}}
         {{#eq  this.name "Learn More" }}
           {{> sections/learn-more sectionIndex=@index }}
