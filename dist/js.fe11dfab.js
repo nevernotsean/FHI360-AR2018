@@ -507,26 +507,8 @@ function () {
   function Site(props) {
     _classCallCheck(this, Site);
 
-    this.config = _fullpageConfig.default; // this.config.anchors = [
-    // 	'intro',
-    // 	'ceo',
-    // 	'1',
-    // 	'2',
-    // 	'3',
-    // 	'4',
-    // 	'5',
-    // 	'6',
-    // 	'7',
-    // 	'8',
-    // 	'9',
-    // 	'10',
-    // 	'11',
-    // 	'12',
-    // 	'13',
-    // 	'14',
-    // 	'learn-more'
-    // ]
-
+    this.config = _fullpageConfig.default;
+    this.config.anchors = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen'];
     this.config.onLeave = this.handleOnLeave.bind(this);
     this.config.afterLoad = this.handleAfterLoad.bind(this);
     this.config.afterRender = this.handleAfterRender.bind(this);
@@ -581,7 +563,7 @@ function () {
       var tocIndex = $("[data-section='".concat(index, "']")).data('toc');
 
       if (!tocIndex) {
-        $('.toc-toggle-inner').html('Start');
+        $('.toc-toggle-inner').html('Stories');
       } else {
         $('.toc-toggle-inner').html(tocIndex + ' / 10');
       } // console.log(index, tocIndex)
@@ -966,4 +948,4 @@ $(document).ready(function () {
   Site.init();
 });
 },{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
-//# sourceMappingURL=js.0caa3c21.js.map
+//# sourceMappingURL=js.fe11dfab.js.map
