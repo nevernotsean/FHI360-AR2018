@@ -1,6 +1,8 @@
 import Promise from 'promise-polyfill';
 import config from './fullpage-config.js';
 import anime from 'animejs';
+import { hl1, hl2, hl3, hl4 } from './tweens';
+import { TimelineMax } from 'gsap';
 
 export default class Site {
   constructor(props) {
@@ -47,6 +49,7 @@ export default class Site {
 
     // this.runParallax(nextIndex - 2)
     // this.countUp(nextIndex - 2)
+    this.runAnimation(nextIndex - 1);
   }
   handleAfterLoad(anchorLink, index) {
     index = index - 1;
@@ -126,6 +129,34 @@ export default class Site {
           )
       });
     });
+  }
+  runAnimation(index) {
+    let el = $(`[data-section="${index}"] [data-anim]`);
+
+    if (!el.length) return 
+    
+    let animName = el.data('anim');
+    let tl;
+
+    switch (animName) {
+      case 'hl1':
+        tl = hl1();
+        break;
+      case 'hl2':
+        tl = hl2();
+        break;
+      case 'hl3':
+        tl = hl3();
+        break;
+      case 'hl4':
+        tl = hl4();
+        break;
+
+      default:
+        break;
+    }
+
+    tl.play();
   }
   handleAfterRender() {
     // console.log('handleAfterRender')

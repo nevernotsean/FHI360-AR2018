@@ -1,14 +1,21 @@
-<section class="section" data-section="{{this.sectionIndex}}">
-  {{#if image }}
-    <div class="bg objectfit-img">
-      <img src="../img/slides/{{image}}" alt="{{caption}}">
+<section class="section" data-section="{{this.sectionIndex}}" data-anim="{{this.animName}}">
+
+  <div class="bg objectfit-img">
+    <div class="svg-animation">
+      {{#block "svg"}}{{/block}}
+
     </div>
-    <div class="bg-screen {{this.overlay}}"></div>
-  {{/if}}
+    {{#if image }}
+      <img src="../img/slides/{{image}}" alt="{{caption}}">
+    {{/if}}
+  </div>
+
+  <div class="bg-screen {{this.overlay}}"></div>
+
   <div class="grid-x inner-frame middle-center">
     <div class="small-12 medium-11 large-11 cell grid-y align-center">
       <div class="cell shrink slide-title stagger-in">
-         {{#block "content"}}{{/block}}
+        {{#block "content"}}{{/block}}
       </div>
     </div>
   </div>
