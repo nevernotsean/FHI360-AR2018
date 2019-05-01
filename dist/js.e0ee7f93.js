@@ -117,79 +117,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"lVYZ":[function(require,module,exports) {
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../scss/index.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/promise-polyfill/lib/index.js":[function(require,module,exports) {
+},{}],"drat":[function(require,module,exports) {
 'use strict';
 
 // Store setTimeout reference so promise-polyfill will be unaffected by
@@ -433,7 +363,7 @@ Promise._unhandledRejectionFn = function _unhandledRejectionFn(err) {
 
 module.exports = Promise;
 
-},{}],"../js/site/fullpage-config.js":[function(require,module,exports) {
+},{}],"R36R":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -513,7 +443,7 @@ var config = {
 };
 var _default = config;
 exports.default = _default;
-},{}],"../node_modules/animejs/anime.min.js":[function(require,module,exports) {
+},{}],"NQR3":[function(require,module,exports) {
 var global = arguments[3];
 var define;
 /*
@@ -549,7 +479,7 @@ n)k=l;else{var l=h,h=h+.1,g=0;do m=l+(h-l)/2,n=a(m,c,b)-k,0<n?h=m:l=m;while(1e-7
 d:A.apply($jscomp$this,d)}}(f)),f={type:f.type};return b}(),ha={css:function(a,c,d){return a.style[c]=d},attribute:function(a,c,d){return a.setAttribute(c,d)},object:function(a,c,d){return a[c]=d},transform:function(a,c,d,b,f){b[f]||(b[f]=[]);b[f].push(c+"("+d+")")}},v=[],B=0,ia=function(){function a(){B=requestAnimationFrame(c)}function c(c){var b=v.length;if(b){for(var d=0;d<b;)v[d]&&v[d].tick(c),d++;a()}else cancelAnimationFrame(B),B=0}return a}();q.version="2.2.0";q.speed=1;q.running=v;q.remove=
 function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.length;f--;)u(a,b[f].animatable.target)&&(b.splice(f,1),b.length||d.pause())};q.getValue=K;q.path=function(a,c){var d=h.str(a)?e(a)[0]:a,b=c||100;return function(a){return{el:d,property:a,totalLength:N(d)*(b/100)}}};q.setDashoffset=function(a){var c=N(a);a.setAttribute("stroke-dasharray",c);return c};q.bezier=A;q.easings=Q;q.timeline=function(a){var c=q(a);c.pause();c.duration=0;c.add=function(d){c.children.forEach(function(a){a.began=
 !0;a.completed=!0});m(d).forEach(function(b){var d=z(b,D(S,a||{}));d.targets=d.targets||a.targets;b=c.duration;var e=d.offset;d.autoplay=!1;d.direction=c.direction;d.offset=h.und(e)?b:L(e,b);c.began=!0;c.completed=!0;c.seek(d.offset);d=q(d);d.began=!0;d.completed=!0;d.duration>b&&(c.duration=d.duration);c.children.push(d)});c.seek(0);c.reset();c.autoplay&&c.restart();return c};return c};q.random=function(a,c){return Math.floor(Math.random()*(c-a+1))+a};return q});
-},{}],"../node_modules/gsap/TweenLite.js":[function(require,module,exports) {
+},{}],"PWbO":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -3109,7 +3039,7 @@ var TweenPlugin = globals.TweenPlugin;
 exports.TweenPlugin = TweenPlugin;
 var EventDispatcher = nonGlobals.events.EventDispatcher;
 exports.EventDispatcher = EventDispatcher;
-},{}],"../node_modules/gsap/TimelineLite.js":[function(require,module,exports) {
+},{}],"z6Yt":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4169,7 +4099,7 @@ _TweenLite._gsScope._gsDefine("TimelineLite", ["core.Animation", "core.SimpleTim
 
 var TimelineLite = _TweenLite.globals.TimelineLite;
 exports.default = exports.TimelineLite = TimelineLite;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/TimelineMax.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"gnPE":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4830,7 +4760,7 @@ _TweenLite._gsScope._gsDefine("TimelineMax", ["TimelineLite", "TweenLite", "easi
 
 var TimelineMax = _TweenLite.globals.TimelineMax;
 exports.default = exports.TimelineMax = TimelineMax;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js"}],"../node_modules/gsap/TweenMaxBase.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO","./TimelineLite.js":"z6Yt"}],"YJl2":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5724,7 +5654,7 @@ var TweenMax = _TweenLite.globals.TweenMax;
 exports.default = exports.TweenMax = TweenMax;
 var TweenMaxBase = TweenMax;
 exports.TweenMaxBase = TweenMaxBase;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/CSSPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"bp4Z":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9501,7 +9431,7 @@ _TweenLite._gsScope._gsDefine("plugins.CSSPlugin", ["plugins.TweenPlugin", "Twee
 
 var CSSPlugin = _TweenLite.globals.CSSPlugin;
 exports.default = exports.CSSPlugin = CSSPlugin;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/AttrPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"8tGb":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9553,7 +9483,7 @@ var AttrPlugin = _TweenLite._gsScope._gsDefine.plugin({
 });
 
 exports.default = exports.AttrPlugin = AttrPlugin;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/RoundPropsPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"wWOj":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9669,7 +9599,7 @@ p._add = function (target, p, s, c, mod) {
 
   this._overwriteProps.push(p);
 };
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/DirectionalRotationPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"ohcH":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9769,7 +9699,7 @@ var DirectionalRotationPlugin = _TweenLite._gsScope._gsDefine.plugin({
 
 exports.default = exports.DirectionalRotationPlugin = DirectionalRotationPlugin;
 DirectionalRotationPlugin._autoCSS = true;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/BezierPlugin.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"uJjk":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10569,7 +10499,7 @@ p._kill = function (lookup) {
 
   return this._super._kill.call(this, lookup);
 };
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/EasePack.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"bxmL":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11015,7 +10945,7 @@ var Sine = _TweenLite.globals.Sine;
 exports.Sine = Sine;
 var ExpoScaleEase = _TweenLite.globals.ExpoScaleEase;
 exports.ExpoScaleEase = ExpoScaleEase;
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js"}],"../node_modules/gsap/TweenMax.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO"}],"Kcu3":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11220,7 +11150,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var TweenMax = _TweenMaxBase.default;
 exports.default = exports.TweenMax = TweenMax;
 TweenMax._autoActivated = [_TimelineLite.default, _TimelineMax.default, _CSSPlugin.default, _AttrPlugin.default, _BezierPlugin.default, _RoundPropsPlugin.default, _DirectionalRotationPlugin.default, _EasePack.Back, _EasePack.Elastic, _EasePack.Bounce, _EasePack.RoughEase, _EasePack.SlowMo, _EasePack.SteppedEase, _EasePack.Circ, _EasePack.Expo, _EasePack.Sine, _EasePack.ExpoScaleEase];
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TweenMaxBase.js":"../node_modules/gsap/TweenMaxBase.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../node_modules/gsap/DirectionalRotationPlugin.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../node_modules/gsap/TimelineMax.js","./BezierPlugin.js":"../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../node_modules/gsap/EasePack.js"}],"../node_modules/gsap/index.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO","./TweenMaxBase.js":"YJl2","./CSSPlugin.js":"bp4Z","./AttrPlugin.js":"8tGb","./RoundPropsPlugin.js":"wWOj","./DirectionalRotationPlugin.js":"ohcH","./TimelineLite.js":"z6Yt","./TimelineMax.js":"gnPE","./BezierPlugin.js":"uJjk","./EasePack.js":"bxmL"}],"TpQl":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11424,7 +11354,7 @@ var _EasePack = require("./EasePack.js");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-},{"./TweenLite.js":"../node_modules/gsap/TweenLite.js","./TimelineLite.js":"../node_modules/gsap/TimelineLite.js","./TimelineMax.js":"../node_modules/gsap/TimelineMax.js","./TweenMax.js":"../node_modules/gsap/TweenMax.js","./CSSPlugin.js":"../node_modules/gsap/CSSPlugin.js","./AttrPlugin.js":"../node_modules/gsap/AttrPlugin.js","./RoundPropsPlugin.js":"../node_modules/gsap/RoundPropsPlugin.js","./DirectionalRotationPlugin.js":"../node_modules/gsap/DirectionalRotationPlugin.js","./BezierPlugin.js":"../node_modules/gsap/BezierPlugin.js","./EasePack.js":"../node_modules/gsap/EasePack.js"}],"../js/site/tweens.js":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO","./TimelineLite.js":"z6Yt","./TimelineMax.js":"gnPE","./TweenMax.js":"Kcu3","./CSSPlugin.js":"bp4Z","./AttrPlugin.js":"8tGb","./RoundPropsPlugin.js":"wWOj","./DirectionalRotationPlugin.js":"ohcH","./BezierPlugin.js":"uJjk","./EasePack.js":"bxmL"}],"h3RI":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11555,7 +11485,7 @@ var hl4 = function hl4() {
 };
 
 exports.hl4 = hl4;
-},{"gsap":"../node_modules/gsap/index.js"}],"../js/site/main.js":[function(require,module,exports) {
+},{"gsap":"TpQl"}],"z2l2":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12043,7 +11973,7 @@ function () {
 }();
 
 exports.default = Site;
-},{"promise-polyfill":"../node_modules/promise-polyfill/lib/index.js","./fullpage-config.js":"../js/site/fullpage-config.js","animejs":"../node_modules/animejs/anime.min.js","./tweens":"../js/site/tweens.js"}],"../js/index.js":[function(require,module,exports) {
+},{"promise-polyfill":"drat","./fullpage-config.js":"R36R","animejs":"NQR3","./tweens":"h3RI"}],"Y5Mt":[function(require,module,exports) {
 "use strict";
 
 require("../scss/index.scss");
@@ -12058,208 +11988,5 @@ var Site = new _main.default();
 $(document).ready(function () {
   Site.init();
 });
-},{"../scss/index.scss":"../scss/index.scss","./site/main.js":"../js/site/main.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
-var global = arguments[3];
-var OVERLAY_ID = '__parcel__error__overlay__';
-var OldModule = module.bundle.Module;
-
-function Module(moduleName) {
-  OldModule.call(this, moduleName);
-  this.hot = {
-    data: module.bundle.hotData,
-    _acceptCallbacks: [],
-    _disposeCallbacks: [],
-    accept: function (fn) {
-      this._acceptCallbacks.push(fn || function () {});
-    },
-    dispose: function (fn) {
-      this._disposeCallbacks.push(fn);
-    }
-  };
-  module.bundle.hotData = null;
-}
-
-module.bundle.Module = Module;
-var checkedAssets, assetsToAccept;
-var parent = module.bundle.parent;
-
-if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-  var hostname = "" || location.hostname;
-  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63038" + '/');
-
-  ws.onmessage = function (event) {
-    checkedAssets = {};
-    assetsToAccept = [];
-    var data = JSON.parse(event.data);
-
-    if (data.type === 'update') {
-      var handled = false;
-      data.assets.forEach(function (asset) {
-        if (!asset.isNew) {
-          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
-          if (didAccept) {
-            handled = true;
-          }
-        }
-      }); // Enable HMR for CSS by default.
-
-      handled = handled || data.assets.every(function (asset) {
-        return asset.type === 'css' && asset.generated.js;
-      });
-
-      if (handled) {
-        console.clear();
-        data.assets.forEach(function (asset) {
-          hmrApply(global.parcelRequire, asset);
-        });
-        assetsToAccept.forEach(function (v) {
-          hmrAcceptRun(v[0], v[1]);
-        });
-      } else {
-        window.location.reload();
-      }
-    }
-
-    if (data.type === 'reload') {
-      ws.close();
-
-      ws.onclose = function () {
-        location.reload();
-      };
-    }
-
-    if (data.type === 'error-resolved') {
-      console.log('[parcel] ✨ Error resolved');
-      removeErrorOverlay();
-    }
-
-    if (data.type === 'error') {
-      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
-      removeErrorOverlay();
-      var overlay = createErrorOverlay(data);
-      document.body.appendChild(overlay);
-    }
-  };
-}
-
-function removeErrorOverlay() {
-  var overlay = document.getElementById(OVERLAY_ID);
-
-  if (overlay) {
-    overlay.remove();
-  }
-}
-
-function createErrorOverlay(data) {
-  var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID; // html encode message and stack trace
-
-  var message = document.createElement('div');
-  var stackTrace = document.createElement('pre');
-  message.innerText = data.error.message;
-  stackTrace.innerText = data.error.stack;
-  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
-  return overlay;
-}
-
-function getParents(bundle, id) {
-  var modules = bundle.modules;
-
-  if (!modules) {
-    return [];
-  }
-
-  var parents = [];
-  var k, d, dep;
-
-  for (k in modules) {
-    for (d in modules[k][1]) {
-      dep = modules[k][1][d];
-
-      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
-        parents.push(k);
-      }
-    }
-  }
-
-  if (bundle.parent) {
-    parents = parents.concat(getParents(bundle.parent, id));
-  }
-
-  return parents;
-}
-
-function hmrApply(bundle, asset) {
-  var modules = bundle.modules;
-
-  if (!modules) {
-    return;
-  }
-
-  if (modules[asset.id] || !bundle.parent) {
-    var fn = new Function('require', 'module', 'exports', asset.generated.js);
-    asset.isNew = !modules[asset.id];
-    modules[asset.id] = [fn, asset.deps];
-  } else if (bundle.parent) {
-    hmrApply(bundle.parent, asset);
-  }
-}
-
-function hmrAcceptCheck(bundle, id) {
-  var modules = bundle.modules;
-
-  if (!modules) {
-    return;
-  }
-
-  if (!modules[id] && bundle.parent) {
-    return hmrAcceptCheck(bundle.parent, id);
-  }
-
-  if (checkedAssets[id]) {
-    return;
-  }
-
-  checkedAssets[id] = true;
-  var cached = bundle.cache[id];
-  assetsToAccept.push([bundle, id]);
-
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    return true;
-  }
-
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAcceptCheck(global.parcelRequire, id);
-  });
-}
-
-function hmrAcceptRun(bundle, id) {
-  var cached = bundle.cache[id];
-  bundle.hotData = {};
-
-  if (cached) {
-    cached.hot.data = bundle.hotData;
-  }
-
-  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
-    cached.hot._disposeCallbacks.forEach(function (cb) {
-      cb(bundle.hotData);
-    });
-  }
-
-  delete bundle.cache[id];
-  bundle(id);
-  cached = bundle.cache[id];
-
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    cached.hot._acceptCallbacks.forEach(function (cb) {
-      cb();
-    });
-
-    return true;
-  }
-}
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../js/index.js"], null)
-//# sourceMappingURL=/js.fcffc47e.js.map
+},{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
+//# sourceMappingURL=js.e0ee7f93.js.map

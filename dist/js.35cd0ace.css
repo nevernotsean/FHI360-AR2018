@@ -877,6 +877,8 @@ nav#up-down {
 
 .photo-credit-trigger {
   cursor: pointer; }
+  .photo-credit-trigger span {
+    font-size: 16px; }
   .photo-credit-trigger img {
     width: 10px;
     height: 6px; }
@@ -896,7 +898,7 @@ nav#up-down {
   display: none; }
   .photo-credits h6 {
     margin-bottom: 0;
-    font-size: 20px; }
+    font-size: 16px; }
   .photo-credits span {
     margin-right: 4px; }
   .credit-open .photo-credits {
@@ -973,7 +975,7 @@ nav#up-down {
     [data-section='17'] .inner-frame .large-11 {
       max-width: 600px; }
       [data-section='17'] .inner-frame .large-11 h2 {
-        font-size: 2.5vw; } }
+        font-size: 30px; } }
 
 .toc-title span.mobile {
   font-size: 16px;
@@ -1118,4 +1120,4 @@ nav#up-down {
     stroke-dasharray: 0 0.25em; } }
 
 
-/*# sourceMappingURL=/scss.3038589d.css.map */
+/*# sourceMappingURL=js.35cd0ace.css.map */
