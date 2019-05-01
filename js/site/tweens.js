@@ -75,10 +75,17 @@ export const hl3 = () => {
 };
 export const hl4 = () => {
   var fadeLinesOut = TweenMax.fromTo(
-    '[data-anim="hl4"] svg rect, svg #road, [data-anim="hl4"] svg #motorcyle, [data-anim="hl4"] .inner-grandient',
+    '[data-anim="hl4"] svg rect, svg #road, [data-anim="hl4"] svg #motorcyle',
     1,
     { opacity: 1, transformOrigin: 'center' },
     { opacity: 0, immediateRender: true }
+  );
+
+  var fadeGradientOut = TweenMax.fromTo(
+    '[data-anim="hl4"] .inner-grandient',
+    1,
+    { opacity: 1, transformOrigin: 'center' },
+    { opacity: 0.5, immediateRender: true }
   );
 
   var tl = new TimelineLite({
@@ -90,6 +97,7 @@ export const hl4 = () => {
   tl.add(drawLines('[data-anim="hl4"] svg #motorcyle > *'), 0.1, 0.5);
 
   tl.add(fadeLinesOut, '+=0.5');
+  tl.add(fadeGradientOut, '-=1')
   tl.call(() => $('#video')[0].play(), null,null, '-=0.5')
   // tl.call(() => {
   //   // $('#video')[0]

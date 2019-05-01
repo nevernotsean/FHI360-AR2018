@@ -2,10 +2,17 @@
   background-image: linear-gradient(45deg, #007787 0%, #006b88 66%, #006289 100%);
 }
 
-.svg-animation, .video-container {
+.svg-animation,
+.video-container {
   position: relative;
   width: 100vw;
   height: 100vh;
+
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 
   svg {
     position: absolute;
@@ -90,15 +97,17 @@
   }
 }
 
-[data-section='0'], [data-section='2'] {
+[data-section='2'] {
   .svg-animation {
     display: none;
   }
 }
 
 [data-section='0'] {
-  .svg-animation {
-    display: none;
+  // .svg-animation {
+  //   display: none;
+  // }
+  .video-container {
   }
   .inner-frame {
     padding: 0;
@@ -124,6 +133,16 @@
   .ceo-h3 {
     font-size: 20px;
     font-weight: 500;
+  }
+}
+
+[data-section='12'],
+[data-section='7'] {
+  svg {
+    max-width: 800px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
   }
 }
 
