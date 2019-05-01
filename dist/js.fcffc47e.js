@@ -11430,7 +11430,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.hl4 = exports.hl3 = exports.hl2 = exports.hl1 = void 0;
 
 var _gsap = require("gsap");
 
@@ -11466,81 +11466,95 @@ function fadeIn(selector) {
   }, stagger);
 }
 
-var _default = {
-  hl1: function hl1() {
-    var circlesIn = _gsap.TweenMax.staggerFromTo('svg #circles > *', 0.1, {
-      scale: 0,
-      transformOrigin: 'center',
-      easing: 'Power4.easeInOut'
-    }, {
-      scale: 1
-    }, 0.005);
+var hl1 = function hl1() {
+  var circlesIn = _gsap.TweenMax.staggerFromTo('[data-anim="hl1"] svg #circles > *', 0.1, {
+    scale: 0,
+    transformOrigin: 'center'
+  }, {
+    scale: 1
+  }, 0.005);
 
-    var lineIn = _gsap.TweenMax.fromTo('svg #curve', 0.5, {
-      drawSVG: '0%'
-    }, {
-      drawSVG: '100%',
-      immediateRender: true
-    });
+  var lineIn = _gsap.TweenMax.fromTo('[data-anim="hl1"]  svg #curve', 0.5, {
+    drawSVG: '0%'
+  }, {
+    drawSVG: '100%',
+    immediateRender: true
+  });
 
-    var tl = new TimelineLite({
-      delay: 1,
-      paused: true
-    });
-    tl.add(lineIn);
-    tl.add(circlesIn);
-    return tl;
-  },
-  hl2: function hl2() {
-    var tl = new TimelineLite({
-      delay: 1,
-      paused: true
-    });
-    tl.add(staggerDraw('svg .tree'));
-    tl.add(staggerDraw('svg .building'), 0.2);
-    tl.add(staggerDraw('svg .window'), 0.05);
-    tl.add(drawLines('svg .bell'));
-    tl.add(drawLines('svg .tower, svg .tower-2, svg .tower-3'));
-    return tl;
-  },
-  hl3: function hl3() {
-    var drawIcons = _gsap.TweenMax.staggerFromTo('svg #icon1, svg #icon3, svg #icon2', 0.25, {
-      scale: 0,
-      transformOrigin: 'center'
-    }, {
-      scale: 1,
-      immediateRender: true
-    }, 0.1);
-
-    var tl = new TimelineLite({
-      delay: 1,
-      paused: true
-    });
-    tl.add(fadeIn('svg #fadein'));
-    tl.add(staggerDraw('svg #circle1, svg #circle3, svg #circle2'));
-    tl.add(drawIcons);
-    return tl;
-  },
-  hl4: function hl4() {
-    var fadeLinesOut = _gsap.TweenMax.fromTo('svg rect, svg #road, svg #motorcyle', 1, {
-      opacity: 1,
-      transformOrigin: 'center'
-    }, {
-      opacity: 0,
-      immediateRender: true
-    });
-
-    var tl = new TimelineLite({
-      delay: 1,
-      paused: true
-    });
-    tl.add(staggerDraw('svg #road > *'), 0.1, 0.5);
-    tl.add(drawLines('svg #motorcyle > *'), 0.1, 0.5);
-    tl.add(fadeLinesOut, '+=0.5');
-    return tl;
-  }
+  var tl = new TimelineLite({
+    delay: 1,
+    paused: true,
+    easing: Power4.easeInOut
+  });
+  tl.add(lineIn);
+  tl.add(circlesIn);
+  return tl;
 };
-exports.default = _default;
+
+exports.hl1 = hl1;
+
+var hl2 = function hl2() {
+  var tl = new TimelineLite({
+    delay: 1,
+    paused: true
+  });
+  tl.add(staggerDraw('[data-anim="hl2"] svg .tree'));
+  tl.add(staggerDraw('[data-anim="hl2"] svg .building'), 0.2);
+  tl.add(staggerDraw('[data-anim="hl2"] svg .window'), 0.05);
+  tl.add(drawLines('[data-anim="hl2"] svg .bell'));
+  tl.add(drawLines('[data-anim="hl2"] svg .tower, svg .tower-2, svg .tower-3'));
+  return tl;
+};
+
+exports.hl2 = hl2;
+
+var hl3 = function hl3() {
+  var drawIcons = _gsap.TweenMax.staggerFromTo('[data-anim="hl3"] svg #icon1, [data-anim="hl3"] svg #icon3, [data-anim="hl3"] svg #icon2', 0.25, {
+    scale: 0,
+    transformOrigin: 'center'
+  }, {
+    scale: 1,
+    immediateRender: true
+  }, 0.1);
+
+  var tl = new TimelineLite({
+    delay: 1,
+    paused: true
+  });
+  tl.add(fadeIn('[data-anim="hl3"] svg #fadein'));
+  tl.add(staggerDraw('[data-anim="hl3"] svg #circle1, [data-anim="hl3"] svg #circle3, [data-anim="hl3"] svg #circle2'));
+  tl.add(drawIcons);
+  return tl;
+};
+
+exports.hl3 = hl3;
+
+var hl4 = function hl4() {
+  var fadeLinesOut = _gsap.TweenMax.fromTo('[data-anim="hl4"] svg rect, svg #road, [data-anim="hl4"] svg #motorcyle, [data-anim="hl4"] .inner-grandient', 1, {
+    opacity: 1,
+    transformOrigin: 'center'
+  }, {
+    opacity: 0,
+    immediateRender: true
+  });
+
+  var tl = new TimelineLite({
+    delay: 1,
+    paused: true
+  });
+  tl.add(staggerDraw('[data-anim="hl4"] svg #road > *'), 0.1, 0.5);
+  tl.add(drawLines('[data-anim="hl4"] svg #motorcyle > *'), 0.1, 0.5);
+  tl.add(fadeLinesOut, '+=0.5');
+  tl.call(function () {
+    return $('#video')[0].play();
+  }, null, null, '-=0.5'); // tl.call(() => {
+  //   // $('#video')[0]
+  // })
+
+  return tl;
+};
+
+exports.hl4 = hl4;
 },{"gsap":"../node_modules/gsap/index.js"}],"../js/site/main.js":[function(require,module,exports) {
 "use strict";
 
@@ -11557,8 +11571,6 @@ var _animejs = _interopRequireDefault(require("animejs"));
 
 var _tweens = require("./tweens");
 
-var _gsap = require("gsap");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11574,7 +11586,7 @@ function () {
     _classCallCheck(this, Site);
 
     this.config = _fullpageConfig.default;
-    this.config.anchors = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen'];
+    this.config.anchors = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'learnmore'];
     this.config.onLeave = this.handleOnLeave.bind(this);
     this.config.afterLoad = this.handleAfterLoad.bind(this);
     this.config.afterRender = this.handleAfterRender.bind(this);
@@ -11686,9 +11698,9 @@ function () {
   }, {
     key: "runAnimation",
     value: function runAnimation(index) {
-      var el = $("[data-section=\"".concat(index, "\"] [data-anim]"));
-      if (!el.length) return;
+      var el = $("[data-section=\"".concat(index, "\"]"));
       var animName = el.data('anim');
+      if (!animName) return;
       var tl;
 
       switch (animName) {
@@ -12031,7 +12043,7 @@ function () {
 }();
 
 exports.default = Site;
-},{"promise-polyfill":"../node_modules/promise-polyfill/lib/index.js","./fullpage-config.js":"../js/site/fullpage-config.js","animejs":"../node_modules/animejs/anime.min.js","./tweens":"../js/site/tweens.js","gsap":"../node_modules/gsap/index.js"}],"../js/index.js":[function(require,module,exports) {
+},{"promise-polyfill":"../node_modules/promise-polyfill/lib/index.js","./fullpage-config.js":"../js/site/fullpage-config.js","animejs":"../node_modules/animejs/anime.min.js","./tweens":"../js/site/tweens.js"}],"../js/index.js":[function(require,module,exports) {
 "use strict";
 
 require("../scss/index.scss");
@@ -12074,7 +12086,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58274" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63038" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

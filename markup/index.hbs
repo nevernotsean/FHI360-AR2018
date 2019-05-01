@@ -6,7 +6,7 @@ meta:
   url: REPLACE ME WITH PRODUCTION URL
   title: FHI 360's 2018 Annual Report
   description: description
-  keywords: FHI 360 Annual Report 2018
+  keywords: FHI 360 Annual Report 2018 
   robots: index, follow
 scripts:
   - https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
@@ -14,6 +14,7 @@ scripts:
   - https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js
   - ../js/vendor/modernizr-3.6.0.js
   - ../js/index.js
+  - ../js/vendor/DrawSVGPlugin.js
 stylesheets:
   - https://fonts.googleapis.com/css?family=Montserrat:400,500,700
   - https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css
@@ -26,8 +27,6 @@ sectionData:
     image: RS11066_FHI - Challenge TB [Zambezia] 025-lpr.jpg
     caption: imageCaption caption
   - name: HL1
-    image: High level 1_TOC.png
-    caption: imageCaption caption
   - name: Ceo Letter
     image: DSC_0533_bw_web.jpg
     caption: imageCaption caption
@@ -60,7 +59,7 @@ sectionData:
   - name: Compass Rose (USA)
     title: Youth get a second chance
     subtitle: |
-                <h3>Christopher C.</h3>
+                <h3>Christopher Collins</h3>
                 <h3>United States</h3> 
     photoCredit: Leanne Gray/FHI 360
     image: Compass Rose_web.jpg
@@ -84,8 +83,6 @@ sectionData:
         chapter: 4
 
   - name: HL2
-    image: High level 2.png
-    caption: imageCaption caption
 
   - name: Career Centers (Morocco)
     title: "You’re hired: 21st-century career centers"
@@ -140,8 +137,6 @@ sectionData:
         chapter: 8
 
   - name: HL3
-    image: High level 3.png
-    caption: imageCaption caption
 
   - name: Ventures
     title: FHI Ventures is launched to scale impact
@@ -192,8 +187,6 @@ sectionData:
         chapter: 12
 
   - name: HL4
-    image: High level 4_video.png
-    caption: imageCaption caption
     
   - name: Learn More
 
@@ -214,7 +207,7 @@ sectionData:
           {{> sections/intro sectionIndex=@index }}
         {{/eq}}        
         {{#eq  this.name "HL1" }}
-          {{> sections/hl1 sectionIndex=@index  animName=hl1 }}
+          {{> sections/hl1 sectionIndex=@index  animName="hl1" }}
         {{/eq}}
         {{#eq  this.name "Ceo Letter" }}
           {{> sections/ceo-letter sectionIndex=@index }}
@@ -232,7 +225,7 @@ sectionData:
           {{> sections/yemen sectionIndex=@index }}
         {{/eq}}
         {{#eq  this.name "HL2" }}
-          {{> sections/hl2 sectionIndex=@index  animName=hl2 }}
+          {{> sections/hl2 sectionIndex=@index animName="hl2" }}
         {{/eq}}
         {{#eq  this.name "SHIFT (Vietnam)" }}
           {{> sections/shift sectionIndex=@index }}
@@ -246,8 +239,8 @@ sectionData:
         {{#eq  this.name "RANA (Nigeria)" }}
           {{> sections/rana sectionIndex=@index }}
         {{/eq}}
-        {{#eq  this.name "HL3"  animName=hl3 }}
-          {{> sections/hl3 sectionIndex=@index }}
+        {{#eq  this.name "HL3" }}
+          {{> sections/hl3 sectionIndex=@index animName="hl3" }}
         {{/eq}}
         {{#eq  this.name "Ventures" }}
           {{> sections/ventures sectionIndex=@index }}
@@ -261,8 +254,8 @@ sectionData:
         {{#eq  this.name "Data Drives impact (Tanzania & Zanzibar)" }}
           {{> sections/dig-solution sectionIndex=@index }}
         {{/eq}}
-        {{#eq  this.name "HL4"  animName=hl4 }}
-          {{> sections/hl4 sectionIndex=@index }}
+        {{#eq  this.name "HL4" }}
+          {{> sections/hl4 sectionIndex=@index  animName="hl4" }}
         {{/eq}}
         {{#eq  this.name "Learn More" }}
           {{> sections/learn-more sectionIndex=@index }}

@@ -2,7 +2,6 @@ import Promise from 'promise-polyfill';
 import config from './fullpage-config.js';
 import anime from 'animejs';
 import { hl1, hl2, hl3, hl4 } from './tweens';
-import { TimelineMax } from 'gsap';
 
 export default class Site {
   constructor(props) {
@@ -24,7 +23,10 @@ export default class Site {
       'thirteen',
       'fourteen',
       'fifteen',
-      'sixteen'
+      'sixteen',
+      'seventeen',
+      'eighteen',
+      'learnmore'
     ];
     this.config.onLeave = this.handleOnLeave.bind(this);
     this.config.afterLoad = this.handleAfterLoad.bind(this);
@@ -131,11 +133,12 @@ export default class Site {
     });
   }
   runAnimation(index) {
-    let el = $(`[data-section="${index}"] [data-anim]`);
-
-    if (!el.length) return 
+    let el = $(`[data-section="${index}"]`);
     
     let animName = el.data('anim');
+
+    if (!animName) return 
+
     let tl;
 
     switch (animName) {

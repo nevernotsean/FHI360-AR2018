@@ -1,16 +1,19 @@
-<section class="section" data-section="{{this.sectionIndex}}" data-anim="{{this.animName}}">
+<section class="section" data-section="{{this.sectionIndex}}" 
+    {{#if this.animName }}
+      data-anim="{{this.animName}}"
+    {{/if}}
+  >
 
-  <div class="bg objectfit-img">
+  <div class="bg objectfit-img gradient">
     <div class="svg-animation">
       {{#block "svg"}}{{/block}}
-
     </div>
     {{#if image }}
       <img src="../img/slides/{{image}}" alt="{{caption}}">
     {{/if}}
   </div>
 
-  <div class="bg-screen {{this.overlay}}"></div>
+  {{!-- <div class="bg-screen {{this.overlay}}"></div> --}}
 
   <div class="grid-x inner-frame middle-center">
     <div class="small-12 medium-11 large-11 cell grid-y align-center">

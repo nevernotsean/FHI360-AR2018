@@ -1,15 +1,18 @@
-.bg.gradient {
-    background-image: linear-gradient(45deg, #007787 0%, #006b88 66%, #006289 100%);
+.gradient {
+  background-image: linear-gradient(45deg, #007787 0%, #006b88 66%, #006289 100%);
 }
 
-.svg-animation {
-  display: flex;
-  margin-top: 85px;
+.svg-animation, .video-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 
   svg {
-    height: 100vh;
-    width: auto;
-    justify-self: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
   }
 }
 
@@ -87,7 +90,16 @@
   }
 }
 
+[data-section='0'], [data-section='2'] {
+  .svg-animation {
+    display: none;
+  }
+}
+
 [data-section='0'] {
+  .svg-animation {
+    display: none;
+  }
   .inner-frame {
     padding: 0;
     align-items: flex-end !important;
@@ -202,5 +214,70 @@
   display: none;
   .drawer-open & {
     display: block;
+  }
+}
+
+// hl4
+[data-section='17'] {
+  .gradient {
+    background: none;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+  }
+  #video {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  #video,
+  svg {
+    right: 0;
+    position: absolute;
+    width: 100%;
+  }
+  .inner-grandient {
+    background-image: linear-gradient(45deg, #007787 0%, #006b88 66%, #006289 100%);
+    z-index: 10;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
+  svg {
+    z-index: 11;
+    left: initial;
+    right: 0;
+    width: auto !important;
+    height: 111vh !important;
+    transform: translate(-1.5vw, 0vh);
+  }
+
+  .inner-frame {
+    align-items: flex-end;
+
+    // .large-11 {
+    //   // margin-bottom: 100px;
+    // }
+  }
+
+  @media screen and (min-width: 63.9375em) {
+    .inner-frame {
+      justify-content: start;
+      align-items: flex-end;
+      padding: 0 0 18vh 13vw;
+
+      .large-11 {
+        max-width: 600px;
+
+        h2 {
+          font-size: 2.5vw;
+        }
+      }
+    }
   }
 }

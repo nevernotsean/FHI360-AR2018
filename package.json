@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "rm -rf .cache",
-    "start": "parcel markup/index.hbs",
+    "start": "parcel markup/index.hbs no-cache",
     "build": "rm -rf dist/* && parcel build markup/index.hbs --no-minify --public-url ./"
   },
   "author": "",

@@ -312,12 +312,14 @@ h6 {
 
   .toc {
     height: 100%;
+    overflow: auto;
   }
   .toc-item {
     cursor: pointer;
     padding: 10px 20px;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    flex: 1 0 76px;
   }
   .toc-number {
     color: #000;
@@ -436,6 +438,8 @@ nav#up-down {
     stroke-dasharray: 1px 500px;
   }
 }
+
+
 
 .fp-viewing-one .toc-progress circle {
   stroke-dasharray: 200px 500px;

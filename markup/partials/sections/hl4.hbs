@@ -1,6 +1,10 @@
 {{#extend "elements/animated-section" drawer=false}}
     {{#content 'svg'}}
-        {{> svg/svg-hl4}}
+        <div class="video-container">
+            <video id="video" src="../mp4/hl4-mobile-720p.mp4"></video>
+            <div class="inner-grandient"></div>
+            {{> svg/svg-hl4}}
+        </div>
     {{/content}}
     {{#content "content"}}
         <h2 class="fw500">When people have the chance to improve their lives and build their communities, they will seize the opportunity and contribute to a <span class="uppercase bold">better future</span> for all of us.</h2>
