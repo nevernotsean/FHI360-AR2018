@@ -1,5 +1,16 @@
+.bg.gradient {
+    background-image: linear-gradient(45deg, #007787 0%, #006b88 66%, #006289 100%);
+}
+
 .svg-animation {
+  display: flex;
   margin-top: 85px;
+
+  svg {
+    height: 100vh;
+    width: auto;
+    justify-self: center;
+  }
 }
 
 .intro.section {
@@ -64,7 +75,6 @@
     margin-bottom: 0;
     line-height: 1.5;
     text-transform: uppercase;
-    
   }
 
   @media screen and (min-width: $medium) {
@@ -77,8 +87,15 @@
   }
 }
 
-
 [data-section='0'] {
+  .inner-frame {
+    padding: 0;
+    align-items: flex-end !important;
+  }
+  .large-11 {
+    width: 100% !important;
+    margin-bottom: 10vh;
+  }
   background-color: inherit !important;
 }
 
