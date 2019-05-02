@@ -97,17 +97,11 @@
   }
 }
 
-[data-section='2'] {
-  .svg-animation {
-    display: none;
-  }
-}
-
 [data-section='0'] {
-  // .svg-animation {
-  //   display: none;
-  // }
   .video-container {
+    video {
+      object-position: top center;
+    }
   }
   .inner-frame {
     padding: 0;
@@ -122,6 +116,9 @@
 
 // ceo
 [data-section='2'] {
+    .svg-animation {
+    display: none;
+  }
   .inner-frame .grid-y {
     max-width: 1200px;
   }
@@ -150,7 +147,7 @@
   background: white;
   color: #000;
   h2 {
-    color: $orange;
+    color: #007787;
   }
   a > img {
     width: 30px;

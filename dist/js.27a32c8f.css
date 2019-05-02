@@ -566,12 +566,11 @@ h6 {
     color: #1A1A1A;
     margin: 0.67em 0 0.25em; }
   .leftDrawer .drawer-subtitle {
-    color: #007787;
     font-weight: 700;
     text-transform: uppercase;
-    color: #EF5526; }
+    color: #007787; }
   .leftDrawer a {
-    color: #EF5526;
+    color: #007787;
     font-weight: 700; }
   .leftDrawer p {
     line-height: 1.6; }
@@ -777,16 +776,19 @@ nav#up-down {
 .gradient {
   background-image: linear-gradient(45deg, #007787 0%, #006b88 66%, #006289 100%); }
 
-.svg-animation, .video-container {
+.svg-animation,
+.video-container {
   position: relative;
   width: 100vw;
   height: 100vh; }
-  .svg-animation video, .video-container video {
+  .svg-animation video,
+  .video-container video {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
     height: 100%; }
-  .svg-animation svg, .video-container svg {
+  .svg-animation svg,
+  .video-container svg {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -842,17 +844,20 @@ nav#up-down {
     .section .slide-subtitle h3 {
       font-size: 1.35vw; } }
 
-[data-section='2'] .svg-animation {
-  display: none; }
-
 [data-section='0'] {
   background-color: inherit !important; }
+  [data-section='0'] .video-container video {
+    -o-object-position: top center;
+       object-position: top center; }
   [data-section='0'] .inner-frame {
     padding: 0;
     align-items: flex-end !important; }
   [data-section='0'] .large-11 {
     width: 100% !important;
     margin-bottom: 10vh; }
+
+[data-section='2'] .svg-animation {
+  display: none; }
 
 [data-section='2'] .inner-frame .grid-y {
   max-width: 1200px; }
@@ -865,7 +870,8 @@ nav#up-down {
   font-size: 20px;
   font-weight: 500; }
 
-[data-section="12"] svg, [data-section="7"] svg {
+[data-section='12'] svg,
+[data-section='7'] svg {
   max-width: 800px;
   margin: 0 auto;
   left: 0;
@@ -875,7 +881,7 @@ nav#up-down {
   background: white;
   color: #000; }
   .learnmore h2 {
-    color: #EF5526; }
+    color: #007787; }
   .learnmore a > img {
     width: 30px;
     height: 30px; }
@@ -1130,4 +1136,4 @@ nav#up-down {
     stroke-dasharray: 0 0.25em; } }
 
 
-/*# sourceMappingURL=js.be5e1719.css.map */
+/*# sourceMappingURL=js.27a32c8f.css.map */
