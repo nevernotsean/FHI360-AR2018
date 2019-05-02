@@ -11476,20 +11476,27 @@ var hl4 = function hl4() {
     immediateRender: true
   });
 
+  var playVideo = function playVideo() {
+    $('[data-anim="hl4"] video')[0].play();
+
+    $('[data-anim="hl4"] video')[0].onended = function () {
+      return _gsap.TweenMax.to('[data-anim="hl4"] .inner-grandient', 1, {
+        opacity: 1,
+        immediateRender: true
+      });
+    };
+  };
+
   var tl = new TimelineLite({
     delay: 1,
     paused: true
   });
+  $('[data-anim="hl4"] video')[0].currentTime = 0;
   tl.add(staggerDraw('[data-anim="hl4"] svg #road > *'), 0.1, 0.5);
   tl.add(drawLines('[data-anim="hl4"] svg #motorcyle > *'), 0.1, 0.5);
   tl.add(fadeLinesOut, '+=0.5');
   tl.add(fadeGradientOut, '-=1');
-  tl.call(function () {
-    return $('#video')[0].play();
-  }, null, null, '-=0.5'); // tl.call(() => {
-  //   // $('#video')[0]
-  // })
-
+  tl.call(playVideo, null, null, '-=0.5');
   return tl;
 };
 
@@ -11552,6 +11559,8 @@ function () {
       // this.countUp(nextIndex - 2)
 
       this.runAnimation(nextIndex - 1);
+      var video = $("[data-section=\"".concat(index - 1, "\"] .slide-video")).get(0);
+      video && video.pause();
     }
   }, {
     key: "handleAfterLoad",
@@ -11575,6 +11584,8 @@ function () {
         return _this.pulseAnim && _this.pulseAnim.pause();
       });
       this.handleTocProgress(index);
+      var video = $("[data-section=\"".concat(index, "\"] .slide-video")).get(0);
+      video && video.play();
     }
   }, {
     key: "handleTocProgress",
@@ -11998,4 +12009,4 @@ $(document).ready(function () {
   Site.init();
 });
 },{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
-//# sourceMappingURL=js.3d06ec1f.js.map
+//# sourceMappingURL=js.de60e531.js.map

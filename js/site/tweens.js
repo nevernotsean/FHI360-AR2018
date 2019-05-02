@@ -88,20 +88,24 @@ export const hl4 = () => {
     { opacity: 0.5, immediateRender: true }
   );
 
+  var playVideo = () => {
+    $('[data-anim="hl4"] video')[0].play()
+    $('[data-anim="hl4"] video')[0].onended = () => TweenMax.to('[data-anim="hl4"] .inner-grandient', 1, { opacity: 1, immediateRender: true });
+  }
+
   var tl = new TimelineLite({
     delay: 1,
     paused: true
   });
+
+  $('[data-anim="hl4"] video')[0].currentTime = 0;
 
   tl.add(staggerDraw('[data-anim="hl4"] svg #road > *'), 0.1, 0.5);
   tl.add(drawLines('[data-anim="hl4"] svg #motorcyle > *'), 0.1, 0.5);
 
   tl.add(fadeLinesOut, '+=0.5');
   tl.add(fadeGradientOut, '-=1')
-  tl.call(() => $('#video')[0].play(), null,null, '-=0.5')
-  // tl.call(() => {
-  //   // $('#video')[0]
-  // })
+  tl.call(playVideo, null,null, '-=0.5')
 
   return tl;
 };

@@ -52,6 +52,10 @@ export default class Site {
     // this.runParallax(nextIndex - 2)
     // this.countUp(nextIndex - 2)
     this.runAnimation(nextIndex - 1);
+
+    let video = $(`[data-section="${index - 1}"] .slide-video`).get(0)
+
+    video && video.pause();
   }
   handleAfterLoad(anchorLink, index) {
     index = index - 1;
@@ -78,6 +82,10 @@ export default class Site {
     );
 
     this.handleTocProgress(index);
+
+    let video = $(`[data-section="${index}"] .slide-video`).get(0)
+
+    video && video.play()
   }
   handleTocProgress(index) {
     let tocIndex = $(`[data-section='${index}']`).data('toc');
