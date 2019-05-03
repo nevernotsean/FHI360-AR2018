@@ -2,6 +2,16 @@
   background-image: linear-gradient(45deg, #007787 0%, #006b88 66%, #006289 100%);
 }
 
+#intro-chevron {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  width: 50px;
+  margin-left: -25px;
+  z-index: 999;
+  cursor: pointer;
+}
+
 .svg-animation,
 .video-container {
   position: relative;
@@ -23,16 +33,6 @@
   }
 }
 
-.intro.section {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  background: #fff;
-  color: #000;
-}
 .section {
   color: white;
   .bg {

@@ -11894,6 +11894,15 @@ function () {
       // 	$.fn.fullpage.setAllowScrolling(false)
       // 	$.fn.fullpage.setKeyboardScrolling(false)
       // }
+
+      (0, _animejs.default)({
+        targets: '#intro-chevron',
+        loop: true,
+        direction: 'alternate',
+        translateY: ['-10px', '10px'],
+        duration: 1000,
+        easing: 'easeInOutQuart'
+      });
     }
   }, {
     key: "addEventListeners",
@@ -12009,4 +12018,4 @@ $(document).ready(function () {
   Site.init();
 });
 },{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
-//# sourceMappingURL=js.de60e531.js.map
+//# sourceMappingURL=js.d20f7945.js.map

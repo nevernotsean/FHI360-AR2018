@@ -357,6 +357,14 @@ export default class Site {
     // 	$.fn.fullpage.setAllowScrolling(false)
     // 	$.fn.fullpage.setKeyboardScrolling(false)
     // }
+    anime({
+      targets: '#intro-chevron',
+      loop: true,
+      direction: 'alternate',
+      translateY: ['-10px', '10px'],
+      duration: 1000,
+      easing: 'easeInOutQuart'
+    })
   }
   addEventListeners() {
     $('.move-next').on('click', e => $.fn.fullpage.moveSectionDown());
