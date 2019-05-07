@@ -84,8 +84,10 @@ export default class Site {
     this.handleTocProgress(index);
 
     let video = $(`[data-section="${index}"] .slide-video`).get(0)
-
-    video && video.play()
+    if (video) {
+      video.currentTime = 0
+      video.play()
+    };
   }
   handleTocProgress(index) {
     let tocIndex = $(`[data-section='${index}']`).data('toc');
@@ -373,6 +375,7 @@ export default class Site {
     $('.close-rightbar').on('click', e => this.toggleTOC());
     $('.toc-item').on('click', e => this.handleTocClick(e));
     $('[data-ceoLink]').on('click', e => this.handleCeoLink());
+    $('.back-to-top').on('click', e => $.fn.fullpage.silentMoveTo(1));
 
     $('[data-closedrawer]').on('click', e => {
       let id = $(e.target)

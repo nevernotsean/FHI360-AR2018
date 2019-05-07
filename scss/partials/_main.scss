@@ -304,7 +304,7 @@ h6 {
   transform: translateX(100%);
   z-index: 10002;
 
-  width: 400px;
+  width: 450px;
 
   .toc-open & {
     box-shadow: rgb(0, 0, 0) 0px 0px 156px 20px;
@@ -415,10 +415,22 @@ nav#up-down {
 
     &[data-movedown] {
       transform: rotate(180deg);
-      bottom: 50px;
+      bottom: 100px;
       top: auto;
     }
   }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  text-align: right;
+  cursor: pointer;
+  // opacity: 0.4;
+  z-index: 1;
+  color: white;
+  font-size: 16px;
 }
 
 .toc-progress {

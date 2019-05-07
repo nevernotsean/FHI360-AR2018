@@ -11585,7 +11585,13 @@ function () {
       });
       this.handleTocProgress(index);
       var video = $("[data-section=\"".concat(index, "\"] .slide-video")).get(0);
-      video && video.play();
+
+      if (video) {
+        video.currentTime = 0;
+        video.play();
+      }
+
+      ;
     }
   }, {
     key: "handleTocProgress",
@@ -11927,6 +11933,9 @@ function () {
       $('[data-ceoLink]').on('click', function (e) {
         return _this3.handleCeoLink();
       });
+      $('.back-to-top').on('click', function (e) {
+        return $.fn.fullpage.silentMoveTo(1);
+      });
       $('[data-closedrawer]').on('click', function (e) {
         var id = $(e.target).closest('[data-section]').data('section');
         console.log(id);
@@ -12018,4 +12027,4 @@ $(document).ready(function () {
   Site.init();
 });
 },{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
-//# sourceMappingURL=js.d20f7945.js.map
+//# sourceMappingURL=js.a8dce9ed.js.map
