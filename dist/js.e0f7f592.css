@@ -1062,7 +1062,7 @@ nav#up-down {
   .leftDrawer {
     width: 90%; }
   .drawer-open .drawer-button_container {
-    left: 100%;
+    left: 90vw;
     display: inline-table; }
   #rightSideBar {
     width: 80vw; }
@@ -1148,4 +1148,4 @@ nav#up-down {
     stroke-dasharray: 0 0.25em; } }
 
 
-/*# sourceMappingURL=scss.c75c70c2.css.map */
+/*# sourceMappingURL=js.e0f7f592.css.map */
