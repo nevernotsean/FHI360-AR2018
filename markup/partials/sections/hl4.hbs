@@ -1,7 +1,9 @@
 {{#extend "elements/animated-section" drawer=false}}
     {{#content 'svg'}}
         <div class="video-container">
-            <video id="video" preload="auto" src="../mp4/hl4-mobile-720p.mp4" muted></video>
+            <video id="video" preload="auto" muted>
+                <source src="https://player.vimeo.com/external/334731206.hd.mp4?s=2b02eb660bfdb6c737b4989ef93dc92a7b59aea7&profile_id=174"  type="video/mp4">
+            </video>
             <div class="inner-grandient"></div>
             {{> svg/svg-hl4}}
         </div>
