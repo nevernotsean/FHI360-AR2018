@@ -131,7 +131,6 @@ a {
   line-height: 1;
 }
 
-
 strong,
 b {
   font-weight: 700;
@@ -220,7 +219,7 @@ h6 {
   }
 
   .drawer-title {
-    color: #1A1A1A;
+    color: #1a1a1a;
     margin: 0.67em 0 0.25em;
   }
   .drawer-subtitle {
@@ -250,6 +249,10 @@ h6 {
 
   img {
     margin-bottom: 1.5em;
+  }
+
+  .drawer-photo-credit {
+    font-size: 12px;
   }
 }
 
@@ -450,8 +453,6 @@ nav#up-down {
     stroke-dasharray: 1px 500px;
   }
 }
-
-
 
 .fp-viewing-one .toc-progress circle {
   stroke-dasharray: 200px 500px;
