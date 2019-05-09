@@ -1,5 +1,8 @@
 import { TweenMax } from 'gsap';
 
+var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+var is_Edge = window.navigator.userAgent.indexOf('Edge') > -1;
+
 function drawLines(selector, t = 0.25) {
   return TweenMax.fromTo(selector, t, { drawSVG: '0%' }, { drawSVG: '100%', immediateRender: true });
 }
@@ -13,29 +16,45 @@ function fadeIn(selector, stagger = 0.1, t = 0.25) {
 }
 
 export const hl1 = () => {
-  var circlesIn = TweenMax.staggerFromTo(
-    '[data-anim="hl1"] svg #circles > *',
-    0.1,
-    {
-      scale: 0,
-      transformOrigin: 'center'
-    },
-    {
-      scale: 1
-    },
-    0.005
+  var lineIn = TweenMax.fromTo(
+    '[data-anim="hl1"]  svg #curve',
+    0.5,
+    { drawSVG: '0%' },
+    { drawSVG: '100%', immediateRender: true }
   );
-
-  var lineIn = TweenMax.fromTo('[data-anim="hl1"]  svg #curve', 0.5, { drawSVG: '0%' }, { drawSVG: '100%', immediateRender: true });
 
   var tl = new TimelineLite({
     delay: 1,
     paused: true,
-    easing: Power4.easeInOut
+    easing: Power4.easeInOut,
+    onUpdate: () => console.log('running')
   });
 
   tl.add(lineIn);
-  tl.add(circlesIn);
+
+  if (window.innerWidth > 1024 && !is_safari && !is_Edge) {
+    tl.add(
+      TweenMax.staggerFromTo(
+        '[data-anim="hl1"] svg #circles > path, [data-anim="hl1"] svg #circles > circle',
+        0.1,
+        {
+          scale: 0,
+          transformOrigin: 'center'
+        },
+        {
+          scale: 1
+        },
+        0.005
+      )
+    );
+  } else {
+    tl.add(
+      TweenMax.from('[data-anim="hl1"] svg #circles', 0.5, {
+        opacity: 0,
+        transformOrigin: 'center'
+      })
+    );
+  }
 
   return tl;
 };
@@ -89,9 +108,10 @@ export const hl4 = () => {
   );
 
   var playVideo = () => {
-    $('[data-anim="hl4"] video')[0].play()
-    $('[data-anim="hl4"] video')[0].onended = () => TweenMax.to('[data-anim="hl4"] .inner-grandient', 1, { opacity: 1, immediateRender: true });
-  }
+    $('[data-anim="hl4"] video')[0].play();
+    $('[data-anim="hl4"] video')[0].onended = () =>
+      TweenMax.to('[data-anim="hl4"] .inner-grandient', 1, { opacity: 1, immediateRender: true });
+  };
 
   var tl = new TimelineLite({
     delay: 1,
@@ -104,8 +124,8 @@ export const hl4 = () => {
   tl.add(drawLines('[data-anim="hl4"] svg #motorcyle > *'), 0.1, 0.5);
 
   tl.add(fadeLinesOut, '+=0.5');
-  tl.add(fadeGradientOut, '-=1')
-  tl.call(playVideo, null,null, '-=0.5')
+  tl.add(fadeGradientOut, '-=1');
+  tl.call(playVideo, null, null, '-=0.5');
 
   return tl;
 };

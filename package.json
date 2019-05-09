@@ -18,6 +18,7 @@
     "fullpage.js": "^2.9.7",
     "gsap": "^2.1.2",
     "node-sass": "^4.12.0",
+    "object-fit-videos": "^1.0.4",
     "parcel-plugin-handlebars": "^0.4.4",
     "promise-polyfill": "^7.1.2"
   }

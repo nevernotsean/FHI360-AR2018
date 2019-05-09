@@ -20,8 +20,18 @@
 
   video {
     object-fit: cover;
+    font-family: 'object-fit: cover;'; // with object-fit-video polyfill js
     width: 100%;
     height: 100%;
+    // height: auto;
+
+    // @supports (object-fit: cover) {
+    //   height: 100%;
+    // }
+    // /* ie edge only gets the following rule */
+    // @supports (object-fit: cover) and (-ms-ime-align: auto) {
+    //   height: auto;
+    // }
   }
 
   svg {
@@ -66,13 +76,11 @@
     }
   }
   .inner-frame {
-    // min-height: 100vh;
-    height: 100%;
-    padding: 100px 60px 185px 60px;
-
-    &.centered {
-      padding: 185px 60px;
-    }
+    display: flex;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 60px;
+    padding-bottom: 185px;
   }
 
   .slide-title {
@@ -248,6 +256,7 @@
     z-index: 1;
     width: 100vw;
     height: 100vh;
+    font-family: 'object-fit: cover;'; // with object-fit-video polyfill js
     object-fit: cover;
     object-position: right;
   }

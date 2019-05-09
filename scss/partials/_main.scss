@@ -1,3 +1,7 @@
+body:before {
+  content: none !important;
+}
+
 // index.js
 .objectfit-img img {
   height: 100%;
@@ -403,10 +407,6 @@ nav#up-down {
   height: 100vh;
   z-index: 2;
 
-  .fp-viewing-intro & {
-    opacity: 0;
-  }
-
   img {
     cursor: pointer;
     position: fixed;
@@ -434,6 +434,14 @@ nav#up-down {
   z-index: 1;
   color: white;
   font-size: 16px;
+}
+
+.drawer-open,
+.fp-viewing-one {
+  .back-to-top,
+  nav#up-down {
+    visibility: hidden;
+  }
 }
 
 .toc-progress {

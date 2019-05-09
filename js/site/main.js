@@ -3,6 +3,8 @@ import config from './fullpage-config.js';
 import anime from 'animejs';
 import { hl1, hl2, hl3, hl4 } from './tweens';
 
+import 'object-fit-videos';
+
 export default class Site {
   constructor(props) {
     this.config = config;
@@ -53,7 +55,7 @@ export default class Site {
     // this.countUp(nextIndex - 2)
     this.runAnimation(nextIndex - 1);
 
-    let video = $(`[data-section="${index - 1}"] .slide-video`).get(0)
+    let video = $(`[data-section="${index - 1}"] .slide-video`).get(0);
 
     video && video.pause();
   }
@@ -83,11 +85,11 @@ export default class Site {
 
     this.handleTocProgress(index);
 
-    let video = $(`[data-section="${index}"] .slide-video`).get(0)
+    let video = $(`[data-section="${index}"] .slide-video`).get(0);
     if (video) {
-      video.currentTime = 0
-      video.play()
-    };
+      video.currentTime = 0;
+      video.play();
+    }
   }
   handleTocProgress(index) {
     let tocIndex = $(`[data-section='${index}']`).data('toc');
@@ -143,33 +145,34 @@ export default class Site {
     });
   }
   runAnimation(index) {
+    // return
     let el = $(`[data-section="${index}"]`);
-    
+
     let animName = el.data('anim');
 
-    if (!animName) return 
+    if (!animName) return;
 
     let tl;
 
     switch (animName) {
       case 'hl1':
-        tl = hl1();
+        tl = hl1;
         break;
       case 'hl2':
-        tl = hl2();
+        tl = hl2;
         break;
       case 'hl3':
-        tl = hl3();
+        tl = hl3;
         break;
       case 'hl4':
-        tl = hl4();
+        tl = hl4;
         break;
 
       default:
         break;
     }
 
-    tl.play();
+    tl().play();
   }
   handleAfterRender() {
     // console.log('handleAfterRender')
@@ -366,7 +369,7 @@ export default class Site {
       translateY: ['-10px', '10px'],
       duration: 1000,
       easing: 'easeInOutQuart'
-    })
+    });
   }
   addEventListeners() {
     $('.move-next').on('click', e => $.fn.fullpage.moveSectionDown());
