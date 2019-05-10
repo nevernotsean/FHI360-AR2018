@@ -604,7 +604,11 @@ h6 {
     line-height: 0; }
   .toc-toggle .toc-progress {
     position: absolute;
-    top: -5px; }
+    top: -5px;
+    left: -5px; }
+
+.ie .toc-toggle .toc-progress {
+  left: -5px; }
 
 .close-rightbar.bg {
   display: none;
@@ -808,17 +812,21 @@ nav#up-down {
   z-index: 999;
   cursor: pointer; }
 
-.bg-c video.bg-c-video {
-  width: auto;
-  max-width: none;
+body.no-objectfit-video .bg-c {
+  position: relative;
   height: 100vh;
-  position: absolute; }
+  width: 100vw; }
+  body.no-objectfit-video .bg-c video.bg-c-video {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: auto; }
 
-.bg-c {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
+body.no-objectfit-video.bg-c-wide .bg-c video.bg-c-video {
+  width: 178vh;
+  height: 100vh; }
 
 .svg-animation,
 .video-container {
@@ -885,6 +893,8 @@ nav#up-down {
 
 [data-section='0'] {
   background-color: inherit !important; }
+  [data-section='0'] .bg.gradient {
+    background: black !important; }
   [data-section='0'] .video-container video {
     -o-object-position: top center;
        object-position: top center; }
@@ -1184,4 +1194,4 @@ nav#up-down {
     stroke-dasharray: 0 0.25em; } }
 
 
-/*# sourceMappingURL=js.d615a348.css.map */
+/*# sourceMappingURL=scss.b6b67a91.css.map */

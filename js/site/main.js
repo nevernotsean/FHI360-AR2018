@@ -3,6 +3,8 @@ import config from './fullpage-config.js';
 import anime from 'animejs';
 import { hl1, hl2, hl3, hl4 } from './tweens';
 
+import isIEcheck from '../isIE';
+
 import 'object-fit-videos';
 
 export default class Site {
@@ -428,6 +430,13 @@ export default class Site {
       $('body').toggleClass('mobile-open');
     });
   }
+  videoeResize(){
+    if (window.innerWidth / window.innerHeight < 1.6) {
+      $('body').addClass('bg-c-wide');
+    } else {
+      $('body').removeClass('bg-c-wide');
+    }
+  }
   preload() {
     if (!Modernizr) return console.log('Enable Modernizer!');
     if (!Modernizr.objectfit) {
@@ -447,6 +456,20 @@ export default class Site {
         }
       });
     }
+
+    var isIE = isIEcheck()
+    var is_Edge = window.navigator.userAgent.indexOf('Edge') > -1;
+
+    if (is_Edge || isIE) {
+      this.videoeResize();
+      window.addEventListener('resize', this.videoeResize)
+    }
+
+    if (is_Edge) $('body').addClass('edge')
+    if (isIE) $('body').addClass('ie')
+
+    if (is_Edge || isIE) 
+      $('body').addClass('no-objectfit-video')
   }
   init() {
     this.preload();

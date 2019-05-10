@@ -11354,7 +11354,21 @@ var _EasePack = require("./EasePack.js");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-},{"./TweenLite.js":"PWbO","./TimelineLite.js":"z6Yt","./TimelineMax.js":"gnPE","./TweenMax.js":"Kcu3","./CSSPlugin.js":"bp4Z","./AttrPlugin.js":"8tGb","./RoundPropsPlugin.js":"wWOj","./DirectionalRotationPlugin.js":"ohcH","./BezierPlugin.js":"uJjk","./EasePack.js":"bxmL"}],"h3RI":[function(require,module,exports) {
+},{"./TweenLite.js":"PWbO","./TimelineLite.js":"z6Yt","./TimelineMax.js":"gnPE","./TweenMax.js":"Kcu3","./CSSPlugin.js":"bp4Z","./AttrPlugin.js":"8tGb","./RoundPropsPlugin.js":"wWOj","./DirectionalRotationPlugin.js":"ohcH","./BezierPlugin.js":"uJjk","./EasePack.js":"bxmL"}],"+KKH":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var isIE = function isIE() {
+  return navigator.appName === 'Microsoft Internet Explorer' || navigator.appName === 'Netscape' && new RegExp('Trident/.*rv:([0-9]{1,}[.0-9]{0,})').exec(navigator.userAgent) != null;
+};
+
+var _default = isIE;
+exports.default = _default;
+},{}],"h3RI":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11364,8 +11378,13 @@ exports.hl4 = exports.hl3 = exports.hl2 = exports.hl1 = void 0;
 
 var _gsap = require("gsap");
 
+var _isIE = _interopRequireDefault(require("../isIE"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 var is_Edge = window.navigator.userAgent.indexOf('Edge') > -1;
+var isIE = (0, _isIE.default)();
 
 function drawLines(selector) {
   var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.25;
@@ -11417,7 +11436,7 @@ var hl1 = function hl1() {
   });
   tl.add(lineIn);
 
-  if (window.innerWidth > 1024 && !is_safari && !is_Edge) {
+  if (window.innerWidth > 1024 && !is_safari && !is_Edge && !isIE) {
     tl.add(_gsap.TweenMax.staggerFromTo('[data-anim="hl1"] svg #circles > path, [data-anim="hl1"] svg #circles > circle', 0.1, {
       scale: 0,
       transformOrigin: 'center'
@@ -11514,7 +11533,7 @@ var hl4 = function hl4() {
 };
 
 exports.hl4 = hl4;
-},{"gsap":"TpQl"}],"Z/6C":[function(require,module,exports) {
+},{"gsap":"TpQl","../isIE":"+KKH"}],"Z/6C":[function(require,module,exports) {
 /**
  * Object Fit Videos
  * Polyfill for object-fit and object-position CSS properties on video elements
@@ -11797,6 +11816,8 @@ var _fullpageConfig = _interopRequireDefault(require("./fullpage-config.js"));
 var _animejs = _interopRequireDefault(require("animejs"));
 
 var _tweens = require("./tweens");
+
+var _isIE = _interopRequireDefault(require("../isIE"));
 
 require("object-fit-videos");
 
@@ -12263,6 +12284,15 @@ function () {
       });
     }
   }, {
+    key: "videoeResize",
+    value: function videoeResize() {
+      if (window.innerWidth / window.innerHeight < 1.6) {
+        $('body').addClass('bg-c-wide');
+      } else {
+        $('body').removeClass('bg-c-wide');
+      }
+    }
+  }, {
     key: "preload",
     value: function preload() {
       if (!Modernizr) return console.log('Enable Modernizer!');
@@ -12283,6 +12313,18 @@ function () {
           }
         });
       }
+
+      var isIE = (0, _isIE.default)();
+      var is_Edge = window.navigator.userAgent.indexOf('Edge') > -1;
+
+      if (is_Edge || isIE) {
+        this.videoeResize();
+        window.addEventListener('resize', this.videoeResize);
+      }
+
+      if (is_Edge) $('body').addClass('edge');
+      if (isIE) $('body').addClass('ie');
+      if (is_Edge || isIE) $('body').addClass('no-objectfit-video');
     }
   }, {
     key: "init",
@@ -12297,7 +12339,7 @@ function () {
 }();
 
 exports.default = Site;
-},{"promise-polyfill":"drat","./fullpage-config.js":"R36R","animejs":"NQR3","./tweens":"h3RI","object-fit-videos":"Z/6C"}],"Y5Mt":[function(require,module,exports) {
+},{"promise-polyfill":"drat","./fullpage-config.js":"R36R","animejs":"NQR3","./tweens":"h3RI","../isIE":"+KKH","object-fit-videos":"Z/6C"}],"Y5Mt":[function(require,module,exports) {
 "use strict";
 
 require("../scss/index.scss");
@@ -12313,4 +12355,4 @@ $(document).ready(function () {
   Site.init();
 });
 },{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
-//# sourceMappingURL=js.21d64786.js.map
+//# sourceMappingURL=js.6f4cd588.js.map

@@ -1,7 +1,9 @@
 import { TweenMax } from 'gsap';
+import isIEcheck from '../isIE';
 
 var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 var is_Edge = window.navigator.userAgent.indexOf('Edge') > -1;
+var isIE = isIEcheck();
 
 function drawLines(selector, t = 0.25) {
   return TweenMax.fromTo(selector, t, { drawSVG: '0%' }, { drawSVG: '100%', immediateRender: true });
@@ -32,7 +34,7 @@ export const hl1 = () => {
 
   tl.add(lineIn);
 
-  if (window.innerWidth > 1024 && !is_safari && !is_Edge) {
+  if (window.innerWidth > 1024 && !is_safari && !is_Edge && !isIE) {
     tl.add(
       TweenMax.staggerFromTo(
         '[data-anim="hl1"] svg #circles > path, [data-anim="hl1"] svg #circles > circle',
