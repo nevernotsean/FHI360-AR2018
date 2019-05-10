@@ -378,7 +378,10 @@ export default class Site {
     $('.close-rightbar').on('click', e => this.toggleTOC());
     $('.toc-item').on('click', e => this.handleTocClick(e));
     $('[data-ceoLink]').on('click', e => this.handleCeoLink());
-    $('.back-to-top').on('click', e => $.fn.fullpage.silentMoveTo(1));
+    $('#back-to-top').on('click', e => {
+      this.toggleTOC();
+      setTimeout(() =>  $.fn.fullpage.silentMoveTo(1), 300);
+    });
 
     $('[data-closedrawer]').on('click', e => {
       let id = $(e.target)

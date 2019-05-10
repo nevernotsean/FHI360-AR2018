@@ -285,7 +285,7 @@ h6 {
   }
 }
 
-.close-rightbar {
+.close-rightbar.bg {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -424,21 +424,28 @@ nav#up-down {
   }
 }
 
-.back-to-top {
+#back-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  text-align: right;
   cursor: pointer;
   // opacity: 0.4;
-  z-index: 1;
+  z-index: 9999;
   color: white;
   font-size: 16px;
+
+  display: none;
+  top: 30px;
+  left: 30px;
+  bottom: initial;
+  text-align: left;
+
+  .toc-open & {
+    display: inline-block;
+  }
 }
 
 .drawer-open,
 .fp-viewing-one {
-  .back-to-top,
+  #back-to-top,
   nav#up-down {
     visibility: hidden;
   }

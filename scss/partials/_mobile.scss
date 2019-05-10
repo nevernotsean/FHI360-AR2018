@@ -4,12 +4,27 @@
     display: none;
   }
 }
+
 @media screen and (max-width: $medium) {
   div#header .share-menu {
     display: none;
   }
   [data-section='0'] .drawer-button_container {
     margin-bottom: 10px;
+  }
+
+  .drawer-title {
+    font-size: 1.5rem !important;
+  }
+  .drawer-subtitle {
+    font-size: 1.25rem !important;
+  }
+  .section .slide-title {
+    font-size: 2rem !important;
+  }
+
+  #back-to-top {
+    width: 50px;
   }
 }
 @media screen and (min-width: $large) {
@@ -108,7 +123,7 @@
     border-width: 2px;
     font-size: 18px;
   }
-  [data-section="0"] {
+  [data-section='0'] {
     .gradient {
       background: none;
     }
