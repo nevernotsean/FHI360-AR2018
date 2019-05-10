@@ -12,6 +12,20 @@
   cursor: pointer;
 }
 
+.bg-c video.bg-c-video {
+  width: auto;
+  max-width: none;
+  height: 100vh;
+  position: absolute;
+}
+
+.bg-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .svg-animation,
 .video-container {
   position: relative;
