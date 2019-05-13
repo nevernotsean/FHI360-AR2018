@@ -12237,8 +12237,7 @@ function () {
         return _this3.handleCeoLink();
       });
       $('#back-to-top').on('click', function (e) {
-        _this3.toggleTOC();
-
+        // this.toggleTOC();
         setTimeout(function () {
           return $.fn.fullpage.silentMoveTo(1);
         }, 300);
@@ -12355,4 +12354,4 @@ $(document).ready(function () {
   Site.init();
 });
 },{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
-//# sourceMappingURL=js.6f4cd588.js.map
+//# sourceMappingURL=js.72f59fef.js.map

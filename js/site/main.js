@@ -381,7 +381,7 @@ export default class Site {
     $('.toc-item').on('click', e => this.handleTocClick(e));
     $('[data-ceoLink]').on('click', e => this.handleCeoLink());
     $('#back-to-top').on('click', e => {
-      this.toggleTOC();
+      // this.toggleTOC();
       setTimeout(() =>  $.fn.fullpage.silentMoveTo(1), 300);
     });
 
