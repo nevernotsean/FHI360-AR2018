@@ -572,7 +572,7 @@ h6 {
     font-weight: 700;
     text-transform: uppercase;
     color: #007787; }
-  .leftDrawer a {
+  .leftDrawer a, .leftDrawer a:visited {
     color: #007787;
     font-weight: 700; }
   .leftDrawer p {
@@ -1191,4 +1191,4 @@ body.no-objectfit-video.bg-c-wide .bg-c video.bg-c-video {
     stroke-dasharray: 0 0.25em; } }
 
 
-/*# sourceMappingURL=js.c38d23a3.css.map */
+/*# sourceMappingURL=scss.a1bd805a.css.map */
