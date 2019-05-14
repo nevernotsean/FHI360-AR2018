@@ -14,7 +14,7 @@ export default class Site {
     this.config.anchors = [
       'one',
       'two',
-      'three',
+      'ceo',
       'four',
       'five',
       'six',

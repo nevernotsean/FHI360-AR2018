@@ -11836,7 +11836,7 @@ function () {
     _classCallCheck(this, Site);
 
     this.config = _fullpageConfig.default;
-    this.config.anchors = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'learnmore'];
+    this.config.anchors = ['one', 'two', 'ceo', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'learnmore'];
     this.config.onLeave = this.handleOnLeave.bind(this);
     this.config.afterLoad = this.handleAfterLoad.bind(this);
     this.config.afterRender = this.handleAfterRender.bind(this);
@@ -12354,4 +12354,4 @@ $(document).ready(function () {
   Site.init();
 });
 },{"../scss/index.scss":"lVYZ","./site/main.js":"z2l2"}]},{},["Y5Mt"], null)
-//# sourceMappingURL=js.72f59fef.js.map
+//# sourceMappingURL=js.c609cfe1.js.map
